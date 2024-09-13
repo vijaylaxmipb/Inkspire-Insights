@@ -1,46 +1,40 @@
 from django.db import models
 from django.contrib.auth.models import User
+import datetime  # Import the datetime module
 
 STATUS = ((0, "Draft"), (1, "Published"))
 
 # Create your models here.
 class Post(models.Model):
-    title = models.CharField(max_length=300, unique=True)
-    slug = models.SlugField(max_length=300, unique=True)
-    body = models.TextField(default='Default body text')  # Added default value
-    author = models.ForeignKey(
-        User, on_delete=models.CASCADE, related_name="blog_posts"
-)
+    title = models.CharField(max_length=200, unique=True)
+    slug = models.SlugField(max_length=200, unique=True)
+    content = models.TextField(default="Default content goes here") 
+    author = models.ForeignKey(User, on_delete=models.CASCADE, related_name="blog_posts")
 
-content = models.TextField()
-created_on = models.DateTimeField(auto_now_add=True)
-status = models.IntegerField(choices=STATUS, default=0)
-excerpt = models.TextField(blank=True)
-updated_on = models.DateTimeField(auto_now=True)
+    status = models.IntegerField(choices=STATUS, default=0)  # Use integer field for Draft and Published
+    
+    excerpt = models.TextField(blank=True)
+    created_on = models.DateTimeField(default=datetime.datetime.now) 
+    updated_on = models.DateTimeField(auto_now=True)  # Automatically update on save
 
-
-class Meta:
-        ordering = ["-created_on"]
-
-def __str__(self):
+    class Meta:
+        ordering = ["-created_on"] 
+    def __str__(self):
         return f"{self.title} | written by {self.author}"
 
 
 class Comment(models.Model):
     post = models.ForeignKey(Post, related_name='comments', on_delete=models.CASCADE)
     name = models.CharField(max_length=80)
-    author = models.CharField(max_length=100)
     body = models.TextField()
     created_at = models.DateTimeField(auto_now_add=True)
-    active = models.BooleanField(default=False)  
+    active = models.BooleanField(default=False) 
     approved = models.BooleanField(default=False)
 
 
 class Meta:
-        ordering = ["created_on"]
+        ordering = ["created_at"]
 
 def __str__(self):
-        return f"Comment {self.body} by {self.author}"
+        return f"Comment {self.body} by {self.name}"
     
-
-
