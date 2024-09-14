@@ -7,9 +7,12 @@
 # ]
 
 from django.urls import path
-from .views import PostList  # Only import PostList
+from .views import PostList, home  # Only import 
+
+
+app_name = 'blog'
 
 urlpatterns = [
-    path('', PostList.as_view(), name='blog_home'),  # Use PostList directly
+    path('', PostList.as_view(), name='blog_home'),  
+    path('home/', home, name='home'), 
 ]
-
