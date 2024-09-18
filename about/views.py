@@ -12,5 +12,3 @@ def about_me(request):
 )
 
 
-
-

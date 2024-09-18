@@ -8,17 +8,16 @@ STATUS = ((0, "Draft"), (1, "Published"))
 class Post(models.Model):
     title = models.CharField(max_length=200, unique=True)
     slug = models.SlugField(max_length=200, unique=True)
-    content = models.TextField(default="Default content goes here") 
+    content = models.TextField(default="Default content goes here")
     author = models.ForeignKey(User, on_delete=models.CASCADE, related_name="blog_posts")
-
-    status = models.IntegerField(choices=STATUS, default=0)  # Use integer field for Draft and Published
-    
+    status = models.IntegerField(choices=STATUS, default=0)
     excerpt = models.TextField(blank=True)
-    created_on = models.DateTimeField(default=datetime.datetime.now) 
-    updated_on = models.DateTimeField(auto_now=True)  # Automatically update on save
+    created_on = models.DateTimeField(default=datetime.datetime.now)
+    updated_on = models.DateTimeField(auto_now=True)
 
     class Meta:
-        ordering = ["-created_on"] 
+        ordering = ["-created_on"]
+
     def __str__(self):
         return f"{self.title} | written by {self.author}"
 
@@ -28,16 +27,17 @@ class Comment(models.Model):
     name = models.CharField(max_length=80)
     body = models.TextField()
     created_at = models.DateTimeField(auto_now_add=True)
-    active = models.BooleanField(default=False) 
+    active = models.BooleanField(default=False)
     approved = models.BooleanField(default=False)
 
 
-class Meta:
+    class Meta:
         ordering = ["created_at"]
 
-def __str__(self):
+    def __str__(self):
         return f"Comment {self.body} by {self.name}"
     
+
 class Event(models.Model):
     title = models.CharField(max_length=200)
     description = models.TextField()
@@ -45,3 +45,4 @@ class Event(models.Model):
 
     def __str__(self):
         return self.title
+
