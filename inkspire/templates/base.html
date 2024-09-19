@@ -32,7 +32,7 @@
     <nav class="navbar navbar-expand-lg navbar-light bg-white">
         <div class="container-fluid">
             <a class="navbar-brand" href="{% url 'blog:home' %}"> <!-- Correct dynamic link to home -->
-                <span class="brand">The <span class="red-ink">Ink</span>spire<span class="thin"> Insights</span></span>
+                <span class="brand">The <span class="red-ink">Ink</span>spire<span class="thick"> Insights</span></span>
             </a>
             <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarText"
                 aria-controls="navbarText" aria-expanded="false" aria-label="Toggle navigation">
@@ -44,6 +44,7 @@
                          <a class="nav-link {% if request.path == home_url %}active{% endif %}" aria-current="page"
                          href="{% url 'blog:home' %}">Home</a> 
                     </li>
+                    
                     <li class="nav-item">
                         <a class="nav-link {% if request.path == about_url %}
                           active{%endif%}" aria-current="page"
@@ -53,7 +54,7 @@
                 </ul>
 
                 <span class="navbar-text text-muted">
-                    adventures of a software developer
+                    Welcome To The Inkspire Insights
                 </span>
             </div>
         </div>

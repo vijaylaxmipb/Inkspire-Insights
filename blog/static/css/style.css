@@ -6,15 +6,18 @@ body {
     font-family: Lato, sans-serif;
     font-size: 1.4rem;
     font-weight: 700;
-    color: #4A4A4F;
+    color: red;
 }
 
 .red-o {
     color: #E84610;
 }
 
-.thin {
-    font-weight: 300;
+.thick {
+    font-weight: 900;
+    font-family: Lato, sans-serif;
+    font-size: 1.6rem;
+    color: red
 }
 
 .light-bg {
