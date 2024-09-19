@@ -159,3 +159,32 @@ body {
 .approval {
     color: rgb(222, 146, 168);
 }
+
+/* Center the login container */
+.login-container {
+    margin-top: 80px;
+    max-width: 100%;
+}
+
+/* Add some padding and width control to the form card */
+.card {
+    border-radius: 8px;
+    border: 1px solid #ddd;
+}
+
+/* Style for the buttons */
+.btn-block {
+    width: 100%;
+    padding: 10px;
+    font-size: 16px;
+}
+
+/* Sign up link style */
+.link {
+    color: #007bff;
+    text-decoration: none;
+}
+
+.link:hover {
+    text-decoration: underline;
+}
