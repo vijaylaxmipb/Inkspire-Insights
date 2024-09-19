@@ -6,7 +6,7 @@ body {
     font-family: Lato, sans-serif;
     font-size: 1.4rem;
     font-weight: 700;
-    color: red;
+    color: rgb(105, 53, 53);
 }
 
 .red-o {
@@ -14,10 +14,10 @@ body {
 }
 
 .thick {
-    font-weight: 900;
+    font-weight: 700;
     font-family: Lato, sans-serif;
     font-size: 1.6rem;
-    color: red
+    color: rgb(53, 143, 155)
 }
 
 .light-bg {
@@ -46,7 +46,7 @@ body {
     bottom: 5%;
     min-width: 30%;
     left: -2px;
-    background-color: #181a81;
+    background-color: #2bada7;
 }
 
 .scale {
@@ -70,7 +70,7 @@ body {
 }
 
 .masthead-text {
-    background-color: #445261;
+    background-color: #29803c;
     color: white;
     position: relative;
 }
@@ -101,7 +101,7 @@ body {
 
 .post-link:hover,
 .page-link {
-    color: #E84610;
+    color: #2b7c68;
 }
 
 .post-title {
@@ -123,11 +123,11 @@ body {
 .btn-signup:hover,
 .btn-signup:active {
     background-color: #fff;
-    color: #23BBBB;
+    color: #2365bb;
 }
 
 .link {
-    color: #23BBBB;
+    color: #241c6b;
     text-decoration: none;
 }
 
@@ -156,7 +156,7 @@ body {
 }
 
 .faded {
-    color: rgb(172, 175, 175);
+    color: rgb(172, 175, 180);
 }
 
 .approval {

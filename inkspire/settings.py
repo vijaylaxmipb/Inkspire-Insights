@@ -54,12 +54,21 @@ INSTALLED_APPS = [
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
+    'django.contrib.sites',
+    'allauth',
+    'allauth.account',
+    'allauth.socialaccount',
+    'allauth.socialaccount.providers.google',
     'django_summernote',
     'blog',
     'about',
     'inkspire', 
     
 ]
+
+SITE_ID = 1
+LOGIN_REDIRECT_URL = '/'
+LOGOUT_REDIRECT_URL = '/'
 
 MIDDLEWARE = [
     'django.middleware.security.SecurityMiddleware',
@@ -70,6 +79,7 @@ MIDDLEWARE = [
     'django.contrib.auth.middleware.AuthenticationMiddleware',
     'django.contrib.messages.middleware.MessageMiddleware',
     'django.middleware.clickjacking.XFrameOptionsMiddleware',
+    'allauth.account.middleware.AccountMiddleware',
 ]
 
 ROOT_URLCONF = 'inkspire.urls'
@@ -77,7 +87,7 @@ ROOT_URLCONF = 'inkspire.urls'
 TEMPLATES = [
     {
         'BACKEND': 'django.template.backends.django.DjangoTemplates',
-        'DIRS': [os.path.join(BASE_DIR, 'inkspire/templates'), os.path.join(BASE_DIR, 'blog/templates')],
+        'DIRS': [os.path.join(BASE_DIR, 'inkspire/templates')],
         'DIRS': [TEMPLATES_DIR],
         'APP_DIRS': True,
         'OPTIONS': {
@@ -110,6 +120,11 @@ WSGI_APPLICATION = 'inkspire.wsgi.application'
 
 import dj_database_url
 import os
+
+# Manually setting the DATABASE_URL environment variable if not set
+os.environ.setdefault(
+    "DATABASE_URL", "postgres://usntdfhyfq5:DwzL2TIsN1dg@ep-gentle-mountain-a23bxz6h-pooler.eu-central-1.aws.neon.tech/bust_cloth_habit_184185"
+)
 
 # Get the DATABASE_URL environment variable
 DATABASE_URL = os.environ.get('DATABASE_URL')
@@ -145,6 +160,8 @@ AUTH_PASSWORD_VALIDATORS = [
         'NAME': 'django.contrib.auth.password_validation.NumericPasswordValidator',
     },
 ]
+
+ACCOUNT_EMAIL_VERIFICATION = 'none'
 
 
 # Internationalization
