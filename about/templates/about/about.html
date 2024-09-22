@@ -8,9 +8,14 @@
         </div>
         <div class="col-8">
             <!-- Title (About Me) -->
-            <h2>{{ about.title }}</h2>
-            <!-- Content (About paragraph) -->
-            <p>{{ about.content | safe }}</p>
+            {% if about %}
+                <h2>{{ about.title }}</h2>
+                <p>{{ about.content | safe }}</p>
+                <p class="text-end"><em>Updated on: {{ about.updated_on }}</em></p>
+            {% else %}
+                <p>No information available.</p>
+            {% endif %}
+
         </div>
     </div>
     <div class="row">

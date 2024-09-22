@@ -1,4 +1,6 @@
 from django.db import models
+from django.contrib.auth.models import User
+import datetime  # Import the datetime module
 
 
 class About(models.Model):
@@ -9,9 +11,6 @@ class About(models.Model):
     def __str__(self):
         return self.title
 
-from django.db import models
-from django.contrib.auth.models import User
-import datetime  # Import the datetime module
 
 STATUS = ((0, "Draft"), (1, "Published"))
 
@@ -38,6 +37,7 @@ class Post(models.Model):
 class Comment(models.Model):
     post = models.ForeignKey(Post, related_name='comments', on_delete=models.CASCADE)
     name = models.CharField(max_length=80)
+    email = models.EmailField(max_length=254, blank=True, null=False)
     body = models.TextField()
     created_at = models.DateTimeField(auto_now_add=True)
     active = models.BooleanField(default=False) 

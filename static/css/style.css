@@ -26,7 +26,7 @@ body {
 }
 
 .main-bg {
-    background-color: #F9FAFC;
+    background-color: b7835826;
 }
 
 .card {
@@ -170,6 +170,11 @@ body {
 .card {
     border-radius: 8px;
     border: 1px solid #ddd;
+}
+
+.card-body {
+    flex: 1 1 auto;
+    padding: 2rem, 2rem;
 }
 
 /* Style for the buttons */
