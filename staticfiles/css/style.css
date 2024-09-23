@@ -1,5 +1,11 @@
-body {
+body, html {
     background-color: #F9FAFC;
+}
+
+.container-fluid {
+    max-width: 1200px; 
+    margin: 0 auto; 
+    padding: 0 15px; 
 }
 
 .brand {
@@ -26,12 +32,15 @@ body {
 }
 
 .main-bg {
-    background-color: #F9FAFC;
+    background-color: #F9FAFC
 }
 
 .card {
     border: none;
-    background-color: transparent;
+    border-radius: 8px;
+    background-color:#fff;
+    box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
+    width:100%;
 }
 
 .image-container {
@@ -39,13 +48,13 @@ body {
 }
 
 .image-flash {
-    position: absolute;
+    position: relative;
     bottom: 5%;
-    min-width: 30%;
+    width:100% ;
     left: -2px;
-    background-color: #188181;
+    background-color: #43648f;
+    padding: 10px;
 }
-
 .scale {
     width: 100%;
     height: auto;
@@ -53,8 +62,12 @@ body {
 
 .author {
     color: white;
-    margin: 4px;
+    margin: 0;
     text-transform: uppercase;
+}
+
+.col-md-4, .col-sm-6 {
+    margin-bottom: 20px; 
 }
 
 .masthead {
@@ -70,11 +83,27 @@ body {
     background-color: #445261;
     color: white;
     position: relative;
+    padding: 20px;
+}
+
+.masthead-image img,
+.image-container img {
+    position: relative;
+    overflow: hidden;
+    max-width: 100%;
+    height: auto;
+    display: block;
 }
 
 .masthead-image {
-    position: relative;
+    padding: 10px;
+    margin-top: 10px;
     overflow: hidden;
+}
+
+.masthead-text, .masthead-image {
+    display: block;
+    float: none;
 }
 
 .masthead-image:after {
@@ -102,13 +131,16 @@ body {
 }
 
 .post-title {
-    margin-top: 10%;
-    margin-left: 5%;
+    font-size: 1.8rem;
+    margin-bottom: 10px
+   
+    
 }
 
 .post-subtitle {
-    margin-left: 5%;
-    color: lightgray;
+    font-size: 1.2rem;
+    color: gray;
+   
 }
 
 .btn-signup,
@@ -172,6 +204,13 @@ body {
     border: 1px solid #ddd;
 }
 
+.card-body {
+    display: block;
+}
+
+.col-md-4, .col-sm-6 {
+    margin-bottom: 20px; 
+}
 /* Style for the buttons */
 .btn-block {
     width: 100%;
@@ -187,4 +226,21 @@ body {
 
 .link:hover {
     text-decoration: underline;
+}
+
+@media (max-width: 768px) {
+    .masthead {
+        height: auto;
+    }
+    .post-title {
+        font-size: 1.5rem;
+        text-align: center;
+    }
+    .post-subtitle {
+        font-size: 0.9rem;
+        text-align: center;
+    }
+    .masthead-image {
+        display: none; /* Hide large images on smaller screens */
+    }
 }

@@ -1,6 +1,4 @@
 from django.db import models
-from django.contrib.auth.models import User
-import datetime  # Import the datetime module
 
 
 class About(models.Model):
@@ -11,6 +9,9 @@ class About(models.Model):
     def __str__(self):
         return self.title
 
+from django.db import models
+from django.contrib.auth.models import User
+import datetime  # Import the datetime module
 
 STATUS = ((0, "Draft"), (1, "Published"))
 
@@ -22,11 +23,11 @@ class Post(models.Model):
     author = models.ForeignKey(User, on_delete=models.CASCADE, related_name="about_posts")
     status = models.IntegerField(choices=STATUS, default=0)
     excerpt = models.TextField(blank=True)
-    created_on = models.DateTimeField(default=datetime.datetime.now)
+    created_at = models.DateTimeField(default=datetime.datetime.now)
     updated_on = models.DateTimeField(auto_now=True)
 
     class Meta:
-        ordering = ["-created_on"]
+        ordering = ["-created_at"]
 
     def __str__(self):
         return f"{self.title} | written by {self.author}"
@@ -37,7 +38,6 @@ class Post(models.Model):
 class Comment(models.Model):
     post = models.ForeignKey(Post, related_name='comments', on_delete=models.CASCADE)
     name = models.CharField(max_length=80)
-    email = models.EmailField(max_length=254, blank=True, null=False)
     body = models.TextField()
     created_at = models.DateTimeField(auto_now_add=True)
     active = models.BooleanField(default=False) 
@@ -57,4 +57,3 @@ class Event(models.Model):
 
     def __str__(self):
         return self.title
-

@@ -12,11 +12,12 @@ class Post(models.Model):
     author = models.ForeignKey(User, on_delete=models.CASCADE, related_name="blog_posts")
     status = models.IntegerField(choices=STATUS, default=0)
     excerpt = models.TextField(blank=True)
-    created_on = models.DateTimeField(default=datetime.datetime.now)
+    created_at = models.DateTimeField(default=datetime.datetime.now)
     updated_on = models.DateTimeField(auto_now=True)
+    dummy_field = models.CharField(max_length=10, null=True, blank=True) 
 
     class Meta:
-        ordering = ["-created_on"]
+        ordering = ["-created_at"]
 
     def __str__(self):
         return f"{self.title} | written by {self.author}"

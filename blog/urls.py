@@ -25,11 +25,12 @@ urlpatterns = [
     path('home/', home, name='home'), 
 
     # Post detail view
-    path('post/<int:post_id>/', post_detail, name='post_detail'),  
+    path('post/<int:post_id>/', post_detail, name='post_detail'),
+    
 
     # Events list view
     path('events/', EventsList.as_view(), name='events_list'),  
     
     # Event detail view
     path('event/<int:event_id>/', event_detail, name='event_detail'),
-]
+    ]

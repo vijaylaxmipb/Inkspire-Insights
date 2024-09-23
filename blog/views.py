@@ -6,9 +6,10 @@ from django.contrib import messages
 
 
 class PostList(ListView):
-    queryset = Post.objects.filter(status=1)
+    queryset = Post.objects.filter(status=1).exclude(title__exact='').exclude(content__exact='').exclude(excerpt__exact='')
     template_name = "blog/index.html"
-    paginate_by = 6
+    paginate_by = 2
+    context_object_name = 'post_list' 
 
 
 class EventsList(ListView):
@@ -25,6 +26,19 @@ def post_detail(request, post_id):
     post = get_object_or_404(Post, id=post_id)
     comments = post.comments.all().order_by("-created_on")
     comment_count = post.comments.filter(approved=True).count()
+    comment_form = CommentForm()
+
+
+    return render(
+    request,
+    "blog/post_detail.html",
+    {
+        "post": post,
+        "comments": comments,
+        "comment_count": comment_count,
+        "comment_form": comment_form,
+    },
+)
 
     if request.method == "POST":
         comment_form = CommentForm(data=request.POST)
