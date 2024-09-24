@@ -20,9 +20,10 @@ app_name = 'blog'
 urlpatterns = [
     # Root URL for blog home
     path('', PostList.as_view(), name='blog_home'),  
+    #path('', PostList.as_view(), name='home'),  
 
     # Separate route for the home page
-    path('home/', home, name='home'), 
+    path('home/', views.home, name='home'), 
 
     # Post detail view
     path('post/<int:post_id>/', post_detail, name='post_detail'),

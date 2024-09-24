@@ -16,6 +16,8 @@ Including another URLconf
 """
 from django.contrib import admin
 from django.urls import include, path
+from django.conf import settings
+from django.conf.urls.static import static 
 
  
 
@@ -29,6 +31,8 @@ urlpatterns = [
     path('summernote/', include('django_summernote.urls')),
     #path('', include('blog.urls')),
     
-    
 ]
 
+# Add this block to serve media files in development mode
+if settings.DEBUG:  # Only serve media files if in debug mode (i.e., development)
+    urlpatterns += static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)

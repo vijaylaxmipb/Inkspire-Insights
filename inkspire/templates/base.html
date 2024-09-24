@@ -34,7 +34,7 @@
     <!-- Navigation -->
     <nav class="navbar navbar-expand-lg navbar-light bg-white">
         <div class="container-fluid">
-            <a class="navbar-brand" href="{% url 'blog:home' %}"> <!-- Correct dynamic link to home -->
+            <a class="navbar-brand" href="{% url 'blog:home' %}"> <!--Dynamic link to home -->
                 <span class="brand">The <span class="red-ink">Ink</span>spire<span class="thick"> Insights</span></span>
             </a>
             <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarText"
@@ -116,11 +116,13 @@
             <i class="fab fa-youtube-square ms-3"></i>
         </p>
     </footer>
+    
+    <script src="{% static 'js/script.js' %}"></script>
 
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.1/dist/js/bootstrap.bundle.min.js"
         integrity="sha384-gtEjrD/SeCtmISkJkNUaaKMoLD0//ElJ19smozuHV6z3Iehds+3Ulb9Bn9Plx0x4" crossorigin="anonymous">
     </script>
-    <script src="{% static 'js/script.js' %}"></script>
+    
 </body>
 
 </html>
