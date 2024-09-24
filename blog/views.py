@@ -8,7 +8,7 @@ from django.contrib import messages
 class PostList(ListView):
     queryset = Post.objects.filter(status=1).exclude(title__exact='').exclude(content__exact='').exclude(excerpt__exact='')
     template_name = "blog/index.html"
-    paginate_by = 2
+    paginate_by = 6
     context_object_name = 'post_list' 
 
 
@@ -21,10 +21,13 @@ class EventsList(ListView):
 def home(request):
     return render(request, 'base.html')
 
+def home(request):
+    return render(request, 'blog/home.html')
+
 
 def post_detail(request, post_id):
     post = get_object_or_404(Post, id=post_id)
-    comments = post.comments.all().order_by("-created_on")
+    comments = post.comments.all().order_by("-created_at")
     comment_count = post.comments.filter(approved=True).count()
     comment_form = CommentForm()
 
