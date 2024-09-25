@@ -44,6 +44,7 @@ def post_detail(request, post_id):
 )
 
     if request.method == "POST":
+        print("Received a POST request")
         comment_form = CommentForm(data=request.POST)
         if comment_form.is_valid():
             comment = comment_form.save(commit=False)
@@ -56,7 +57,8 @@ def post_detail(request, post_id):
     )
 
 
-    comment_form = CommentForm()
+    comment_form = CommentForm(data=request.POST)
+    print("About to render template")
 
     events = Event.objects.all()  # Or filter for related events
     return render(request, 'blog/post_detail.html', {'post': post, 'events': events, "comments": comments,
@@ -66,3 +68,7 @@ def post_detail(request, post_id):
 def event_detail(request, event_id):
     event = get_object_or_404(Event, id=event_id)
     return render(request, 'event_detail.html', {'event': event})  
+
+
+def about(request):
+    return render(request, 'about.html')  # Render the 'about.html' template

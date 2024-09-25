@@ -14,11 +14,13 @@
                 <h3 class="text-center mb-4">{% trans "Sign In" %}</h3>
 
                 <p class="text-center">
-                    {% blocktrans %}Welcome back to the Inkspire Insights blog. To leave a comment or like a post, please log in. If
-                    you have not created an account yet, then <a class="link" href="{{ signup_url }}">sign up</a> first.{% endblocktrans %}
+                    {% blocktrans %}
+                    Welcome back to the Inkspire Insights blog. To leave a comment or like a post, please log in. If
+                    you have not created an account yet, then <a class="link" href="{{ signup_url }}">sign up</a> first.
+                    {% endblocktrans %}
                 </p>
 
-                <form method="POST" action="{% url 'account_login' %}">
+                <form method="POST" action="{% url 'account_login' %}" class="mt-4">
                     {% csrf_token %}
                     {{ form.as_p }}
                     
@@ -27,12 +29,16 @@
                     {% endif %}
                     
                     <div class="text-center mt-3">
-                        <button class="btn btn-primary btn-block" type="submit">{% trans "Sign In" %}</button>
+                        <button class="btn btn-primary btn-block" type="submit">
+                            {% trans "Sign In" %}
+                        </button>
                     </div>
                 </form>
 
                 <div class="mt-4 text-center">
-                    <a class="small" href="{% url 'account_reset_password' %}">{% trans "Forgot Password?" %}</a>
+                    <a class="small" href="{% url 'account_reset_password' %}">
+                        {% trans "Forgot Password?" %}
+                    </a>
                 </div>
             </div>
         </div>

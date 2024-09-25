@@ -268,11 +268,12 @@ input[type="text"], input[type="password"], input[type="email"] {
 .hero {
     position: relative;
     text-align: center;
-    width: 100%;
+    width: 100vw;
     height: 100vh;  
     overflow: hidden;
     margin: 0;
     padding: 0;
+    
 }
 
 .hero_image {
@@ -285,6 +286,7 @@ input[type="text"], input[type="password"], input[type="email"] {
     position: absolute;
     top: 0;
     left: 0;
+    
 }
 
 .hero-content {
@@ -292,19 +294,19 @@ input[type="text"], input[type="password"], input[type="email"] {
     top: 50%;
     left: 50%;
     transform: translate(-50%, -50%);
-    color: white;
     text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.7);
     text-align: center;
     
 }
 
 .hero-content h1 {
-    font-size: 4rem;
     margin-bottom: 20px;
+    font-size: 2rem;
 }
 
 .hero-content p {
     font-size: 1.5rem;
+    margin-bottom: 30px;
 }
 
 .btn-primary {

@@ -12,6 +12,7 @@
                 {% for post in object_list %}
                    {% if post.title and post.content and post.excerpt %}
                    <div class="col-md-4 col-sm-6 col-12">
+                
                        <div class="card mb-4">
                         <div class="card-body">
                             <!-- Make title and excerpt clickable -->
@@ -19,7 +20,7 @@
                                 <h2 class="post-title">{{ post.title }}</h2>
                                 <p class="post-subtitle">{{ post.excerpt }}</p>
                             </a>
-                            <p class="card-text text-muted h6">{{ post.created_on }}</p>
+                            <p class="card-text text-muted h6">{{ post.created_at }}</p>
                             <div class="image-container">
                                 <div class="image-flash">
                                     <p class="author">Author: {{ post.author }}</p>

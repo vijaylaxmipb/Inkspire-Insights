@@ -23,7 +23,7 @@ urlpatterns = [
     #path('', PostList.as_view(), name='home'),  
 
     # Separate route for the home page
-    path('home/', views.home, name='home'), 
+    path('home/', views.home, name='home'),
 
     # Post detail view
     path('post/<int:post_id>/', post_detail, name='post_detail'),
@@ -34,4 +34,7 @@ urlpatterns = [
     
     # Event detail view
     path('event/<int:event_id>/', event_detail, name='event_detail'),
+
+    path('about/', views.about, name='about'),
+    
     ]
