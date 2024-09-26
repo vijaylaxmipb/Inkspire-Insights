@@ -77,6 +77,11 @@ body, html {
     display: inline-block;
     height: 33vh;
     width: 100%;
+    padding: 0 20px;
+    margin-left: auto;
+    margin-right: auto;
+    max-width: 90%;
+
 }
 
 .masthead-text {

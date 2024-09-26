@@ -33,6 +33,5 @@ urlpatterns = [
     
 ]
 
-# Add this block to serve media files in development mode
 if settings.DEBUG:  # Only serve media files if in debug mode (i.e., development)
     urlpatterns += static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)

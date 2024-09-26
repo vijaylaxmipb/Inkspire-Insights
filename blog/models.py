@@ -1,6 +1,9 @@
 from django.db import models
 from django.contrib.auth.models import User
 import datetime  # Import the datetime module
+from cloudinary.models import CloudinaryField
+
+
 
 STATUS = ((0, "Draft"), (1, "Published"))
 
@@ -15,6 +18,10 @@ class Post(models.Model):
     created_at = models.DateTimeField(default=datetime.datetime.now)
     updated_on = models.DateTimeField(auto_now=True)
     dummy_field = models.CharField(max_length=10, null=True, blank=True) 
+    #featured_image = CloudinaryField('image', blank=True, null=True) 
+    featured_image = models.ImageField(upload_to='blog_images/', blank=True, null=True) 
+
+    
 
     class Meta:
         ordering = ["-created_at"]

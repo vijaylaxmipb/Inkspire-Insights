@@ -8,6 +8,9 @@ body, html {
     padding: 0 15px; 
 }
 
+.container {
+    max-width: 960px; 
+} 
 .brand {
     font-family: Lato, sans-serif;
     font-size: 1.4rem;
@@ -70,34 +73,41 @@ body, html {
     margin-bottom: 20px; 
 }
 
+.col-4 img, .col-8 img {
+    border-radius: 8px; 
+    margin-bottom: 20px;
+}
+
+.text-end {
+    margin-top: 10px;
+}
+
 .masthead {
     margin-top: 10px;
     overflow: hidden;
     position: relative;
     display: inline-block;
     width: 100%;
-    align-items: center; 
+    align-items: center;
     justify-content: space-between;
-    overflow: hidden;
+    background-color: #445261;
+    padding: 2px;
+    color: white;
+
 }
 
 .masthead-text {
-    background-color: #445261;
-    color: white;
-    position: relative;
-    padding: 20px;
-    z-index: 10;
+    padding-right: 20px;
     flex: 1;
 }
 
-.masthead-image img,
-.image-container img {
-    position: relative;
-    overflow: hidden;
-    max-width: 100%;
+.masthead-image img {
+    max-width: 350px;
     height: auto;
     display: block;
     z-index: 5;
+    object-fit: cover;
+    border-radius: 8px;
     
 }
 
@@ -134,14 +144,13 @@ body, html {
 
 .post-title {
     font-size: 1.8rem;
-    margin-bottom: 10px
-   
+    margin-bottom: 10px; 
     
 }
 
 .post-subtitle {
     font-size: 1.2rem;
-    color: gray;
+    color: #b0b0b0;
    
 }
 
@@ -208,10 +217,16 @@ body, html {
     background-color: #fff;
 }
 
-
 .card-body {
     display: block;
 }
+
+.card-img-top {
+    width: 100%;
+    height: 200px;  /* Adjust height based on your design */
+    object-fit: cover;  /* Ensures the image covers the area without stretching */
+} 
+
 .btn {
     padding: 12px 20px;
     font-size: 1.2rem;
@@ -248,15 +263,23 @@ input[type="text"], input[type="password"], input[type="email"] {
     .masthead {
         height: auto;
         flex-direction: column;
+        padding: 10px;
     
     }
+
+    .masthead-image img {
+        max-width: 100%;  
+        margin-top: 10px;
+    }
+
     .post-title {
-        font-size: 1.5rem;
+        font-size: 1.6rem;
         text-align: center;
     }
+
     .post-subtitle {
         font-size: 0.9rem;
-        text-align: center;
+        
     }
     .masthead-image {
         display: none; 
