@@ -16,6 +16,7 @@
               <!-- Check if the post has an uploaded image. If yes, show it; otherwise, show a placeholder -->
               {% if post.featured_image %}
                   <img src="{{ post.featured_image.url }}" class="scale img-fluid" alt="{{ post.title }}">
+
               {% else %}
                   <img src="{% static 'images/heroo.jpg' %}" class="scale img-fluid" alt="placeholder image">
               {% endif %}
