@@ -1,4 +1,10 @@
-body, html {
+body {
+    background-color: #111010;
+    font-size: large;
+    margin: 2px;
+}
+
+html {
     background-color: #8e9c9c;
 }
 
@@ -107,6 +113,25 @@ body, html {
     border-radius: 8px;
     margin-bottom: 20px;
 }
+
+.flex-shrink-0 main-bg {
+    background-image: url('/static/images/backgroung_img.jpg');
+    background-color: #475d75;
+
+}
+
+.container login-container{
+    text-align: center;
+    padding: 30px;
+
+}
+.col-md-6 mt-5{
+
+    border-radius: 8px;
+    margin-bottom: 20px;
+
+}
+
 
 /* Masthead Section */
 .masthead {
@@ -295,12 +320,11 @@ button.btn-primary {
 }
 
 .about-page {
-    background-color: #f0f0f0; 
-    background-image: url('/static/images/background_img.PNG');
+    background-color: rgb(247, 234, 234);
     background-size: cover;
     background-position: center;
     padding: 50px;
-    color: #333; 
+    color: #111010; 
 }
 
 
