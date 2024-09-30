@@ -245,9 +245,10 @@ input[type="text"], input[type="password"], input[type="email"] {
 
 /* Button Styling */
 .btn {
-    padding: 12px 20px;
+    padding: 5px 10px;
     font-size: 1.2rem;
     font-weight: 500;
+    height: 30px;
 }
 
 /* Hero Section */
