@@ -1,7 +1,8 @@
 body {
-    background-color: #111010;
+    
     font-size: large;
-    margin: 2px;
+    background-color: #f8f9fa; 
+    font-family: Arial, sans-serif;
 }
 
 html {
@@ -326,6 +327,83 @@ button.btn-primary {
     padding: 50px;
     color: #111010; 
 }
+
+/* Button hover effect */
+.btn-info:hover {
+    background-color: #138496; /* Darken the button on hover */
+}
+
+/* Form styling */
+form.login {
+    margin-top: 20px;
+}
+
+/* Social providers section styling */
+.socialaccount_providers {
+    display: flex;
+    justify-content: center;
+    gap: 15px; /* Space between provider icons */
+}
+
+/* Social login button (or icon) styling */
+.socialaccount_providers li {
+    display: inline-block;
+}
+
+/* Divider "or" styling */
+.login-or {
+    font-size: 0.9rem;
+    color: #6c757d;
+    margin: 20px 0;
+}
+
+/* Input fields in the form */
+input[type="text"],
+input[type="password"] {
+    width: 100%;
+    padding: 10px;
+    margin: 10px 0;
+    box-sizing: border-box;
+    border: 1px solid #ced4da;
+    border-radius: 4px;
+}
+
+/* Custom styles for the search results page */
+.search-results-container {
+    margin-top: 40px;
+}
+
+.search-results-container h1 {
+    font-size: 2rem;
+    margin-bottom: 20px;
+}
+
+.search-results-container ul {
+    list-style-type: none; 
+    padding: 0;
+}
+
+.search-results-container ul li {
+    margin-bottom: 15px; 
+    font-size: 1.2rem;
+}
+
+.search-results-container ul li a {
+    text-decoration: none; 
+    color: #007bff; 
+    font-weight: bold;
+}
+
+.search-results-container ul li a:hover {
+    text-decoration: underline; 
+}
+
+.no-results {
+    font-size: 1.5rem;
+    color: #dc3545; 
+    margin-top: 20px;
+}
+
 
 
 /* Responsive Section */

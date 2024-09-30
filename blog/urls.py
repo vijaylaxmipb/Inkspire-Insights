@@ -1,10 +1,3 @@
-# from . import views
-# from django.urls import path
-
-# urlpatterns = [
-    # path('', views.PostList.as_view(), name='home'),
-    # path('', views.PostList.as_view(), name='blog_home'),  # Use the class-based view here
-# ]
 
 from django.urls import path
 #from .views import PostList, home 
@@ -36,5 +29,17 @@ urlpatterns = [
     path('event/<int:event_id>/', event_detail, name='event_detail'),
 
     path('about/', views.about, name='about'),
+
+
+    path('<slug:slug>/edit_comment/<int:comment_id>', 
+         views.comment_edit, name='comment_edit'),
+
+    path('<slug:slug>/delete_comment/<int:comment_id>',
+         views.comment_delete, name='comment_delete'),
+
+
+    path('search/', views.search_view, name='search'),
+   
+
     
     ]
