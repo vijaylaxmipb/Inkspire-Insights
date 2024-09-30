@@ -2,6 +2,7 @@ from django.db import models
 from django.contrib.auth.models import User
 import datetime  # Import the datetime module
 from cloudinary.models import CloudinaryField
+from django.urls import reverse
 
 
 
@@ -29,6 +30,9 @@ class Post(models.Model):
 
     def __str__(self):
         return f"{self.title} | written by {self.author}"
+
+    def get_absolute_url(self):
+        return reverse('blog:post_detail', kwargs={'post_id': self.id})
 
 
 class Comment(models.Model):
@@ -62,3 +66,6 @@ class BlogPost(models.Model):
 
     def __str__(self):
         return self.title
+
+
+    
