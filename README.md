@@ -4,7 +4,6 @@
 - [Agile Methodology](#agile-methodology)
   * [Overview](#overview)
   * [GitHub Projects](#github-projects)
-  * [EPICS](#epics)
   * [User Stories](#user-stories)
   * [Developer Stories](#developer-stories)
   * [Visitor Stories](#visitor-stories)
@@ -188,3 +187,25 @@ With an emphasis on delivering a seamless user experience, the goal of this proj
 - Families and Educators
 
 [Back to top](#contents)
+
+## Database Schema
+
+The database schema outlines the structure and relationships between key tables for the platform. The **User** table stores basic user information and authentication details. The **Post** table manages user-generated content with fields for title, content, author, and metadata. The **Comment** table handles comments on posts, including author information. These tables are designed to ensure efficient data management and robust user interactions on the platform.
+
+This schema was generated using [dbdiagram.io](https://www.lucidchart.com)
+
+![Database Schema](/static/images/database%20schema.PNG)
+
+[Back to top](#contents)
+
+## Design Choices
+
+### Typography
+
+ [Merriweather](https://fonts.googleapis.com/css2?family=Roboto:wght@300&display=swap) was chosen as the primary font to enhance the reading experience and align with the blog's nature-themed aesthetic. Its design features make it highly legible on both screens and printed materials, which is crucial for ensuring that readers can comfortably engage with the contentinspirational gardening stories. This font's traditional yet. By using Roboto, I aim to deliver content that is not only visually appealing but also easy to read, thereby enhancing the overall user experience.
+
+### Colour Scheme
+
+The color scheme aims to create a  the vibrant, nature-inspired elements,reliable tone needed for the about section. By combining these carefully chosen colors, I aim to deliver a visually appealing and user-friendly experience.
+
+
