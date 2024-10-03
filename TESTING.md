@@ -32,9 +32,10 @@
 
 ## User Story Testing
 
-| User Story                                                                                  | Screenshot                 |Result          |
-| --------------------------------------------------------------------------------------------|----------------------------|----------------| 
-| As a developer I can setup a new Django project so that I can create the project's structure| The project was set up successfully    | 
- <mark>PASS<mark>|      
-                                                                                                
+| User Story                                                                                  | Screenshot                 |Result          -|
+| --------------------------------------------------------------------------------------------|----------------------------|-----------------| 
+| As a developer I can setup a new Django project so that I can create the project's structure| The project was set up     | <mark>PASS<mark>|
+|                                                                                               sussecfully
+|As a developer I can connect database and media storage so that the user's is stored         |Database and storage set up | <mark>PASS<mark>|
+ succesfully                                                                                   successfully                                                                 
 
