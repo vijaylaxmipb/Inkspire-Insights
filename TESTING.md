@@ -32,12 +32,9 @@
 
 ## User Story Testing
 
-| User Story                                                                                   | Screenshot                        |Result       |
-| -------------------------------------------------------------------------------------------------------------------------------------------------
-| As a developer I can setup a new Django project so that I can create the project's structure | The project was set up successfully | 
-<mark>PASS<mark>|
-| As a developer I can connect database and media storage so that the user's stored data is stored successfully | Database and storage set up succesfully |<mark>PASS<mark>|
-| As a developer, I can perform an early deployment of the application to verify the functionality of the initial setup so that I can continue testing the application as it evolves during development. | Live site was hosted with no errors |<mark>PASS<mark>|
-| As a developer I can connect database and media storage so that the user's stored data is stored successfully | Database and storage set up succesfully |<mark>PASS<mark>|
-| As a developer I can choose a colour theme so that all pages have a consistent feel and style. | A colour theme was chosen for the website as referenced in the [README](./README.md) |<mark>PASS<mark>|
-|As a user I want the website to be responsive so I can view it on multiple devices | <details><summary>Responsive</summary>[README](./README.md)
+| User Story                                                                                  | Screenshot                 |Result          |
+| --------------------------------------------------------------------------------------------|----------------------------|----------------| 
+| As a developer I can setup a new Django project so that I can create the project's structure| The project was set up successfully    | 
+ <mark>PASS<mark>|      
+                                                                                                
+
