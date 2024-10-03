@@ -212,7 +212,7 @@ The color scheme aims to create a  the vibrant, nature-inspired elements,reliabl
 
 | color          |  Hex Code  |  usage
 |----------------|------------|---------------------                         
-|Primary Color   |#E84610     |This bright red-orange attention            
+|Primary Color   |#E84610     |This bright red-orange color can be used for attention-grabbing elements like buttons,            
 |Secondary Color |#0f3f86     |         
 |Background Color|#f8f9fa     |            
 |Accent Color:1  |#445261     |
