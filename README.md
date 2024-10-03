@@ -202,10 +202,21 @@ This schema was generated using [dbdiagram.io](https://www.lucidchart.com)
 
 ### Typography
 
- [Merriweather](https://fonts.googleapis.com/css2?family=Roboto:wght@300&display=swap) was chosen as the primary font to enhance the reading experience and align with the blog's nature-themed aesthetic. Its design features make it highly legible on both screens and printed materials, which is crucial for ensuring that readers can comfortably engage with the contentinspirational gardening stories. This font's traditional yet. By using Roboto, I aim to deliver content that is not only visually appealing but also easy to read, thereby enhancing the overall user experience.
+ [Roboto](https://fonts.googleapis.com/css2?family=Roboto:wght@300&display=swap) was chosen as the primary font to enhance the reading experience and align with the blog's nature-themed aesthetic. Its design features make it highly legible on both screens and printed materials, which is crucial for ensuring that readers can comfortably engage with the contentinspirational gardening stories. This font's traditional yet. By using Roboto, I aim to deliver content that is not only visually appealing but also easy to read, thereby enhancing the overall user experience.
 
 ### Colour Scheme
 
 The color scheme aims to create a  the vibrant, nature-inspired elements,reliable tone needed for the about section. By combining these carefully chosen colors, I aim to deliver a visually appealing and user-friendly experience.
 
+![Coolors Scheme](/static/images/colour.png)
 
+| color          |  Hex Code  |  usage
+|----------------|------------|---------------------                         
+|Primary Color   |#E84610     |This bright red-orange attention            
+|Secondary Color |#0f3f86     |         
+|Background Color|#f8f9fa     |            
+|Accent Color:1  |#445261     |
+|Accent Color:2  |#b0b0b0     |
+|Teal Accent     |#188181     |
+|Bright Cyan     |#23BBBB     |
+|Soft Colour     |#F9FAFC     |
