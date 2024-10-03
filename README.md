@@ -71,88 +71,74 @@ Using GitHub Projects, tasks are managed and progress tracked through project bo
 
 - Github: [Github Projects](https://github.com/users/vijaylaxmipb/projects/6/views/1)
 
+## User Experience
+
 ### User Stories
+
+
+
 
 With an emphasis on delivering a seamless user experience, the goal of this project is to provide a comprehensive platform that serves both visitors and registered users. The platform will allow for the development and maintenance of content, present developer profiles, and provide opportunities for interaction.  The following user stories outline the essential functionalities and the rationale behind them.
 
 *************************************
-### Developer Stories
 
-- As a **developer**, I want to **create wireframes** so that I can **visually represent the layout and structure of the application.**
+#### New User
 
-- As a **developer**, I want to **design a database schema**  so that I can **efficiently store and manage platform content, ensuring optimal performance, scalability, and flexibility.**
-
-- As a **developer**, I want to **create visually engaging and responsive designs** so that **users can easily navigate the website and access relevant information**.
-
-- As a **developer**, I want to **adopt Agile methodology** so that **I can deliver high quality product that meets the needs of the user.**
-
-- As a **developer**, I want to **install and add basic configurations to Django** so that **I can create a working app**.
-
-- As a **developer**, I want to **deploy to Heroku** so that **I can verify initial set up**.
-
-- As a **developer**, I want to **the platform to load quickly and respond swiftly to user interactions** so that **users can have a seamless experience**.
-
-- As a **developer**, I want to **ensure that all syntax errors are identified and resolved during the code validation process** so that **the code is free from syntax-related issues**.
-
-- As a **developer**, I want to **maintain thorough documentation** so that **code is maintained seamlessly in future**.
-
-- As a **developer**, I want to **ensure that user stories are thoroughly tested** so that **they meet acceptance criteria and deliver the expected functionality**.
-
-- As a **developer**, I want to **deploy the application to Heroku** so that **it is accessible to users online**.
-
-- As a **developer**, I want to **ensure that application meets performance and accessibility standards** so that **provides a seamless experience for all users and performs optimally**.
-
-- As a **developer**, I want to **update my profile information** so that **I can keep my information current and accurate**.
+1. As a user I want the website to be responsive so I can view it on multiple devices.
+2. As a User I can intuitively navigate through the website so that I can view all content with ease. 
+3. As a User, I can create an account so that I can post, save and edit content.
+4. As a User, I can log out so that I can secure my account from potential hacks.
+5. As a User, I can post an article so that I can share my insights with the community.
+6. As a User, I can create comments on articles, so that I can engage with the content and share my thoughts. 
+7. As a User, I can delete my own comments, so that I can remove unwanted opinions. 
+8. As a User, I can view content on the home page so that I can stay informed and explore engaging topics.
+9. As a User, I can view a selected article with its comments, as well as related articles, so that I can explore in-depth content and engage with the community. 
+10. As a User, I can filter articles to a specific category, so that I can explore content that interests me. 
+11. As a User, I can view a user's profile page, displaying their posts, favourites and basic information so that I can learn more about the user and their contributions. 
+12. As a User, I can add articles to my favourites so that I can save my most enjoyed articles for future reference. 
+13. As a User I can see notification messages when performing CRUD operations or login/logout, signup so that informed about the outcome of the action taken. 
+14. As a User, I want to view comments on an article so that I can see the discussions going on a particular topic. 
 
 
 *************************************************************
-### Visitor Stories
 
+#### Existing User
 
-- As a **visitor**, I want to **visit the developer's GitHub portfolio** so that **I can view their projects and contributions**.
-
-- As a **visitor**, I want to **download the developer's resume** so that I can **review their qualifications and consider them for a position.**
-
-- As a **visitor**, I want to **view the developer's profile** so that I can **learn more about the developer, contact them, and access their portfolio.**
-
-- As a **visitor**, I want the **accessibility features to be improved** so that **to maintain equal access and usability for all users, including those with disabilities.**
-
-- As a **visitor**, I want to **visual elements across the platform to be consistent** so that **I can have a cohesive and pleasant user interface experience**.
-
-- As a **visitor**, I want to **navigate through the platform effortlessly,** so that **I can find relevant sections and features intuitively.**
-
-- As a **visitor**, I want to **utilize advanced display filtering options** so that **content displayed on the platform according to my preferences and requirements.**
-
-- As a **visitor**, I want to **able to register an account** so **I can create an account**.
-
-- As a **visitor**, I want to **provide feedback, report issues, and suggest improvements through a contact form,** so that I can **actively participate in improving the platform and receive support when needed**.
+1. As a User, I want to be able to log in and out of my account so that I can use the platform
+2. As a User, I want to to be able to reset my password so that I do not loose access to my account.
+3. As a User, I want to manage my profile so that I have control of the information held on the platform.
+4. As a User, I want to create posts so that I can upload them on the platform. 
+5. As a User, I want to edit and delete posts so that I can maintain the content up-to-date.
+6. As a User, I want to be able to comment on posts so that **provide feedback to authors.
+7. As a User, I want to be able to delete and edit comments so that I can control my engagement on the platform.
+8. As a User, I want the ability to interact with posts and comments by liking, un-liking, and favoriting them,so that I can engage with content that resonates with me.
+9. As a User, I want to see a user-friendly interface when I have no posts or favourites on my profile page. Additionally, I want to have an option to easily add new content. 
 
 ****************************************************
 
-### Registered User Stories
+#### Website Owner/Developer
 
-- As a **registered user**, I want to **be able to log in and out of my account** so that **I can use the platform**.
+1. As a developer I can layout wireframes so that I have a clear idea of the sites structure and theme 
+2. As a Developer I can choose a colour theme so that all pages have a consistent feel and style 
+3. As a Developer, I can created a standardised article preview card for each article, providing key information at a glance so that users can quickly understand the context of an article 
+4. As a Site Owner, I can have the capability to perform all CRUD (Create, Read, Update, Delete) functionality within the website's admin interface so that I can manually create and edit content. 
+5. As the Site Owner, I can approve user created content so that I can manually oversee and manage content creation and edits. 
+6. As a Site Owner, I can delete user profiles and all associated content from the platform so I can minimise harmful users.
+7. As the Site Owner, I can view users and their profiles/content through the website's admin interface, allowing me to manage site users. 
+8. As a Developer, I want to ensure the styling and theme of the website are consistent, free from CSS errors, and provide an intuitive and easy-to-use UI/UX so that users easily digest content and perform all actions with ease. 
+9. As a Developer, I can show custom error pages redirect the user to the home page, so that I have a consistent experience even when encountering errors on the website. 
+10. As a Developer,I want to ensure that user stories are thoroughly tested so that they meet acceptance criteria and deliver the expected functionality.
+11. As a Developer,I want to deploy the application to Heroku so that it is accessible to users online.
 
-- As a **registered user**, I want to **to be able to reset my password** so that **I do not loose access to my account**.
 
-- As a **registered user**, I want to **manage my profile** so that **I have control of the information held on the platform**.
-
-- As a **registered user**, I want to **create posts** so that **I can upload them on the platform**.
-
-- As a **registered user**, I want to **edit and delete posts** so that **I can maintain the content up-to-date**.
-
-- As a **registered user**, I want to **to be able to comment on posts** so that **provide feedback to authors**.
-
-- As a **registered user**, I want to **to be able to delete and edit comments** so that I can **control my engagement on the platform**.
-
-- As a **registered user**, I want **the ability to interact with posts and comments by liking, un-liking, and favoriting them,** so that I can **engage with content that resonates with me**.
+****************************************************
 
 
 ### Admin User Stories
 
-- As an **admin user**, I want **the ability to perform all CRUD (Create, Read, Update, Delete) operations** so that **manually manage, control and edit content**.
+- As an admin user, I want the ability to perform all CRUD (Create, Read, Update, Delete) operations so that manually manage, control and edit content.
 
-- As an **admin user**, I want to **approve comments and posts** so that **I can ensure content quality and appropriateness before it is published**.
+- As an admin user, I want to approve comments and posts so that I can ensure content quality and appropriateness before it is published.
 
 
 ## Website Goals and Objectives
@@ -292,6 +278,7 @@ The responsive design adapts seamlessly to both desktop and mobile devices, ensu
 
 The footer maintains consistency with the overall site design, featuring the same font and color scheme, and is fully responsive to adapt to various screen sizes. This attention to detail helps reinforce the site's branding and enhances the user experience by providing clear and accessible navigation options at the bottom of the page. Media links are included. Also, users can contact site owner by clicking on the :envelope: icon is they wish to do so. Instead of generic links, the footer includes 'About Section' link with detailed profile of the developeer of this project.
 
+
 **About Section:**
 
 The About Me section of Inkspire Insights provides detailed information about the blog creator in a visually appealing format. It includes a brief bio where about the developer, shares their passion for creativity, personal growth, and storytelling. The layout focuses on a user-friendly presentation of the developer’s background and inspirations for the blog. The data is managed via the Django Admin Portal, and the system is scalable to support multiple profiles or further enhancements, offering a clean and structured way to access important information about the blog's creator.
@@ -304,6 +291,15 @@ The landing page of Inkspire Insights is designed to welcome visitors with a cle
 
 
 ![Landing View Large Screen](/static/images/landing%20page.png)
+
+### Search Feature
+
+Implement a search bar in the navigation menu to allow users to search for specific users or articles by entering text, enhancing content discoverability.
+
+### Password Reset with Email Validation
+
+Introduce a secure and user-friendly password reset system that relies on email validation, making it easier for users to regain access to their accounts.
+
 
 ### User Account Pages
 
@@ -329,3 +325,38 @@ The Log Out page provides users with confirmation of a successful logout from th
 
 
 ![Log Out View](/static/images/log%20out.png)
+
+### Article Preview Card
+
+The Article Card on Inkspire Insight  is a concise yet informative snapshot of a user's post within a specific tech-related category. It includes the following key elements:
+
+1. Author Profile: A visual representation of the author's Profile and username, providing a quick way to identify the content creator.
+2. Likes: The number of likes the post has received, offering a sense of its popularity and engagement.
+3. Comments: The count of comments on the post, indicating the level of community discussion and interaction.
+4. Post Date: The date when the article was published, offering a reference for the recency of the content.
+5. Title: The headline of the post, serving as a captivating entry point to the article's content.
+6. Excerpt: A brief summary or excerpt from the article, providing users with a glimpse of the post's key points and enticing them to read further.
+
+Together, these elements create a preview Card that is both visually appealing and informative, allowing users to make informed choices about which posts to explore further within a specific category.
+
+![Article Preview Card](/static/images/article_preview_card.PNG)
+
+
+### Notification Messages
+
+Notification messages were user every time the user performs CRUD operation, sign in, and sign out.
+![Notification Messages ](/static/images/notification_messages.png)
+
+
+### Comment Card
+
+The comment card elegantly showcases the user's comment, the author's identity, and the date
+![Comment Card ](/static/images/comment_card.png)
+
+### Awaiting approval
+
+when a user comment for a blog and click on submit button,notification popup for approval from admin.
+![Awaiting approval ](/static/images/awating_approval.png)
+
+
+## Testing
