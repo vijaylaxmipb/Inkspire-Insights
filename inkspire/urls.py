@@ -29,7 +29,7 @@ urlpatterns = [
     # path('blog/', blog_home, name='blog_home'),
     path("", include("blog.urls"), name="blog-urls"),
     path('summernote/', include('django_summernote.urls')),
-    path('', include('blog.urls')),
+   
    
     
 ]

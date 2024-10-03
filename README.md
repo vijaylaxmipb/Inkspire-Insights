@@ -213,10 +213,119 @@ The color scheme aims to create a  the vibrant, nature-inspired elements,reliabl
 | color          |  Hex Code  |  usage
 |----------------|------------|---------------------                         
 |Primary Color   |#E84610     |This bright red-orange color can be used for attention-grabbing elements like buttons,            
-|Secondary Color |#0f3f86     |         
-|Background Color|#f8f9fa     |            
-|Accent Color:1  |#445261     |
-|Accent Color:2  |#b0b0b0     |
-|Teal Accent     |#188181     |
-|Bright Cyan     |#23BBBB     |
-|Soft Colour     |#F9FAFC     |
+|Secondary Color |#0f3f86     |A deep blue that works well for headings, titles, or branding elements like the logo      
+|Background Color|#f8f9fa     |A very light grayish-white, used as a general background color for the body or container elements.            
+|Accent Color:1  |#445261     |This muted dark slate gray is ideal for section backgrounds, footer areas, or sidebar navigation.
+|Accent Color:2  |#b0b0b0     |Use this as a secondary text color or for borders and dividers. 
+|Teal Accent     |#188181     |This deep teal works great for icons, links, or hover effects.It's a fresh, calm color that adds visual interest without being too bold, complementing the rest of the color scheme.
+|Bright Cyan     |#23BBBB     |A bright and modern cyan color, useful for hover effects, secondary buttons, or interactive elements.
+|Soft Colour     |#F9FAFC     |This very light blue-gray color can be applied to the background of cards, forms, or input fields. 
+
+[Back to top](#contents)
+
+### Images
+
+Combination of images sourced from Pexels(https://www.pexels.com/).
+All images are provided under the [Pexels License](https://www.pexels.com/license/), allowing free use for personal and commercial purposes, with no attribution required. However, crediting the photographers is appreciated.
+
+[Back to top](#contents)
+
+### Responsiveness
+
+My website is responsive to different layouts depending on the size of the viewport have been included in the CSS media queries. This allows visitors to experience the website as I intended on device types and screen sizes. The breakpoints I am using are from Bootstrap.
+
+![Breakpoints](/static/images/am_i_responsive.png)
+
+[Back to top](#contents)
+
+## Security Measures and Protective Design
+
+### User Authentication
+
+- The application uses Django's built-in authentication system to manage user access.
+- Logged-in users can post comments, and the system allows for post and event management through standard Django views.
+- Users must be logged in to submit comments. However, the system currently does not enforce login requirements for viewing posts or events.
+
+## Comment Management
+
+- Users can add comments to posts. The comments are associated with specific posts and are displayed in the post detail view.
+- After submitting a comment, the comment is saved and set to await approval by an admin/moderator before being displayed publicly.
+- **Edit and Delete Functionality**: There is no explicit enforcement of user-specific permissions on editing or deleting comments in the current implementation. However, the views handle comment editing and deleting through form submission, with logic in place to compare the comment author with the logged-in user. If the logged-in user is the author of the comment, they are allowed to edit or delete the comment.
+
+## Post and Event Management
+
+- The application includes a list of posts and events.
+- The posts and events are displayed using Django's `ListView`, and users can view individual post or event details.
+- **Post Detail View**: This view displays a single post along with all the comments associated with it. The post detail view also includes the ability to submit a new comment.
+- The system currently does not enforce role-based permissions for viewing posts or events.
+
+### Password Management
+
+- Use Django's built-in password management tools to ensure passwords are hashed and stored securely.
+- Enforce strong password policies to enhance user account security.
+- Users can log in and out of their accounts via Django's authentication system.
+
+### Form Validation
+
+If incorrect or empty data is added to a form, the form won't submit, and a warning will appear to the user informing them which field raised the error.
+
+### Database Security
+
+- The database URL and secret key are stored in the `env.py` file to prevent unwanted connections to the database. This setup was implemented before the first push to GitHub.
+- Cross-Site Request Forgery (CSRF) tokens are used on all forms throughout the site to enhance security.
+- The application uses a PostgreSQL database, manually configured in the `settings.py` file due to an error where the default database was not being detected or displayed properly.
+
+[Back to top](#contents)
+
+## Features
+
+### Header
+
+![Visitor Large Screen](/static/images/Header.png)
+
+The header of the Inkspire Insights Blog is designed to be both visually appealing and user-friendly. It features a navigation menu, user authentication links, and a search bar. The cohesive color scheme, incorporating primary, secondary, and background colors, ensures a visually harmonious design while maintaining accessibility with strong color contrast and ARIA labels for screen readers.
+The responsive design adapts seamlessly to both desktop and mobile devices, ensuring that the navigation remains intuitive and fully functional across all screen sizes. 
+
+### Footer
+
+![Footer](/static/images/footer.png)
+
+The footer maintains consistency with the overall site design, featuring the same font and color scheme, and is fully responsive to adapt to various screen sizes. This attention to detail helps reinforce the site's branding and enhances the user experience by providing clear and accessible navigation options at the bottom of the page. Media links are included. Also, users can contact site owner by clicking on the :envelope: icon is they wish to do so. Instead of generic links, the footer includes 'About Section' link with detailed profile of the developeer of this project.
+
+**About Section:**
+
+The About Me section of Inkspire Insights provides detailed information about the blog creator in a visually appealing format. It includes a brief bio where about the developer, shares their passion for creativity, personal growth, and storytelling. The layout focuses on a user-friendly presentation of the developer’s background and inspirations for the blog. The data is managed via the Django Admin Portal, and the system is scalable to support multiple profiles or further enhancements, offering a clean and structured way to access important information about the blog's creator.
+
+![Landing View Large Screen](/static/images/about.png)
+
+ ### Landing Page
+
+The landing page of Inkspire Insights is designed to welcome visitors with a clean, modern, and engaging layout. The page features a series of blog post cards, each displaying the title, excerpt, publication date, and author, making it easy for users to browse and explore the latest insights. The page is structured with a prominent navigation bar at the top, including options for Home, About, Login/Logout, and a search bar for easy content discovery.The blog post cards feature vibrant images, bold headlines, and brief excerpts that draw the user in. The clean typography and ample spacing ensure that the content is easy to read and visually appealing.
+
+
+![Landing View Large Screen](/static/images/landing%20page.png)
+
+### User Account Pages
+
+The user account pages ensure a smooth and secure process for managing user access, enhancing the overall user experience on Blossom Therapy Insights.
+
+**Sign Up/Registration Page:**
+
+The Sign Up page features a clean and intuitive form where users can create an account by entering their username, first name, last name, email, and password. The form uses a responsive design, ensuring accessibility and ease of use across devices. By prioritizing user-friendly design, the Sign Up page helps facilitate quick and easy registration, encouraging new users to join the community and start their gardening journey.
+
+![Register](/static/images/sign_up.png)
+
+---
+
+**Sign In Page:**
+
+The Log In page offers a straightforward and secure way for existing users to access their accounts. The page includes fields for the username and password, with clear labels and a prominent login button. The page maintains consistency with the site's overall aesthetic, ensuring a cohesive user experience. The focus on simplicity and security helps users quickly and confidently access their accounts to engage with the Inkspire Insight.
+
+![Sign In](/static/images/sign_in.png)
+
+**Log Out Page:**
+
+The Log Out page provides users with confirmation of a successful logout from their account. It features a brief message indicating that the user has been logged out. The design is minimalistic, reinforcing the action taken and providing a clear path to continue exploring the site or logging in again.
+
+
+![Log Out View](/static/images/log%20out.png)
