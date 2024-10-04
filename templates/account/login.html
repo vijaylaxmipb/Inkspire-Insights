@@ -10,7 +10,7 @@
     <div class="col-12 col-md-8 col-lg-6">
       <div class="card mt-5">
         <div class="card-body text-center">
-          <h1 class="card-title mb-3">{% trans "Sign In" %}</h1>
+          <h1 class="card-title mb-3" style="color: black;">{% trans "Sign In" %}</h1>
           {% get_providers as socialaccount_providers %}
           {% if socialaccount_providers %}
           <p class="card-text">{% blocktrans with site.name as site_name %}Please sign in with one

@@ -37,6 +37,7 @@ class Post(models.Model):
 
 class Comment(models.Model):
     post = models.ForeignKey(Post, related_name='comments', on_delete=models.CASCADE)
+    user = models.ForeignKey(User, on_delete=models.CASCADE, default=1) 
     name = models.CharField(max_length=80)
     body = models.TextField()
     created_at = models.DateTimeField(auto_now_add=True)
@@ -48,7 +49,7 @@ class Comment(models.Model):
         ordering = ["created_at"]
 
     def __str__(self):
-        return f"Comment {self.body} by {self.name}"
+        return f"Comment {self.body} by {self.user.username}"
     
 
 class Event(models.Model):

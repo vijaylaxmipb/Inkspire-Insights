@@ -1,20 +1,18 @@
 {% extends "base.html" %}
-
 {% load static %}
-
 {% block content %}
 
 
 <div class="container">
-    <h1>Welcome to the Home Page</h1>
+    <h1>Explore Our Insights</h1>
 </div>
 
 <section class="hero">
-    <img src="{% static 'images/hero_image.jpg' %}" alt="Welcome to Inkspire Insights" class="hero-image center-image">
+    <img src="{% static 'images/hero_image.jpg' %}" alt="Welcome to Inkspire Insights" class="hero-image">
     <div class="hero-content">
         <h1>Discover Your Potential with The Inkspire Insights</h1>
         <p>Explore insightful articles on personal growth, lifestyle, creativity, and more.</p>
-        <a href="{% url 'about' %}" class="btn-primary">Learn More</a>
+        <a href="{% url 'blog:blog_home' %}" class="btn-primary">Learn More</a>
     </div>
 </section>
 

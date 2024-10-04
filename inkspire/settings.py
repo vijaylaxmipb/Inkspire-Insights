@@ -12,13 +12,17 @@ https://docs.djangoproject.com/en/4.2/ref/settings/
 
 from pathlib import Path
 import os
+import sys
 import dj_database_url
 if os.path.isfile('env.py'):
     import env
 
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
 BASE_DIR = Path(__file__).resolve().parent.parent
-TEMPLATES_DIR = os.path.join(BASE_DIR, 'inkspire', 'templates')
+TEMPLATES_DIRS = [
+    os.path.join(BASE_DIR, 'inkspire', 'templates'),
+    os.path.join(BASE_DIR, 'templates')  
+]
 
 # Directory where static files will be collected for production
 STATIC_ROOT = BASE_DIR / "staticfiles"
@@ -41,7 +45,8 @@ DEBUG = True
 
 ALLOWED_HOSTS = [ 
     '8000-vijaylaxmip-inkspireins-xcl7d7k6nab.ws.codeinstitute-ide.net',
-    '.herokuapp.com'
+    '.herokuapp.com',
+    '.gitpod.io', '127.0.0.1', 'localhost'
     ]
 
 
@@ -92,8 +97,7 @@ ROOT_URLCONF = 'inkspire.urls'
 TEMPLATES = [
     {
         'BACKEND': 'django.template.backends.django.DjangoTemplates',
-        'DIRS': [os.path.join(BASE_DIR, 'inkspire/templates')],
-        'DIRS': [TEMPLATES_DIR],
+        'DIRS': TEMPLATES_DIRS,
         'APP_DIRS': True,
         'OPTIONS': {
             'context_processors': [
@@ -141,6 +145,9 @@ if not DATABASE_URL:
 DATABASES = {
     'default': dj_database_url.parse(DATABASE_URL)
 }
+
+if 'test' in sys.argv:
+    DATABASES['default']['ENGINE'] = 'django.db.backends.sqlite3'
 
 CSRF_TRUSTED_ORIGINS = [
     "https://*.codeinstitute-ide.net/",
@@ -195,4 +202,12 @@ MEDIA_ROOT = BASE_DIR / 'media'
 # https://docs.djangoproject.com/en/4.2/ref/settings/#default-auto-field
 
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
+
+# settings.py
+
+ACCOUNT_FORMS = {
+    'login': 'blog.forms.CustomLoginForm',
+    'signup': 'blog.forms.CustomSignupForm',
+}
+
 

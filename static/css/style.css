@@ -22,14 +22,17 @@ html {
 
 /* Brand and Typography */
 .brand {
-    font-family: Lato, sans-serif;
-    font-size: 1.8rem;
-    font-weight: 700;
-    color: #0f3f86;
+    background: linear-gradient(to right, #FFD700, #800080); 
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    font-weight: bold; 
+    font-size:larger;
 }
 
-.red-o {
-    color: #E84610;
+
+.red-ink {
+    color: #FFD700; 
+    font-weight: bold; 
 }
 
 .thin {
@@ -84,6 +87,23 @@ html {
     padding: 0; 
     margin: 0;
 }
+
+.navbar-brand {
+    display: flex;
+    align-items: center;
+}
+
+.brand-logo {
+    height: 60px;  
+    margin-right: 9px; 
+    vertical-align: middle;
+    max-width: 100%;
+}
+
+.hero h1 {
+    font-size: 1.5rem; 
+}
+
 
 /* Image Styles */
 .image-container, .image-flash, .scale, .masthead-image img {
@@ -164,8 +184,9 @@ html {
 }
 
 /* Post Styles */
+
 .post-title {
-    font-size: 1.8rem;
+    font-size: 1.2rem;
     margin-bottom: 15px;
     font-weight: 700;
     text-align: center;
@@ -322,7 +343,7 @@ button.btn-primary {
 }
 
 .about-page {
-    background-color: rgb(247, 234, 234);
+    background-color: linear-gradient(to bottom right, rgba(144, 238, 144, 0.5), rgba(227, 255, 227, 0.8));
     background-size: cover;
     background-position: center;
     padding: 50px;
@@ -405,7 +426,17 @@ input[type="password"] {
     margin-top: 20px;
 }
 
+.form-control {
+    /* Bootstrap example */
+    border: 1px solid #ccc;
+    border-radius: 4px;
+}
 
+.custom-class {
+    /* Your custom styles */
+    background-color: #f9f9f9;
+    font-size: 16px;
+}
 
 /* Responsive Section */
 @media (max-width: 768px) {
@@ -473,6 +504,8 @@ input[type="password"] {
     /* Typography adjustments for mobile */
     .brand {
         font-size: 1.5rem;
+        color: bold;
+        color: #800080;
     }
 
     .text-center {

@@ -1,9 +1,12 @@
-from django.shortcuts import render, get_object_or_404, reverse
+from django.shortcuts import render, get_object_or_404, reverse, redirect
 from django.views.generic import ListView
 from .models import Post, Event, Comment
 from django.http import HttpResponseRedirect
 from .forms import CommentForm
 from django.contrib import messages
+from django.contrib.auth.decorators import login_required
+from django.urls import reverse
+
 
 # ListView for Posts
 class PostList(ListView):
@@ -70,33 +73,46 @@ def about(request):
     return render(request, 'about.html')
 
 # View to edit comments
-def comment_edit(request, slug, comment_id):
+def comment_edit(request, post_id, comment_id):
+    comment = get_object_or_404(Comment, id=comment_id, post__id=post_id, user=request.user) 
     if request.method == "POST":
-        queryset = Post.objects.filter(status=1)
-        post = get_object_or_404(queryset, slug=slug)
-        comment = get_object_or_404(Comment, pk=comment_id)
         comment_form = CommentForm(data=request.POST, instance=comment)
-
-        if comment_form.is_valid() and comment.author == request.user:
+        if comment_form.is_valid():
             comment = comment_form.save(commit=False)
-            comment.post = post
-            comment.approved = False
+            comment.approved = False  
             comment.save()
-            messages.add_message(request, messages.SUCCESS, 'Comment Updated!')
+            messages.success(request, 'Comment updated successfully!')
+            return redirect('blog:post_detail', post_id=post_id)
         else:
-            messages.add_message(request, messages.ERROR, 'Error updating comment!')
+            messages.error(request, 'There was an error updating your comment.')
+    else:
+        comment_form = CommentForm(instance=comment)
 
-    return HttpResponseRedirect(reverse('post_detail', args=[slug]))
+    # Render the edit form template
+    return render(request, 'blog/edit_comment.html', {
+        'form': comment_form,
+        'post_id': post_id,
+    })
 
 # View to delete comments
-def comment_delete(request, slug, comment_id):
+@login_required
+def comment_delete(request, post_id, comment_id):
     """
     View to delete a comment
     """
-    queryset = Post.objects.filter(status=1)
-    post = get_object_or_404(queryset, slug=slug)
-    comment = get_object_or_404(Comment, pk=comment_id)
+    post = get_object_or_404(Post, id=post_id)
+    comment = get_object_or_404(Comment, pk=comment_id, user=request.user)
 
-    if comment.author == request.user:
-        comment.delete()
-        messages.add_message
+    if request.method == "POST":
+        comment_form = CommentForm(data=request.POST, instance=comment)
+
+        if comment_form.is_valid():
+            comment = comment_form.save(commit=False)
+            comment.post = post
+            comment.save()
+            messages.add_message(request, messages.SUCCESS, 'Comment updated successfully!')
+            return HttpResponseRedirect(reverse('post_detail', args=[post_id]))
+    else:
+        comment_form = CommentForm(instance=comment)
+
+    return render(request, 'blog/edit_comment.html', {'comment_form': comment_form, 'post': post})

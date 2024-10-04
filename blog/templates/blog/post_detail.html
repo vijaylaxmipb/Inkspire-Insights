@@ -93,7 +93,7 @@
           {% if not comment.approved and comment.author == user %}
           faded{% elif not comment.approved %} d-none{% endif %}">
           <p class="font-weight-bold">
-            {{ comment.author }}
+            {{ comment.user.username }}
             <span class="font-weight-normal">
               {{ comment.created_at }}
             </span> wrote:
@@ -106,12 +106,10 @@
             This comment is awaiting approval
           </p>
           {% endif %}
-           {% if user.is_authenticated and comment.author == user %}
-           <button class="btn btn-delete"
-           comment_id="{{ comment.id }}">Delete</button>
-           <a href="{% url 'comment_edit' post.slug comment.id %}" class="btn btn-edit">Edit</a>
-           <button class="btn btn-edit" comment_id="{{ comment.id }}">Edit</button>
-          {% endif %}
+          {% if user.is_authenticated and comment.user == user %}
+          <a href="{% url 'blog:comment_edit' post.id comment.id %}" class="btn btn-sm btn-warning">Edit</a>
+          <a href="{% url 'blog:comment_delete' post.id comment.id %}" class="btn btn-sm btn-danger">Delete</a>
+        {% endif %}
         </div>
         <!-- For loop ends here -->
         {% endfor %}
