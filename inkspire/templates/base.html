@@ -1,10 +1,3 @@
-{% load static %}
-{% url 'blog:home' as home_url %}
-{% url 'about' as about_url %}
-{% url 'account_login' as login_url %}
-{% url 'account_signup' as signup_url %}
-{% url 'account_logout' as logout_url %}
-{% url 'blog:blog_home' as blog_home_url %}
 
 <!DOCTYPE html>
 <html lang="en">
@@ -13,6 +6,13 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>The Inkspire Insights</title>
+    {% load static %}
+    {% url 'blog:blog_home' as blog_home_url %}
+    {% url 'blog:home' as home_url %}
+    {% url 'about' as about_url %}
+    {% url 'account_login' as login_url %}
+    {% url 'account_signup' as signup_url %}
+    {% url 'account_logout' as logout_url %}
 
     <!-- Google Fonts CSS -->
     <link rel="preconnect" href="https://fonts.gstatic.com">
@@ -52,7 +52,7 @@
                          href="{% url 'blog:home' %}">Inksight</a> 
                     </li>
 
-                    <li class="nav-item"></li>
+                    <li class="nav-item">
                         <a class="nav-link {% if request.path == home_url %}active{% endif %}" 
                            aria-current="page" href="{% url 'blog:blog_home' %}">Home</a> 
                     </li>

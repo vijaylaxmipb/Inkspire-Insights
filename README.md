@@ -309,7 +309,7 @@ The user account pages ensure a smooth and secure process for managing user acce
 
 The Sign Up page features a clean and intuitive form where users can create an account by entering their username, first name, last name, email, and password. The form uses a responsive design, ensuring accessibility and ease of use across devices. By prioritizing user-friendly design, the Sign Up page helps facilitate quick and easy registration, encouraging new users to join the community and start their gardening journey.
 
-![Register](/static/images/sign_up.png)
+![Register](/static/images/register.png)
 
 ---
 
@@ -324,7 +324,7 @@ The Log In page offers a straightforward and secure way for existing users to ac
 The Log Out page provides users with confirmation of a successful logout from their account. It features a brief message indicating that the user has been logged out. The design is minimalistic, reinforcing the action taken and providing a clear path to continue exploring the site or logging in again.
 
 
-![Log Out View](/static/images/log%20out.png)
+![Log Out View](/static/images/sign_out.png.png)
 
 ### Article Preview Card
 
@@ -360,3 +360,5 @@ when a user comment for a blog and click on submit button,notification popup for
 
 
 ## Testing
+
+In depth testing documentation can be found [here.](./TESTING.md)

@@ -102,7 +102,6 @@ def comment_delete(request, post_id, comment_id):
     """
     post = get_object_or_404(Post, id=post_id)
     comment = get_object_or_404(Comment, pk=comment_id, user=request.user)
-
     if request.method == "POST":
         comment_form = CommentForm(data=request.POST, instance=comment)
 
