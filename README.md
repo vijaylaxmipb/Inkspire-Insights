@@ -1,6 +1,6 @@
 # The Inkspire Insights
 
-![Main Image](static/images/am_i_responsive)
+![am_i_responsive](static/images/am_i_responsive.png)
 
 [Deployed Link](https://inkspire-insights-ce1064155269.herokuapp.com/)
 
@@ -280,7 +280,7 @@ The footer maintains consistency with the overall site design, featuring the sam
 
 The About Me section of Inkspire Insights provides detailed information about the blog creator in a visually appealing format. It includes a brief bio where about the developer, shares their passion for creativity, personal growth, and storytelling. The layout focuses on a user-friendly presentation of the developer’s background and inspirations for the blog. The data is managed via the Django Admin Portal, and the system is scalable to support multiple profiles or further enhancements, offering a clean and structured way to access important information about the blog's creator.
 
-![About](/static/images/about.png)
+![About](/static/images/About%20Section.png)
 
  ### Landing Page
 
@@ -545,4 +545,4 @@ In depth testing documentation can be found [here.](./TESTING.md)
 - Bootstrap
   https://getbootstrap.com/docs/5.0/getting-started/download/
 - Django Documentation
-  https://docs.djangoproject.com/en/3.2/
+  https://docs.djangoproject.com/en/3.2/l
