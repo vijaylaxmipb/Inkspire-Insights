@@ -463,7 +463,7 @@ input[type="password"] {
 }
 
 .form-control {
-    width: 150px; 
+     
     border: 1px solid #ccc;
     border-radius: 4px;
     padding: 5px;
