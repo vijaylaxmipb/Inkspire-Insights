@@ -1,6 +1,6 @@
 # The Inkspire Insights
 
-![Main Image](./css/images/am_i_responsive)
+![Main Image](static/images/am_i_responsive)
 
 [Deployed Link](https://inkspire-insights-ce1064155269.herokuapp.com/)
 
@@ -80,7 +80,7 @@ Using GitHub Projects, tasks are managed and progress tracked through project bo
 
 
 
-With an emphasis on delivering a seamless user experience, the goal of this project is to provide a comprehensive platform that serves both visitors and registered users. The platform will allow for the development and maintenance of content, present developer profiles, and provide opportunities for interaction.  The following user stories outline the essential functionalities and the rationale behind them.
+With an emphasis on delivering a seamless user experience, the goal of this project is to provide a comprehensive platform that serves both visitors and registered users. The platform will allow for the development and maintenance of content, present developer profile, and provide opportunities for interaction.  The following user stories outline the essential functionalities.
 
 *************************************
 
@@ -95,11 +95,9 @@ With an emphasis on delivering a seamless user experience, the goal of this proj
 7. As a User, I can delete my own comments, so that I can remove unwanted opinions. 
 8. As a User, I can view content on the home page so that I can stay informed and explore engaging topics.
 9. As a User, I can view a selected article with its comments, as well as related articles, so that I can explore in-depth content and engage with the community. 
-10. As a User, I can filter articles to a specific category, so that I can explore content that interests me. 
-11. As a User, I can view a user's profile page, displaying their posts, favourites and basic information so that I can learn more about the user and their contributions. 
-12. As a User, I can add articles to my favourites so that I can save my most enjoyed articles for future reference. 
-13. As a User I can see notification messages when performing CRUD operations or login/logout, signup so that informed about the outcome of the action taken. 
-14. As a User, I want to view comments on an article so that I can see the discussions going on a particular topic. 
+10. As a User, I can filter articles to a specific category, so that I can explore content that interests me.  
+11. As a User, I can add articles to my favourites so that I can save my most enjoyed articles for future reference. 
+12. As a User, I want to view comments on an article so that I can see the discussions going on a particular topic. 
 
 
 *************************************************************
@@ -111,29 +109,28 @@ With an emphasis on delivering a seamless user experience, the goal of this proj
 3. As a User, I want to manage my profile so that I have control of the information held on the platform.
 4. As a User, I want to create posts so that I can upload them on the platform. 
 5. As a User, I want to edit and delete posts so that I can maintain the content up-to-date.
-6. As a User, I want to be able to comment on posts so that **provide feedback to authors.
+6. As a User, I want to be able to comment on posts so that provide feedback to authors.
 7. As a User, I want to be able to delete and edit comments so that I can control my engagement on the platform.
-8. As a User, I want the ability to interact with posts and comments by liking, un-liking, and favoriting them,so that I can engage with content that resonates with me.
-9. As a User, I want to see a user-friendly interface when I have no posts or favourites on my profile page. Additionally, I want to have an option to easily add new content. 
+8. As a User, I want to see a user-friendly interface when I have no posts or favourites on my profile page. Additionally, I want to have an option to easily add new content. 
 
-****************************************************
+**************************************************************
 
 #### Website Owner/Developer
 
 1. As a developer I can layout wireframes so that I have a clear idea of the sites structure and theme 
 2. As a Developer I can choose a colour theme so that all pages have a consistent feel and style 
 3. As a Developer, I can created a standardised article preview card for each article, providing key information at a glance so that users can quickly understand the context of an article 
-4. As a Site Owner, I can have the capability to perform all CRUD (Create, Read, Update, Delete) functionality within the website's admin interface so that I can manually create and edit content. 
-5. As the Site Owner, I can approve user created content so that I can manually oversee and manage content creation and edits. 
-6. As a Site Owner, I can delete user profiles and all associated content from the platform so I can minimise harmful users.
-7. As the Site Owner, I can view users and their profiles/content through the website's admin interface, allowing me to manage site users. 
+4. As a Developer, I can have the capability to perform all CRUD (Create, Read, Update, Delete) functionality within the website's admin interface so that I can manually create and edit content. 
+5. As the Developer, I can approve user created content so that I can manually oversee and manage content creation and edits. 
+6. As a Developer, I can delete user profiles and all associated content from the platform so I can minimise harmful users.
+7. As Developer, I can view users and their profiles/content through the website's admin interface, allowing me to manage site users. 
 8. As a Developer, I want to ensure the styling and theme of the website are consistent, free from CSS errors, and provide an intuitive and easy-to-use UI/UX so that users easily digest content and perform all actions with ease. 
 9. As a Developer, I can show custom error pages redirect the user to the home page, so that I have a consistent experience even when encountering errors on the website. 
 10. As a Developer,I want to ensure that user stories are thoroughly tested so that they meet acceptance criteria and deliver the expected functionality.
 11. As a Developer,I want to deploy the application to Heroku so that it is accessible to users online.
 
 
-****************************************************
+******************************************************************************
 
 
 ### Admin User Stories
@@ -151,7 +148,7 @@ With an emphasis on delivering a seamless user experience, the goal of this proj
 
 * Facilitate Developer Showcase:
   -  Allow registered users to create, edit, and manage posts and comments.
-  -  Implement features that encourage user interaction, such as liking and favoriting content.
+  -  Implement features that encourage user interaction.
 
 * Support Continuous Improvement and Scalability:
   - Adopt Agile development practices to continuously deliver high-quality features.
@@ -180,7 +177,7 @@ With an emphasis on delivering a seamless user experience, the goal of this proj
 
 The database schema outlines the structure and relationships between key tables for the platform. The **User** table stores basic user information and authentication details. The **Post** table manages user-generated content with fields for title, content, author, and metadata. The **Comment** table handles comments on posts, including author information. These tables are designed to ensure efficient data management and robust user interactions on the platform.
 
-This schema was generated using [dbdiagram.io](https://www.lucidchart.com)
+This schema was generated using [Lucidchart.com](https://www.lucidchart.com)
 
 ![Database Schema](/static/images/database%20schema.PNG)
 
@@ -214,7 +211,7 @@ The color scheme aims to create a  the vibrant, nature-inspired elements,reliabl
 ### Images
 
 Combination of images sourced from Pexels(https://www.pexels.com/).
-All images are provided under the [Pexels License](https://www.pexels.com/license/), allowing free use for personal and commercial purposes, with no attribution required. However, crediting the photographers is appreciated.
+All images are provided under the [Pexels](https://www.pexels.com) & [Unsplash](https://unsplash.com), allowing free use for personal and commercial purposes, with no attribution required.
 
 [Back to top](#contents)
 
@@ -271,28 +268,26 @@ If incorrect or empty data is added to a form, the form won't submit, and a warn
 
 ![Visitor Large Screen](/static/images/Header.png)
 
-The header of the Inkspire Insights Blog is designed to be both visually appealing and user-friendly. It features a navigation menu, user authentication links, and a search bar. The cohesive color scheme, incorporating primary, secondary, and background colors, ensures a visually harmonious design while maintaining accessibility with strong color contrast and ARIA labels for screen readers.
-The responsive design adapts seamlessly to both desktop and mobile devices, ensuring that the navigation remains intuitive and fully functional across all screen sizes. 
+The header of the Inkspire Insights Blog is designed to be both visually appealing and user-friendly. It features a navigation menu, user authentication links, and a search bar. The cohesive color scheme, incorporating primary, secondary, and background colors, ensures a visually harmonious design while maintaining accessibility with color contrast.The responsive design adapts seamlessly to both desktop and mobile devices, ensuring that the navigation remains intuitive and fully functional across all screen sizes. 
 
 ### Footer
 
 ![Footer](/static/images/footer.png)
 
-The footer maintains consistency with the overall site design, featuring the same font and color scheme, and is fully responsive to adapt to various screen sizes. This attention to detail helps reinforce the site's branding and enhances the user experience by providing clear and accessible navigation options at the bottom of the page. Media links are included. Also, users can contact site owner by clicking on the :envelope: icon is they wish to do so. Instead of generic links, the footer includes 'About Section' link with detailed profile of the developeer of this project.
-
+The footer maintains consistency with the overall site design, featuring the same font and color scheme, and is fully responsive to adapt to various screen sizes. This attention to detail helps reinforce the site's branding and enhances the user experience by providing clear and accessible navigation options at the bottom of the page. Media links are included. 
 
 **About Section:**
 
 The About Me section of Inkspire Insights provides detailed information about the blog creator in a visually appealing format. It includes a brief bio where about the developer, shares their passion for creativity, personal growth, and storytelling. The layout focuses on a user-friendly presentation of the developer’s background and inspirations for the blog. The data is managed via the Django Admin Portal, and the system is scalable to support multiple profiles or further enhancements, offering a clean and structured way to access important information about the blog's creator.
 
-![Landing View Large Screen](/static/images/about.png)
+![About](/static/images/about.png)
 
  ### Landing Page
 
 The landing page of Inkspire Insights is designed to welcome visitors with a clean, modern, and engaging layout. The page features a series of blog post cards, each displaying the title, excerpt, publication date, and author, making it easy for users to browse and explore the latest insights. The page is structured with a prominent navigation bar at the top, including options for Home, About, Login/Logout, and a search bar for easy content discovery.The blog post cards feature vibrant images, bold headlines, and brief excerpts that draw the user in. The clean typography and ample spacing ensure that the content is easy to read and visually appealing.
 
 
-![Landing View Large Screen](/static/images/inksight.png)
+![LandingPage](/static/images/landing page.png)
 
 ### Search Feature
 
@@ -305,19 +300,18 @@ Introduce a secure and user-friendly password reset system that relies on email 
 
 ### User Account Pages
 
-The user account pages ensure a smooth and secure process for managing user access, enhancing the overall user experience on Blossom Therapy Insights.
+The user account pages ensure a smooth and secure process for managing user access, enhancing the overall user experience on Inkspire Insights.
 
 **Sign Up/Registration Page:**
 
-The Sign Up page features a clean and intuitive form where users can create an account by entering their username, first name, last name, email, and password. The form uses a responsive design, ensuring accessibility and ease of use across devices. By prioritizing user-friendly design, the Sign Up page helps facilitate quick and easy registration, encouraging new users to join the community and start their gardening journey.
+The Sign Up page features a clean and intuitive form where users can create an account by entering their username, first name, last name, email, and password. The form uses a responsive design, ensuring accessibility and ease of use across devices. By prioritizing user-friendly design, the Sign Up page helps facilitate quick and easy registration, encouraging new users to join the community.
 
 ![Register](/static/images/register.png)
 
----
 
 **Sign In Page:**
 
-The Log In page offers a straightforward and secure way for existing users to access their accounts. The page includes fields for the username and password, with clear labels and a prominent login button. The page maintains consistency with the site's overall aesthetic, ensuring a cohesive user experience. The focus on simplicity and security helps users quickly and confidently access their accounts to engage with the Inkspire Insight.
+The Sign In page offers a straightforward and secure way for existing users to access their accounts. The page includes fields for the username and password, with clear labels and a prominent login button. The page maintains consistency with the site's overall aesthetic, ensuring a cohesive user experience. The focus on simplicity and security helps users quickly and confidently access their accounts to engage with the Inkspire Insight.
 
 ![Sign In](/static/images/sign_in.png)
 
@@ -326,11 +320,11 @@ The Log In page offers a straightforward and secure way for existing users to ac
 The Log Out page provides users with confirmation of a successful logout from their account. It features a brief message indicating that the user has been logged out. The design is minimalistic, reinforcing the action taken and providing a clear path to continue exploring the site or logging in again.
 
 
-![Log Out View](/static/images/sign_out.png.png)
+![Log Out View](/static/images/sign_out.png)
 
 ### Article Preview Card
 
-The Article Card on Inkspire Insight  is a concise yet informative snapshot of a user's post within a specific tech-related category. It includes the following key elements:
+The Article Card on Inkspire Insight  is a concise yet informative snapshot of a user's post in General blog. It includes the following key elements:
 
 1. Author Profile: A visual representation of the author's Profile and username, providing a quick way to identify the content creator.
 2. Likes: The number of likes the post has received, offering a sense of its popularity and engagement.
@@ -364,13 +358,13 @@ when a user comment for a blog and click on submit button,notification popup for
 
 Django Admin Portal allows superuser to manage content and users of the website. The admin view is customized to reflect the scope of this project. 
 
-![Django Admin Portal](./css/images/admin_view)
+![Django Admin Portal](/static/images/admin_view)
 
 [Back to top](#contents)
 
 ## Future Features
 
-Blossom Therapy Insights aims to continually evolve and enhance user experience. Here are some potential future features:
+Inkwell Insights aims to continually evolve and enhance user experience. Here are some potential future features:
 
 #### Enhanced User Profiles
 #### Advanced Insights Management
@@ -535,23 +529,19 @@ In depth testing documentation can be found [here.](./TESTING.md)
 
 - The tutor support team from codeinstitute were extremely helpful in helping me to overcome bugs in my code & chatGPT for resolving some code issue.
 
-- I used countless stack overflow entries to help me to solve minor django related bugs.
-
 - I used the following tutorial for help with my requirements.txt file [LearnPython](https://learnpython.com/blog/python-requirements-file/)
 
 - I received a lot of help and advice from my mentor Spencer Barriball for his guidance on making this project, he helped me provide guidance on features and pointed me to the right direction.
 
 - Extending user model
   https://docs.djangoproject.com/en/dev/topics/auth/customizing/#extending-the-existing-user-model
-- QRCode generator
-  https://www.geeksforgeeks.org/generate-qr-code-using-qrcode-in-python/
 - Pylint for Django
 - https://stackoverflow.com/questions/71986184/how-can-i-override-str-in-models-py
 - W3 Schools
   https://www.w3schools.com/django/django_collect_static_files.php
 - Virtual Environment
   https://www.w3schools.com/django/django_create_virtual_environment.php
-- Code Institue Material
+- Code Institute Material
 - Bootstrap
   https://getbootstrap.com/docs/5.0/getting-started/download/
 - Django Documentation

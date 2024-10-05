@@ -14,6 +14,7 @@ Including another URLconf
     1. Import the include() function: from django.urls import include, path
     2. Add a URL to urlpatterns:  path('blog/', include('blog.urls'))
 """
+
 from django.contrib import admin
 from django.urls import include, path
 from django.conf import settings
@@ -21,6 +22,11 @@ from django.conf.urls.static import static
 from blog import views as blog_views
 from blog.views import home
 
+from django.conf.urls import handler404
+from django.shortcuts import render
+
+def custom_404(request, exception):
+    return render(request, 'blog/404.html', status=404)
 
 
 urlpatterns = [
@@ -39,3 +45,5 @@ urlpatterns = [
 if settings.DEBUG: 
     urlpatterns += static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)
     urlpatterns += static(settings.STATIC_URL, document_root=settings.STATICFILES_DIRS[0])
+
+handler404 = custom_404

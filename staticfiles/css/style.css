@@ -1,5 +1,23 @@
 body, html {
-    background-color: #8e9c9c;
+    
+    font-size: large;
+    background-color: #f8f9fa; 
+    font-family: Arial, sans-serif;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+}
+
+.wrapper.flex-grow-1 {
+    flex-grow: 1; 
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+}
+
+main.flex-shrink-0 {
+    flex-grow: 1; 
+    padding: 20px; 
 }
 
 /* General Container Styles */
@@ -10,20 +28,23 @@ body, html {
 }
 
 .container {
-    max-width: 700px; 
-    text-align: center; 
+    text-align: justify; 
 }
 
 /* Brand and Typography */
 .brand {
-    font-family: Lato, sans-serif;
-    font-size: 1.8rem;
-    font-weight: 700;
-    color: #0f3f86;
+    background: linear-gradient(to right, #FFD700, #800080); 
+    background-clip: text;
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    font-weight: bold; 
+    font-size:larger;
 }
 
-.red-o {
-    color: #E84610;
+
+.red-ink {
+    color: #FFD700; 
+    font-weight: bold; 
 }
 
 .thin {
@@ -60,7 +81,7 @@ body, html {
     border-radius: 8px;
     background-color: #fff;
     width: 100%;
-    max-width: 950px; /* Added consistent width control */
+    max-width: 950px; 
     margin: 20px auto;
     padding: 30px;
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); 
@@ -78,6 +99,23 @@ body, html {
     padding: 0; 
     margin: 0;
 }
+
+.navbar-brand {
+    display: flex;
+    align-items: center;
+}
+
+.brand-logo {
+    height: 60px;  
+    margin-right: 9px; 
+    vertical-align: middle;
+    max-width: 100%;
+}
+
+.hero h1 {
+    font-size: 1.5rem; 
+}
+
 
 /* Image Styles */
 .image-container, .image-flash, .scale, .masthead-image img {
@@ -109,6 +147,25 @@ body, html {
     margin-bottom: 20px;
 }
 
+.flex-shrink-0 main-bg {
+    background-image: url('/static/images/backgroung_img.jpg');
+    background-color: #475d75;
+
+}
+
+.container login-container{
+    text-align: center;
+    padding: 30px;
+
+}
+.col-md-6 mt-5{
+
+    border-radius: 8px;
+    margin-bottom: 20px;
+
+}
+
+
 /* Masthead Section */
 .masthead {
     margin: 0 auto;
@@ -123,7 +180,6 @@ body, html {
     justify-content: space-between;
     background-color: #445261;
     color: white;
-    min-width: none;
     box-sizing: border-box;
 }
 
@@ -139,8 +195,9 @@ body, html {
 }
 
 /* Post Styles */
+
 .post-title {
-    font-size: 1.8rem;
+    font-size: 1.2rem;
     margin-bottom: 15px;
     font-weight: 700;
     text-align: center;
@@ -220,9 +277,10 @@ input[type="text"], input[type="password"], input[type="email"] {
 
 /* Button Styling */
 .btn {
-    padding: 12px 20px;
+    padding: 5px 10px;
     font-size: 1.2rem;
     font-weight: 500;
+    height: 35px;
 }
 
 /* Hero Section */
@@ -262,6 +320,11 @@ input[type="text"], input[type="password"], input[type="email"] {
     font-size: 2rem;
     color: whitesmoke;
 }
+.hero-content h2 {
+    margin-bottom: 20px;
+    font-size: 2rem;
+    color: whitesmoke;
+}
 
 .hero-content p {
     font-size: 1.5rem;
@@ -281,10 +344,123 @@ input[type="text"], input[type="password"], input[type="email"] {
     font-size: 1.2rem;
     width: 100%;
 }
-
+button.btn-primary {
+    background-color: #007bff;
+    border: none;
+    padding: 10px 20px;
+    font-size: 16px;
+    cursor: pointer;
+    border-radius: 5px;
+    transition: background-color 0.3s ease-in-out;
+}
 .btn-primary:hover {
     background-color: #0056b3;
     cursor: pointer;
+}
+
+.about-page {
+    background: linear-gradient(to bottom right, rgba(144, 238, 144, 0.5), rgba(227, 255, 227, 0.8));
+    background-size: cover;
+    background-position: center;
+    padding: 50px;
+    color: #111010; 
+}
+
+/* Button hover effect */
+.btn-info:hover {
+    background-color: #138496; 
+}
+
+/* Footer at the bottom */
+.footer {
+    background-color: #2c3e50;
+    color: white;
+    padding: 20px;
+    text-align: center;
+    width: 100%;
+    margin-top: auto; 
+}
+/* Form styling */
+form.login {
+    margin-top: 20px;
+}
+
+/* Social providers section styling */
+.socialaccount_providers {
+    display: flex;
+    justify-content: center;
+    gap: 15px; /* Space between provider icons */
+}
+
+/* Social login button (or icon) styling */
+.socialaccount_providers li {
+    display: inline-block;
+}
+
+/* Divider "or" styling */
+.login-or {
+    font-size: 0.9rem;
+    color: #6c757d;
+    margin: 20px 0;
+}
+
+/* Input fields in the form */
+input[type="text"],
+input[type="password"] {
+    width: 100%;
+    padding: 10px;
+    margin: 10px 0;
+    box-sizing: border-box;
+    border: 1px solid #ced4da;
+    border-radius: 4px;
+}
+
+/* Custom styles for the search results page */
+.search-results-container {
+    margin-top: 40px;
+}
+
+.search-results-container h1 {
+    font-size: 2rem;
+    margin-bottom: 20px;
+}
+
+.search-results-container ul {
+    list-style-type: none; 
+    padding: 0;
+}
+
+.search-results-container ul li {
+    margin-bottom: 15px; 
+    font-size: 1.2rem;
+}
+
+.search-results-container ul li a {
+    text-decoration: none; 
+    color: #007bff; 
+    font-weight: bold;
+}
+
+.search-results-container ul li a:hover {
+    text-decoration: underline; 
+}
+
+.no-results {
+    font-size: 1.5rem;
+    color: #dc3545; 
+    margin-top: 20px;
+}
+
+.form-control {
+    /* Bootstrap example */
+    border: 1px solid #ccc;
+    border-radius: 4px;
+}
+
+.custom-class {
+    /* Your custom styles */
+    background-color: #f9f9f9;
+    font-size: 16px;
 }
 
 /* Responsive Section */
@@ -338,4 +514,94 @@ input[type="text"], input[type="password"], input[type="email"] {
         margin-bottom: 40px; 
     }
 
+}
+
+/* For mobile devices */
+@media (max-width: 600px) {
+    body {
+        font-size: medium;
+    }
+
+    .container-fluid {
+        padding: 0 10px;
+    }
+
+    /* Typography adjustments for mobile */
+    .brand {
+        font-size: 1.5rem;
+        font-weight: bold;
+        color: #800080;
+    }
+
+    .text-center {
+        margin-bottom: 20px;
+    }
+
+    .card {
+        padding: 15px;
+        margin-top: 20px;
+        box-shadow: none; 
+    }
+
+   
+    .masthead {
+        padding: 10px;
+        flex-direction: column;
+        align-items: center;
+        text-align: center;
+    }
+
+    .masthead-text {
+        padding-right: 0;
+    }
+
+   
+    .masthead-image img {
+        max-width: 100%;
+        height: auto;
+        margin-left: 0;
+    }
+
+    /* Adjust button sizes */
+    .btn-primary {
+        font-size: 1rem;
+        padding: 8px 15px;
+        width: 100%; 
+    }
+
+    /* Adjust titles and subtitles */
+    .post-title {
+        font-size: 1.4rem;
+    }
+
+    .post-subtitle {
+        font-size: 1rem;
+    }
+
+    /* Adjust input fields for better visibility */
+    input[type="text"],
+    input[type="password"],
+    input[type="email"] {
+        font-size: 1rem;
+        padding: 8px;
+    }
+
+    /* Reduce spacing */
+    .text-content {
+        margin-bottom: 30px;
+    }
+
+    /* Reduce margin for columns */
+    .col-md-4, .col-sm-6 {
+        margin-bottom: 20px;
+    }
+
+    .search-results-container h1 {
+        font-size: 1.5rem;
+        margin-bottom: 10px;
+    }
+
+    .search-results-container ul li {
+        font-size: 1rem;
+    }
 }

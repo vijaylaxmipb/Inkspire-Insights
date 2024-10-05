@@ -21,7 +21,7 @@ if os.path.isfile('env.py'):
 BASE_DIR = Path(__file__).resolve().parent.parent
 TEMPLATES_DIRS = [
     os.path.join(BASE_DIR, 'inkspire', 'templates'),
-    os.path.join(BASE_DIR, 'templates')  
+    os.path.join(BASE_DIR, 'templates')
 ]
 
 # Directory where static files will be collected for production
