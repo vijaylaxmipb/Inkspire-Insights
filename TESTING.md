@@ -32,7 +32,6 @@
 | As a developer I can setup a new Django project                                              | The project was set up successfully                           | <mark>PASS</mark> |
 | As a developer I can connect database and media storage                                      | Database and storage set up successfully                      | <mark>PASS</mark> |
 | As a developer, I can perform an early deployment of the application                         | Live site was hosted with no errors                           | <mark>PASS</mark> |
-| As a developer I can layout wireframes                                                       | Wireframes were planned and created as referenced in the README| <mark>PASS</mark> |
 | As a developer I can choose a colour theme                                                   | A colour theme was chosen for the website as referenced in the README | <mark>PASS</mark> |
 
 ### User Stories
@@ -56,7 +55,7 @@
 | As a User, I can create an account                                                          | Registration process detailed in the [Register](./README.md#user-account-pages) | <mark>PASS</mark> |
 | As a User, I can access my account                                                          | Profile Edit described in the [Sign in](./README.md#user-account-pages) | <mark>PASS</mark> |
 | As a User, I can log out                                                                    | Sign Out functionality detailed in the [Log out view](./README.md#user-account-pages) | <mark>PASS</mark> |
-| As a User, I can view content on the home page                                              | Home Page content detailed in the [Content](./README.md#contents) | <mark>PASS</mark> |
+| As a User, I can view content on the home page                                              | Home Page content detailed in the [Content](./README.md#content) | <mark>PASS</mark> |
 | As a User, I can view a selected article                                                    | Post Detail Page in the [Article Preview Card ](./README.md#article-preview-card) | <mark>PASS</mark> |
 | As a User, I can view comments on an article                                                | Comments functionality explained in the [Comment](./README.md#comment-card) | <mark>PASS</mark> |
 | As a User, I can click on the footer contact social links                                   | Footer social links referenced in the [Footer](./README.md#footer) | <mark>PASS</mark> |
@@ -65,10 +64,10 @@
 
 | User Story                                                                                  | Screenshot                                                   | Result           |
 | ------------------------------------------------------------------------------------------- | ------------------------------------------------------------ | ---------------- |
-| As a Site Owner, I can perform all CRUD operations in the admin interface                   | Admin CRUD features detailed in the [README](./README.md) | <mark>PASS</mark> |
-| As a Site Owner, I can approve user-created content                                          | Approval process explained in the [README](./README.md) | <mark>PASS</mark> |
-| As a Site Owner, I can delete user profiles and their content                               | User deletion process in the [README](./README.md) | <mark>PASS</mark> |
-| As a Site Owner, I can manage users through the admin interface                             | Admin Content management in the [README](./README.md) | <mark>PASS</mark> |
+| As a Site Owner, I can perform all CRUD operations in the admin interface                   | Admin CRUD features detailed in the [README](/static/images/add.png) | <mark>PASS</mark> |
+| As a Site Owner, I can approve user-created content                                          | Approval process explained in the [README](./static/images/approve_comment.png) | <mark>PASS</mark> |
+| As a Site Owner, I can delete user profiles and their content                               | User deletion process in the [README](./static/images/admin_delete.png) | <mark>PASS</mark> |
+| As a Site Owner, I can manage users through the admin interface                             | Admin Content management in the [README](./static/images/manage_user.png) | <mark>PASS</mark> |
 | As a Site Owner, I can view notifications when performing CRUD operations                   | Notifications feature detailed in the [Notification](./README.md#notification-messages) | <mark>PASS</mark> |
 
 ## Code Validation
@@ -79,7 +78,7 @@ All HTML pages were run through the [W3C HTML Validator](https://validator.w3.or
 
 | Page            | Validator                                                                                     | Result              |
 | --------------- | --------------------------------------------------------------------------------------------- | ------------------- |
-| Home            | <details><summary>Inksight</summary><img src="./static/images/inksight.png"></details>                                   | <mark>ERROR</mark>   |
+| Home            | <details><summary>Inksight</summary><img src="./static/images/insight_error.png"></details>                                   | <mark>ERROR</mark>   |
 | Home     | <details><summary>Home</summary>><img src="./static/images/home_w3c.png"></details>                            | <mark>PASS</mark>   |
 | About       | <details><summary>about</summary><img src="./static/images/about_w3c_error.png"></details>                                | <mark>ERROR</mark>   |
 | Sign In    | <details><summary>Sign In</summary><img src="./static/images/sign_in_w3c.png"></details>                           | <mark>PASS</mark> |
@@ -133,6 +132,10 @@ The Website was tested on Google Chrome, Firefox, Safari and Chrome Canary brows
 ## Device Testing
 
 The website was tested on a variety of devices, including Desktop, Laptop, Oneplus Nord 4, and Lenovo tablet, to ensure that it displayed well on screens of different sizes, both in portrait and landscape orientations. The website functioned as expected, and its responsive design was validated using Chrome developer tools on various devices, ensuring that the layout remained structurally sound across different screen dimensions.
+
+### Lighthouse
+
+Lighthouse validation was run on all pages (both mobile and desktop) in order to check accessibility and performance.
 
 | Page            | Performance | Accessibility | Best Practices | SEO | Screenshot                                                                                                                  |
 | --------------- | :---------: | :-----------: | :------------: | :-: | --------------------------------------------------------------------------------------------------------------------------- |
@@ -244,7 +247,7 @@ The website was tested on a variety of devices, including Desktop, Laptop, Onepl
 
 | Bug                                                                                                                        | Status |
 | -------------------------------------------------------------------------------------------------------------------------- | ------ |
-| [Delete button throwing error]                                                                 | Closed |
+
 | [UpdateView Profile throwing errors with multiple forms](./css/images/Insight_lighhousepng.png)| Closed |
 | [Content creating widget not responsive](./css/images/Insight_lighhousepng.png)                | Closed |
 | [Pagination on profile page ](.css/)                                                           | Closed |

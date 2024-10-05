@@ -117,17 +117,16 @@ With an emphasis on delivering a seamless user experience, the goal of this proj
 
 #### Website Owner/Developer
 
-1. As a developer I can layout wireframes so that I have a clear idea of the sites structure and theme 
-2. As a Developer I can choose a colour theme so that all pages have a consistent feel and style 
-3. As a Developer, I can created a standardised article preview card for each article, providing key information at a glance so that users can quickly understand the context of an article 
-4. As a Developer, I can have the capability to perform all CRUD (Create, Read, Update, Delete) functionality within the website's admin interface so that I can manually create and edit content. 
-5. As the Developer, I can approve user created content so that I can manually oversee and manage content creation and edits. 
-6. As a Developer, I can delete user profiles and all associated content from the platform so I can minimise harmful users.
-7. As Developer, I can view users and their profiles/content through the website's admin interface, allowing me to manage site users. 
-8. As a Developer, I want to ensure the styling and theme of the website are consistent, free from CSS errors, and provide an intuitive and easy-to-use UI/UX so that users easily digest content and perform all actions with ease. 
-9. As a Developer, I can show custom error pages redirect the user to the home page, so that I have a consistent experience even when encountering errors on the website. 
-10. As a Developer,I want to ensure that user stories are thoroughly tested so that they meet acceptance criteria and deliver the expected functionality.
-11. As a Developer,I want to deploy the application to Heroku so that it is accessible to users online.
+1. As a Developer I can choose a colour theme so that all pages have a consistent feel and style 
+2. As a Developer, I can created a standardised article preview card for each article, providing key information at a glance so that users can quickly understand the context of an article 
+3. As a Developer, I can have the capability to perform all CRUD (Create, Read, Update, Delete) functionality within the website's admin interface so that I can manually create and edit content. 
+4. As the Developer, I can approve user created content so that I can manually oversee and manage content creation and edits. 
+5. As a Developer, I can delete user profiles and all associated content from the platform so I can minimise harmful users.
+6. As Developer, I can view users and their profiles/content through the website's admin interface, allowing me to manage site users. 
+7. As a Developer, I want to ensure the styling and theme of the website are consistent, free from CSS errors, and provide an intuitive and easy-to-use UI/UX so that users easily digest content and perform all actions with ease. 
+8. As a Developer, I can show custom error pages redirect the user to the home page, so that I have a consistent experience even when encountering errors on the website. 
+9. As a Developer,I want to ensure that user stories are thoroughly tested so that they meet acceptance criteria and deliver the expected functionality.
+10. As a Developer,I want to deploy the application to Heroku so that it is accessible to users online.
 
 
 ******************************************************************************
@@ -287,7 +286,7 @@ The About Me section of Inkspire Insights provides detailed information about th
 The landing page of Inkspire Insights is designed to welcome visitors with a clean, modern, and engaging layout. The page features a series of blog post cards, each displaying the title, excerpt, publication date, and author, making it easy for users to browse and explore the latest insights. The page is structured with a prominent navigation bar at the top, including options for Home, About, Login/Logout, and a search bar for easy content discovery.The blog post cards feature vibrant images, bold headlines, and brief excerpts that draw the user in. The clean typography and ample spacing ensure that the content is easy to read and visually appealing.
 
 
-![LandingPage](/static/images/landing page.png)
+![LandingPage](/static/images/landing%20page.png)
 
 ### Search Feature
 
@@ -358,7 +357,7 @@ when a user comment for a blog and click on submit button,notification popup for
 
 Django Admin Portal allows superuser to manage content and users of the website. The admin view is customized to reflect the scope of this project. 
 
-![Django Admin Portal](/static/images/admin_view)
+![Django Admin Portal](/static/images/admin_view.png)
 
 [Back to top](#contents)
 
