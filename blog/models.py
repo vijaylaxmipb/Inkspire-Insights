@@ -5,8 +5,8 @@ from cloudinary.models import CloudinaryField
 from django.urls import reverse
 
 
-
 STATUS = ((0, "Draft"), (1, "Published"))
+
 
 # Create your models here.
 class Post(models.Model):
@@ -21,8 +21,6 @@ class Post(models.Model):
     dummy_field = models.CharField(max_length=10, null=True, blank=True) 
     #featured_image = CloudinaryField('image', blank=True, null=True) 
     featured_image = models.ImageField(upload_to='blog_images/', blank=True, null=True) 
-    
-
     
 
     class Meta:
@@ -67,6 +65,3 @@ class BlogPost(models.Model):
 
     def __str__(self):
         return self.title
-
-
-    

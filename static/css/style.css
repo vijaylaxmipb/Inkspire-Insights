@@ -23,6 +23,7 @@ html {
 /* Brand and Typography */
 .brand {
     background: linear-gradient(to right, #FFD700, #800080); 
+    background-clip: text;
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
     font-weight: bold; 
@@ -168,7 +169,6 @@ html {
     justify-content: space-between;
     background-color: #445261;
     color: white;
-    min-width: none;
     box-sizing: border-box;
 }
 
@@ -348,7 +348,7 @@ button.btn-primary {
 }
 
 .about-page {
-    background-color: linear-gradient(to bottom right, rgba(144, 238, 144, 0.5), rgba(227, 255, 227, 0.8));
+    background: linear-gradient(to bottom right, rgba(144, 238, 144, 0.5), rgba(227, 255, 227, 0.8));
     background-size: cover;
     background-position: center;
     padding: 50px;
@@ -509,7 +509,7 @@ input[type="password"] {
     /* Typography adjustments for mobile */
     .brand {
         font-size: 1.5rem;
-        color: bold;
+        font-weight: bold;
         color: #800080;
     }
 

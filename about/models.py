@@ -1,22 +1,21 @@
 from django.db import models
+from cloudinary.models import CloudinaryField
+from django.contrib.auth.models import User  # Moved to the top
+import datetime  # Import at the top, as per PEP 8
 
+STATUS = ((0, "Draft"), (1, "Published"))
 
 
 class About(models.Model):
     title = models.CharField(max_length=300)
+    profile_image = CloudinaryField('image', default='placeholder')
     updated_on = models.DateTimeField(auto_now=True)
     content = models.TextField()
 
     def __str__(self):
         return self.title
 
-from django.db import models
-from django.contrib.auth.models import User
-import datetime  # Import the datetime module
 
-STATUS = ((0, "Draft"), (1, "Published"))
-
-# Create your models here.
 class Post(models.Model):
     title = models.CharField(max_length=200, unique=True)
     slug = models.SlugField(max_length=200, unique=True)
@@ -34,32 +33,16 @@ class Post(models.Model):
         return f"{self.title} | written by {self.author}"
 
 
-
-
-class Comment(models.Model):
+class Comment(models.Model):  # Fixed indentation
     post = models.ForeignKey(Post, related_name='comments', on_delete=models.CASCADE)
     name = models.CharField(max_length=80)
     body = models.TextField()
     created_at = models.DateTimeField(auto_now_add=True)
-    active = models.BooleanField(default=False) 
+    active = models.BooleanField(default=False)
     approved = models.BooleanField(default=False)
 
 
-    class Meta:
-        ordering = ["created_at"]
-
-    def __str__(self):
-        return f"Comment {self.body} by {self.name}"
-    
-class Event(models.Model):
-    title = models.CharField(max_length=200)
-    description = models.TextField()
-    date = models.DateField()
-
-    def __str__(self):
-        return self.title
-
-class CollaborateRequest(models.Model):
+class CollaborateRequest(models.Model):  # Fixed indentation
     name = models.CharField(max_length=200)
     email = models.EmailField()
     message = models.TextField()
@@ -67,3 +50,4 @@ class CollaborateRequest(models.Model):
 
     def __str__(self):
         return f"Collaboration request from {self.name}"
+
