@@ -11,7 +11,7 @@ urlpatterns = [
 
     # Welcome page
     path('home/', views.home, name='home'),
-
+    
     # Post detail view
     path('post/<int:post_id>/', views.post_detail, name='post_detail'),
 

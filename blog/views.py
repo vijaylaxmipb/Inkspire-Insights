@@ -42,6 +42,9 @@ def post_detail(request, post_id):
                 request, messages.SUCCESS,
                 'Comment submitted and awaiting approval'
             )
+        else:
+            messages.error(request, 'You must be logged in to comment!')
+            return redirect('login')
 
     events = Event.objects.all()
     return render(
@@ -98,16 +101,10 @@ def comment_edit(request, post_id, comment_id):
 def comment_delete(request, post_id, comment_id):
     post = get_object_or_404(Post, id=post_id)
     comment = get_object_or_404(Comment, pk=comment_id, user=request.user)
+
     if request.method == "POST":
-        comment_form = CommentForm(data=request.POST, instance=comment)
+        comment.delete()  # Deletes the comment
+        messages.success(request, 'Comment deleted successfully!')
+        return redirect('blog:post_detail', post_id=post_id)
 
-        if comment_form.is_valid():
-            comment = comment_form.save(commit=False)
-            comment.post = post
-            comment.save()
-            messages.add_message(request, messages.SUCCESS, 'Comment updated successfully!')
-            return HttpResponseRedirect(reverse('post_detail', args=[post_id]))
-    else:
-        comment_form = CommentForm(instance=comment)
-
-    return render(request, 'blog/edit_comment.html', {'comment_form': comment_form, 'post': post})
+    return render(request, 'blog/confirm_delete.html', {'comment': comment, 'post': post})

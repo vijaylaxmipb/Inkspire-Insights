@@ -14,20 +14,13 @@
 
   - [Site Navigation](#site-navigation)
   - [Home Page](#home-page)
-  - [Category Page](#category-page)
   - [Article Preview Card](#article-preview-card)
   - [Post Detail Page](#post-detail-page)
   - [Comment](#comment)
-  - [Add Post Page](#add-post-page)
-  - [Edit Post Page](#edit-post-page)
-  - [Delete Confirmation Modal](#delete-confirmation-modal)
-  - [Profile Page](#profile-page)
-  - [Update Profile Page](#update-profile-page)
   - [Sign Up Page](#sign-up-page)
   - [Sign In Page](#sign-in-page)
   - [Log Out Page](#log-out-page)
-  - [Code of Conduct Page](#code-of-conduct-page)
-
+  
 - [Bugs](#bugs)
 
 ## User Story Testing
@@ -145,16 +138,15 @@ The website was tested on a variety of devices, including Desktop, Laptop, Onepl
 | --------------- | :---------: | :-----------: | :------------: | :-: | --------------------------------------------------------------------------------------------------------------------------- |
 |                 |             |               |                |     |
 | **Desktop**     |             |               |                |     |
-| Home            |     98      |      100      |      100       | 100 | <details><summary>Home</summary><img src="./documentation/testing/lighthouse/homedesktop.png"></details>                    |
-| Category        |     98      |      100      |      100       | 100 | <details><summary>Category</summary><img src="./documentation/testing/lighthouse/categorydesktop.png"></details>            |
-| Post Detail     |     97      |      100      |      100       | 100 | <details><summary>Post Detail </summary><img src="./documentation/testing/lighthouse/postdetaildesktop.png"></details>      |
-| Profile         |     96      |      100      |      100       | 100 | <details><summary>Profile</summary><img src="./documentation/testing/lighthouse/profiledesktop.png"></details>              |
-| Add Post        |     99      |      96       |      100       | 100 | <details><summary>Add Post</summary><img src="./documentation/testing/lighthouse/addpostdesktop.png"></details>             |
-| Edit Post       |     99      |      96       |      100       | 100 | <details><summary>Edit Post</summary><img src="./documentation/testing/lighthouse/editpostdesktop.png"></details>           |
-| Update Profile  |     100     |      100      |      100       | 100 | <details><summary>Update Profile</summary><img src="./documentation/testing/lighthouse/updateprofiledesktop.png"></details> |
-| Sign Up         |     99      |      100      |      100       | 100 | <details><summary>Sign Up</summary><img src="./documentation/testing/lighthouse/signindesktop.png"></details>               |
-| Sign In         |     100     |      100      |      100       | 100 | <details><summary>Sign In</summary><img src="./documentation/testing/lighthouse/signindesktop.png"></details>               |
-| Sign Out        |     100     |      100      |      100       | 100 | <details><summary>Sign Out</summary><img src="./documentation/testing/lighthouse/signoutdesktop.png"></details>             |
+| Inksight        |     98      |      95       |      96        | 82  | <details><summary>Inksight</summary><img src="./css/images/Insight_lighhouse.png"></details>                    |
+| Home            |     96      |      95       |      96        | 91  | <details><summary>Home</summary><img src="./css/images/home_lighthouse.png"></details>                    |
+| Post Detail     |     99      |      96       |      96        | 91  | <details><summary>Post Detail </summary><img src="./css/images/post_title_lighthouse.png"></details>      |
+| About           |     98      |      100      |      56        | 91  | <details><summary>Update Profile</summary><img src=".css/images/lighthouse/about_light.png"></details> |
+| Sign Up         |     99      |      96       |      96        | 91  | <details><summary>Sign Up</summary><img src=".css/images/sign_up_lighthouse.png"></details>               |
+| Sign In         |     99      |      100      |      96        | 91  | <details><summary>Sign In</summary><img src=".css/images/sign_in_lighthouse.png"></details>               |
+| Sign Out        |     100     |      100      |      96        | 91  | <details><summary>Sign Out</summary><img src=".css/images/logout_lighthouse.png"></details>             |
+| Delete comment  |     100     |      100      |      96        | 91  | <details><summary>Profile</summary><img src="./css/images/delete_comment_lighthouse.png"></details>              |
+| Edit comment    |     99      |      95       |      96        | 91  | <details><summary>Add Post</summary><img src="./css/images/edit_commet_lighthouse.png"></details>             |
 
 ## Manual Testing
 
@@ -172,4 +164,92 @@ The website was tested on a variety of devices, including Desktop, Laptop, Onepl
 | Log in Link            | Display     | Render for non authenticated users                      | <mark>Pass</mark> |
 | Add Post Link          | Display     | Render only if user is authenticated                    | <mark>Pass</mark> |
 | Log out Link           | Display     | Render only if user is authenticated                    | <mark>Pass</mark> |
-| Nav Link               | Hover/Focus | Display a border,         | <mark>Pass</mark> |
+
+
+### Home Page
+
+| Element          | Action      | Expected Result                          | Pass/Fail         |
+| ---------------- | ----------- | ---------------------------------------- | ----------------- |
+| Editors Pick     | Display     | Editors Pick Post Card viewable          | <mark>Pass</mark> |
+| Popular Post     | Display     | Popular Post Post Card viewable          | <mark>Pass</mark> |
+
+### Article Preview Card
+
+| Element        | Action      | Expected Result                                    | Pass/Fail         |
+| -------------- | ----------- | -------------------------------------------------- | ----------------- |
+| Content        | Display     | Render the article title, excerpt, author and date | <mark>Pass</mark> |
+| Title Link     | Click       | Redirect to post detail page                       | <mark>Pass</mark> |
+| Edit Button    | Click       | Redirect to edit post page                         | <mark>Pass</mark> |
+| Edit Button    | Display     | Render for only authneticated post author          | <mark>Pass</mark> |
+| Delete Button  | Hover/Focus | Background color                                   | <mark>Pass</mark> |
+| Title Link     | Hover/Focus | Darken Text                                        | <mark>Pass</mark> |
+| Author Link    | Hover/Focus | Darken Text                                        | <mark>Pass</mark> |
+| Edit Button    | Hover/Focus | Background color                                   | <mark>Pass</mark> |
+
+
+### Post Detail Page
+
+| Element               | Action      | Expected Result                                     | Pass/Fail         |
+| --------------------- | ----------- | --------------------------------------------------- | ----------------- |
+| Article               | Display     | The articles title/content and author are displayed | <mark>Pass</mark> |
+| Edit Button           | Click       | Redirect to edit post page                          | <mark>Pass</mark> |
+| Comments              | Display     | Render All Comments                                 | <mark>Pass</mark> |
+| Edit Button           | Hover/Focus | Darken Background                                   | <mark>Pass</mark> |
+| Comment Submit Button | Hover/Focus | Darken Background                                   | <mark>Pass</mark> |
+| Comment Delete        | Hover/Focus | Darken                                              | <mark>Pass</mark> |
+
+### Comment
+
+| Element       | Action      | Expected Result                             | Pass/Fail         |
+| ------------- | ----------- | ------------------------------------------- | ----------------- |
+| Comment       | Display     | Render the comment content, author and date | <mark>Pass</mark> |
+| Delete Button | Display     | Render if authenticated author              | <mark>Pass</mark> |
+
+### Sign Up Page
+
+| Element       | Action         | Expected Result                             | Pass/Fail         |
+| ------------- | -------------- | ------------------------------------------- | ----------------- |
+| Page          | Authentication | Authenticated users redirected to Home page | <mark>Pass</mark> |
+| Form(Valid)   | Submit         | Redirected to Home page                     | <mark>Pass</mark> |
+| Form(Valid)   | Submit         | Sign up in Notification received            | <mark>Pass</mark> |
+| Form(Invalid) | Submit         | Error Context rendered to UI                | <mark>Pass</mark> |
+| Form(Invalid) | Submit         | Error Notification received                 | <mark>Pass</mark> |
+| Login Link    | Click          | Redirect to Login Page                      | <mark>Pass</mark> |
+| Form Button   | Hover/Focus    | Darken Background                           | <mark>Pass</mark> |
+| Login Link    | Hover/Focus    | Darken Text                                 | <mark>Pass</mark> |
+
+### Sign In Page
+
+| Element       | Action         | Expected Result                             | Pass/Fail         |
+| ------------- | -------------- | ------------------------------------------- | ----------------- |
+| Page          | Authentication | Authenticated users redirected to Home page | <mark>Pass</mark> |
+| Form(Valid)   | Submit         | Redirected to Home page                     | <mark>Pass</mark> |
+| Form(Valid)   | Submit         | Sign up in Notification received            | <mark>Pass</mark> |
+| Form(Invalid) | Submit         | Error Context rendered to UI                | <mark>Pass</mark> |
+| Form(Invalid) | Submit         | Error Notification received                 | <mark>Pass</mark> |
+| Register Link | Click          | Redirect to Sign In Page                    | <mark>Pass</mark> |
+| Form Button   | Hover/Focus    | Darken Background                           | <mark>Pass</mark> |
+| Register Link | Hover/Focus    | Darken Text                                 | <mark>Pass</mark> |
+
+### Log Out Page
+
+| Element       | Action         | Expected Result                                | Pass/Fail         |
+| ------------- | -------------- | ---------------------------------------------- | ----------------- |
+| Page          | Authentication | Un-authenticated users redirected to Home page | <mark>Pass</mark> |
+| Logout Button | Click          | User session is Logged out                     | <mark>Pass</mark> |
+| Logout Button | Click          | Redirected to Home page                        | <mark>Pass</mark> |
+| Form Button   | Hover/Focus    | Darken Background                              | <mark>Pass</mark> |
+
+## Bugs
+
+| Bug                                                                                                                        | Status |
+| -------------------------------------------------------------------------------------------------------------------------- | ------ |
+| [Delete button throwing error]                                                                 | Closed |
+| [UpdateView Profile throwing errors with multiple forms](./css/images/Insight_lighhousepng.png)| Closed |
+| [Content creating widget not responsive](./css/images/Insight_lighhousepng.png)                | Closed |
+| [Pagination on profile page ](.css/)                                                           | Closed |
+| [Lighthouse Performance Score for about](./css/images/about_light.png)                         | Closed |
+| [w3c validator error for about.html file](./css/images/about_w3c_bugfix.png)                   | Closed |
+| [w3c validator insighterror for html file](./css/images/insight_error.png)                     | Closed |
+| [Jshint Error for comment.py file](./css/images/comment_js.png)                                | Open   |
+| [Jshint Error for blog(urls.py)  ](./css/images/urls_py(blog).png)                             | Open   |

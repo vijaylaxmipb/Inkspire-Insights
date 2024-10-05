@@ -19,6 +19,8 @@ from django.urls import include, path
 from django.conf import settings
 from django.conf.urls.static import static
 from blog import views as blog_views
+from blog.views import home
+
 
 
 urlpatterns = [
@@ -30,8 +32,8 @@ urlpatterns = [
     path('summernote/', include('django_summernote.urls')),
     # path('home/', blog_views.home, name='home'),
     path("home/", include("blog.urls"), name="blog-urls"),
-    path("", home, name="home"),
-  
+    path("", home, name="home"), 
+ 
 ]
 
 if settings.DEBUG: 

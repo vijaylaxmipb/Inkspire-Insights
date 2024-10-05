@@ -1,12 +1,23 @@
-body {
+body, html {
     
     font-size: large;
     background-color: #f8f9fa; 
     font-family: Arial, sans-serif;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
 }
 
-html {
-    background-color: #8e9c9c;
+.wrapper.flex-grow-1 {
+    flex-grow: 1; 
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+}
+
+main.flex-shrink-0 {
+    flex-grow: 1; 
+    padding: 20px; 
 }
 
 /* General Container Styles */
@@ -357,9 +368,18 @@ button.btn-primary {
 
 /* Button hover effect */
 .btn-info:hover {
-    background-color: #138496; /* Darken the button on hover */
+    background-color: #138496; 
 }
 
+/* Footer at the bottom */
+.footer {
+    background-color: #2c3e50;
+    color: white;
+    padding: 20px;
+    text-align: center;
+    width: 100%;
+    margin-top: auto; 
+}
 /* Form styling */
 form.login {
     margin-top: 20px;
@@ -585,4 +605,3 @@ input[type="password"] {
         font-size: 1rem;
     }
 }
-
