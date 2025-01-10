@@ -19,27 +19,28 @@ from django.contrib import admin
 from django.urls import include, path
 from django.conf import settings
 from django.conf.urls.static import static
-from blog import views as blog_views
-from blog.views import home
-
-from django.conf.urls import handler404
+#from blog import views as blog_views
+#from django.conf.urls import handler404
 from django.shortcuts import render
+from blog.views import home
+from blog.views import PostList
+from django.contrib import admin
+from django.urls import include, path
+from django.conf import settings
 
 def custom_404(request, exception):
     return render(request, 'blog/404.html', status=404)
 
 
 urlpatterns = [
-    path("about/", include("about.urls"), name="about-urls"),
+    path("", home, name="home"), 
+    #path('blog/', PostList.as_view(), name='blog_home'),
+    path('blog/', include('blog.urls')),
+    path('about/', include('about.urls')),
     path('admin/', admin.site.urls),
     path("accounts/", include("allauth.urls")),
-    # path('blog/', blog_home, name='blog_home'),
-    # path("", include("blog.urls"), name="blog-urls"),
     path('summernote/', include('django_summernote.urls')),
-    # path('home/', blog_views.home, name='home'),
-    path("home/", include("blog.urls"), name="blog-urls"),
-    path("", home, name="home"), 
- 
+
 ]
 
 if settings.DEBUG: 

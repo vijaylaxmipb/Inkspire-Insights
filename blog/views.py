@@ -108,3 +108,7 @@ def comment_delete(request, post_id, comment_id):
         return redirect('blog:post_detail', post_id=post_id)
 
     return render(request, 'blog/confirm_delete.html', {'comment': comment, 'post': post})
+
+# blog/views.py
+def learn_more(request):
+    return render(request, 'blog/learn_more.html')

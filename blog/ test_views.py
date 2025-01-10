@@ -42,7 +42,7 @@ class TestBlogViews(TestCase):
         )
 
     def test_successful_collaboration_request_submission(self):
-    """Test for a user requesting a collaboration"""
+       """Test for a user requesting a collaboration"""
     post_data = {
         'name': 'test name',
         'email': 'test@email.com',

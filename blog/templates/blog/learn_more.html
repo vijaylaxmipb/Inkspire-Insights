@@ -1,0 +1,62 @@
+{% extends "base.html" %}
+{% load static %}
+
+{% block content %}
+<div class="container mt-5">
+    <h1 class="text-center mb-4">Learn More About Inkspire Insights</h1>
+    <p class="lead text-center">
+        Welcome to the Learn More page! Discover what makes Inkspire Insights your go-to platform for personal growth, creativity, and inspiration.
+    </p>
+
+    <div class="row mt-5">
+        <!-- Section 1: About Inkspire Insights -->
+        <div class="col-md-6">
+            <h2>About Us</h2>
+            <p>
+                At Inkspire Insights, we believe in the power of stories and creativity to inspire meaningful change. From personal growth strategies to the latest trends in technology, our platform offers a wide range of resources to help you unlock your potential.
+            </p>
+        </div>
+        <div class="col-md-6">
+            <img src="{% static 'images/placeholder-about.jpg' %}" alt="About Us Placeholder" class="img-fluid rounded">
+        </div>
+    </div>
+
+    <div class="row mt-5">
+        <!-- Section 2: Key Features -->
+        <div class="col-md-6">
+            <img src="{% static 'images/placeholder-features.jpg' %}" alt="Key Features Placeholder" class="img-fluid rounded">
+        </div>
+        <div class="col-md-6">
+            <h2>Our Key Features</h2>
+            <ul>
+                <li>Insightful articles on personal development and creativity</li>
+                <li>Inspiring stories from contributors around the world</li>
+                <li>Actionable advice for achieving work-life balance</li>
+                <li>Expert tips on mastering technology and self-improvement</li>
+            </ul>
+        </div>
+    </div>
+
+    <div class="row mt-5">
+        <!-- Section 3: Get Involved -->
+        <div class="col-md-6">
+            <h2>Get Involved</h2>
+            <p>
+                Join our community and start your journey with Inkspire Insights. Share your own stories, contribute articles, or simply engage with like-minded individuals passionate about growth and creativity.
+            </p>
+            <a href="{% url 'account_signup' %}" class="btn btn-primary">Sign Up Now</a>
+        </div>
+        <div class="col-md-6">
+            <img src="{% static 'images/placeholder-community.jpg' %}" alt="Community Placeholder" class="img-fluid rounded">
+        </div>
+    </div>
+
+    <div class="row mt-5">
+        <!-- Section 4: Contact Us -->
+        <div class="col-12 text-center">
+            <h2>Have Questions?</h2>
+            <p>We'd love to hear from you! Reach out to us at <a href="mailto:support@inkspireinsights.com">support@inkspireinsights.com</a>.</p>
+        </div>
+    </div>
+</div>
+{% endblock %}
