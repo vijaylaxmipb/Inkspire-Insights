@@ -6,7 +6,9 @@ from .forms import CommentForm
 from django.contrib import messages
 from django.contrib.auth.decorators import login_required
 from django.urls import reverse
-
+from .models import Event
+from .forms import EventForm
+from django.utils.timezone import now
 
 class PostList(ListView):
     queryset = Post.objects.filter(status=1).exclude(title__exact='').exclude(content__exact='').exclude(excerpt__exact='')
@@ -22,29 +24,36 @@ class EventsList(ListView):
 
 
 def home(request):
-    return render(request, 'blog/home.html')
+    events = Event.objects.filter(date__gte=now()).order_by('date')[:5]
+    #return render(request, 'blog/home.html')
+    return render(request, 'blog/home.html', {'events': events})
 
 
 def post_detail(request, post_id):
     post = get_object_or_404(Post, id=post_id)
-    comments = post.comments.all().order_by("-created_at")
-    comment_count = post.comments.filter(approved=True).count()
+
+    comments = post.comments.filter(approved=True).order_by("-created_at")
+    comment_count = comments.count()
     comment_form = CommentForm()
 
     if request.method == "POST":
         comment_form = CommentForm(data=request.POST)
         if comment_form.is_valid():
             comment = comment_form.save(commit=False)
-            comment.author = request.user
+            comment.user = request.user
             comment.post = post
+
+            if request.user.is_authenticated:
+                comment.approved = True
+
             comment.save()
-            messages.add_message(
-                request, messages.SUCCESS,
-                'Comment submitted and awaiting approval'
-            )
+            messages.success(request, 'Your comment has been posted successfully!')
+            return redirect('blog:post_detail', post_id=post.id) 
         else:
-            messages.error(request, 'You must be logged in to comment!')
-            return redirect('login')
+            messages.error(request, 'Error submitting your comment.')
+
+    # Fetch related posts (exclude the current post)
+    posts = Post.objects.filter(status=1).exclude(id=post.id)[:3]
 
     events = Event.objects.all()
     return render(
@@ -55,7 +64,8 @@ def post_detail(request, post_id):
             'events': events, 
             'comments': comments,
             'comment_count': comment_count,
-            'comment_form': comment_form
+            'comment_form': comment_form,
+      
         }
     )
 
@@ -74,41 +84,44 @@ def search_view(request):
 def about(request):
     return render(request, 'about.html')
 
-
+@login_required
 def comment_edit(request, post_id, comment_id):
     comment = get_object_or_404(Comment, id=comment_id, post__id=post_id, user=request.user)
     if request.method == "POST":
-        comment_form = CommentForm(data=request.POST, instance=comment)
-        if comment_form.is_valid():
-            comment = comment_form.save(commit=False)
-            comment.approved = False
-            comment.save()
-            messages.success(request, 'Comment updated successfully!')
+        form = CommentForm(data=request.POST, instance=comment)
+        if form.is_valid():
+            form.save()
+            messages.success(request, 'Comment updated successfully.')
             return redirect('blog:post_detail', post_id=post_id)
-        else:
-            messages.error(request, 'There was an error updating your comment.')
     else:
-        comment_form = CommentForm(instance=comment)
+        form = CommentForm(instance=comment)
 
-
-    return render(request, 'blog/edit_comment.html', {
-        'form': comment_form,
-        'post_id': post_id,
-    })
+    return render(request, 'blog/edit_comment.html', {'form': form})
 
 
 @login_required
 def comment_delete(request, post_id, comment_id):
-    post = get_object_or_404(Post, id=post_id)
-    comment = get_object_or_404(Comment, pk=comment_id, user=request.user)
-
+    comment = get_object_or_404(Comment, id=comment_id, post__id=post_id, user=request.user)
     if request.method == "POST":
-        comment.delete()  # Deletes the comment
-        messages.success(request, 'Comment deleted successfully!')
+        comment.delete()
+        messages.success(request, 'Comment deleted successfully.')
         return redirect('blog:post_detail', post_id=post_id)
 
-    return render(request, 'blog/confirm_delete.html', {'comment': comment, 'post': post})
+    return render(request, 'blog/confirm_delete.html', {'comment': comment})
 
 # blog/views.py
 def learn_more(request):
     return render(request, 'blog/learn_more.html')
+
+@login_required
+def create_event(request):
+    if request.method == "POST":
+        form = EventForm(request.POST)
+        if form.is_valid():
+            form.save()
+            messages.success(request, 'Event created successfully!')
+            return redirect('blog:events_list')  # Redirect to the events list page
+    else:
+        form = EventForm()
+
+    return render(request, 'blog/create_event.html', {'form': form})

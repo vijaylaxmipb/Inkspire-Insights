@@ -1,6 +1,6 @@
 from django.db import models
 from django.contrib.auth.models import User
-import datetime  # Import the datetime module
+import datetime 
 from cloudinary.models import CloudinaryField
 from django.urls import reverse
 
@@ -19,7 +19,7 @@ class Post(models.Model):
     created_at = models.DateTimeField(default=datetime.datetime.now)
     updated_on = models.DateTimeField(auto_now=True)
     dummy_field = models.CharField(max_length=10, null=True, blank=True) 
-    #featured_image = CloudinaryField('image', blank=True, null=True) 
+    featured_image = CloudinaryField('image', blank=True, null=True) 
     featured_image = models.ImageField(upload_to='blog_images/', blank=True, null=True) 
     
 
@@ -48,6 +48,12 @@ class Comment(models.Model):
 
     def __str__(self):
         return f"Comment {self.body} by {self.user.username}"
+
+     
+    def save(self, *args, **kwargs):
+        if self.user and not self.name: 
+            self.name = self.user.username
+        super().save(*args, **kwargs)
     
 
 class Event(models.Model):
@@ -61,7 +67,8 @@ class Event(models.Model):
 class BlogPost(models.Model):
     title = models.CharField(max_length=200)
     content = models.TextField()
-    image = models.ImageField(upload_to='blog_images/')  # Files will be uploaded to media/blog_images/
+    image = models.ImageField(upload_to='blog_images/')
 
     def __str__(self):
         return self.title
+    

@@ -41,21 +41,23 @@
           <h2>More Blog Posts</h2>
       </div>
       {% for blog_post in posts %}
-          <div class="col-md-4 mb-4">
+          <div class="col-md-4 mb-4 d-flex align-items-stretch">
               <div class="card h-100">
-                  <div class="card-body">
+                  
                      <!-- Display blog post image -->
                      {% if blog_post.featured_image %}
                      <img src="{{ blog_post.featured_image.url }}" class="card-img-top img-fluid" alt="{{ blog_post.title }}">
                      {% else %}
                      <img src="{% static 'images/default.jpg' %}" class="card-img-top img-fluid" alt="placeholder image">
                      {% endif %}
-                      <h3 class="card-title">{{ blog_post.title }}</h3>
-                      <p class="card-text">{{ blog_post.content|truncatewords:20 }}</p>
-                      <p class="card-subtitle text-muted">By {{ blog_post.author }}</p>
-                  </div>
+
+                     <div class="card-body d-flex flex-column">
+                         <h3 class="card-title">{{ blog_post.title }}</h3>
+                         <p class="card-text">{{ blog_post.content|truncatewords:20 }}</p>
+                         <p class="card-subtitle text-muted">By {{ blog_post.author }}</p>
+                    </div>
                   <div class="card-footer">
-                      <a href="{% url 'post_detail' blog_post.id %}" class="btn btn-primary">Read More</a>
+                    <a href="{% url 'blog:post_detail' post_id=blog_post.id %}" class="btn btn-primary">Read More</a>
                   </div>
               </div>
           </div>
@@ -82,48 +84,43 @@
       <div class="card-body">
         {% if comments %}
             {% for comment in comments %}
-               <div class="p-2 comments
-          {% if not comment.approved and comment.author == user %}
-          faded{% elif not comment.approved %} d-none{% endif %}">
-          <p class="font-weight-bold">
-            {{ comment.user.username }}
-            <span class="font-weight-normal">
-              {{ comment.created_at }}
-            </span> wrote:
-          </p>
-          <div id="comment{{ comment.id }}">
-            {{ comment.body | linebreaks }}
+               <div class="p-2 comments">
+                   <p class="font-weight-bold">
+                       {{ comment.user.username }}
+                       <span class="font-weight-normal">
+                           {{ comment.created_at }}
+                       </span> wrote:
+                   </p>
+                   <div id="comment{{ comment.id }}">
+                       {{ comment.body | linebreaks }}
+                   </div>
+                   {% if user.is_authenticated and comment.user == user %}
+                       <!-- Edit and Delete Buttons for the comment owner -->
+                       <a href="{% url 'blog:comment_edit' post.id comment.id %}" class="btn btn-sm btn-warning">Edit</a>
+                       <a href="{% url 'blog:comment_delete' post.id comment.id %}" class="btn btn-sm btn-danger">Delete</a>
+                    {% endif %}
+                      </div>
+                  {% endfor %}
+              {% else %}
+                  <p>No comments yet. Be the first to comment!</p>
+              {% endif %}
           </div>
-          {% if not comment.approved and comment.author == user %}
-          <p class="approval">
-            This comment is awaiting approval
-          </p>
-          {% endif %}
-          {% if user.is_authenticated and comment.user == user %}
-          <a href="{% url 'blog:comment_edit' post.id comment.id %}" class="btn btn-sm btn-warning">Edit</a>
-          <a href="{% url 'blog:comment_delete' post.id comment.id %}" class="btn btn-sm btn-danger">Delete</a>
-        {% endif %}
-        </div>
-        <!-- For loop ends here -->
-        {% endfor %}
       </div>
-    </div>
+
     <!-- Creating New Comments -->
     <div class="col-md-4 card mb-4 mt-3">
       <div class="card-body">
-        {% if user.is_authenticated %}
+        {% if user.is_authenticated %}l
         <h3>Leave a comment:</h3>
         <p>Posting as: {{ user.username }}</p>
-        <form id="commentForm" method="post"
-          style="margin-top: 1.3em;">
-          {{ comment_form | crispy }}
+        <form method="post">
+          {{ comment_form.as_p }}
           {% csrf_token %}
-          <button id="submitButton" type="submit"
-            class="btn btn-signup btn-lg">Submit</button>
+          <button type="submit" class="btn btn-primary">Submit</button>
         </form>
-        {% else %}
-        <p>Log in to leave a comment</p>
-        {% endif %}
+            {% else %}
+                <p>You need to <a href="{% url 'account_login' %}">log in</a> to leave a comment.</p>
+            {% endif %}
       </div>
     </div>
   </div>

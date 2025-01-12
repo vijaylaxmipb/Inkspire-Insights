@@ -19,8 +19,10 @@ urlpatterns = [
     path('search/', views.search_view, name='search'),
     path('learn-more/', views.learn_more, name='learn_more'),
     
-    
+    path('post/<int:post_id>/', views.post_detail, name='post_detail'),
     path('post/<int:post_id>/edit_comment/<int:comment_id>/', views.comment_edit, name='comment_edit'),
     path('post/<int:post_id>/delete_comment/<int:comment_id>/', views.comment_delete, name='comment_delete'),
+    path('events/create/', views.create_event, name='create_event'),
+    path('events/', views.EventsList.as_view(), name='events_list'), 
 
     ]

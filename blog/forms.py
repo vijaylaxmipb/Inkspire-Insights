@@ -3,7 +3,8 @@ from django import forms
 # blog/forms.py
 from allauth.account.forms import LoginForm, SignupForm
 from django import forms
-from .models import Comment 
+from .models import Comment
+from .models import Event
 
 
 class CommentForm(forms.ModelForm):
@@ -30,3 +31,8 @@ class CustomSignupForm(SignupForm):
         self.fields['email'].widget.attrs.update({'class': 'form-control custom-class'})
         self.fields['password1'].widget.attrs.update({'class': 'form-control custom-class'})
         self.fields['password2'].widget.attrs.update({'class': 'form-control custom-class'})
+
+class EventForm(forms.ModelForm):
+    class Meta:
+        model = Event
+        fields = ['title', 'description', 'date']
