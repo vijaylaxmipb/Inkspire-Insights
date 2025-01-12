@@ -1,14 +1,16 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <title>Event Detail</title>
-</head>
-<body>
-    {% for event in events %}
+{% extends "base.html" %}
+
+{% block content %}
+<div class="container">
     <h2>{{ event.title }}</h2>
-    <p>{{ event.date }}</p>
+    <p><strong>Date:</strong> {{ event.date }}</p>
     <p>{{ event.description }}</p>
-{% endfor %}
-</body>
-</html>
+    <p>
+        <strong>Related Blog Post:</strong>
+        <a href="{% url 'blog:post_detail' event.blog_post.id %}">
+            {{ event.blog_post.title }}
+        </a>
+    </p>
+    <a href="{% url 'blog:events_list' %}" class="btn btn-secondary">Back to Events</a>
+</div>
+{% endblock %}

@@ -35,4 +35,4 @@ class CustomSignupForm(SignupForm):
 class EventForm(forms.ModelForm):
     class Meta:
         model = Event
-        fields = ['title', 'description', 'date']
+        fields = ['title', 'description', 'date', 'blog_post']

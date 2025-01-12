@@ -7,14 +7,21 @@
         <ul>
             {% for event in events %}
                 <li>
-                    <a href="{% url 'blog:event_detail' event.id %}">{{ event.title }}</a>
-                    - {{ event.date }}
+                    <a href="{% url 'blog:event_detail' event.id %}">
+                        <strong>{{ event.title }}</strong>
+                    </a> - {{ event.date }}
                     <p>{{ event.description }}</p>
+                    <p>
+                        <strong>Related Blog Post:</strong>
+                        <a href="{% url 'blog:post_detail' event.blog_post.id %}">
+                            {{ event.blog_post.title }}
+                        </a>
+                    </p>
                 </li>
             {% endfor %}
         </ul>
     {% else %}
-        <p>No upcoming events at the moment.</p>
+        <p>No upcoming events.</p>
     {% endif %}
 </div>
 {% endblock %}

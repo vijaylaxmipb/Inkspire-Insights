@@ -120,7 +120,7 @@ def create_event(request):
         if form.is_valid():
             form.save()
             messages.success(request, 'Event created successfully!')
-            return redirect('blog:events_list')  # Redirect to the events list page
+            return redirect('blog:events_list')
     else:
         form = EventForm()
 

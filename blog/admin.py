@@ -26,6 +26,6 @@ class CommentAdmin(admin.ModelAdmin):
 
 @admin.register(Event)
 class EventAdmin(admin.ModelAdmin):
-    list_display = ('title', 'date')
-    search_fields = ['title']
+    list_display = ('title', 'date', 'blog_post')
+    search_fields = ('title', 'description', 'blog_post__title')
     list_filter = ('date',)
