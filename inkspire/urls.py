@@ -19,8 +19,6 @@ from django.contrib import admin
 from django.urls import include, path
 from django.conf import settings
 from django.conf.urls.static import static
-#from blog import views as blog_views
-#from django.conf.urls import handler404
 from django.shortcuts import render
 from blog.views import home
 from blog.views import PostList
@@ -34,7 +32,6 @@ def custom_404(request, exception):
 
 urlpatterns = [
     path("", home, name="home"), 
-    #path('blog/', PostList.as_view(), name='blog_home'),
     path('blog/', include('blog.urls')),
     path('about/', include('about.urls')),
     path('admin/', admin.site.urls),

@@ -127,21 +127,35 @@
 </div>
 
 <!-- Section for Event List -->
+<!-- Section for Related Events -->
 <div class="row">
-    <div class="col card mb-4 mt-3 left top">
-        <div class="card-body">
-            <h2>Related Events</h2>
-            <ul>
-                {% for event in events %}
-                    <li>{{ event.title }} - {{ event.date }}</li>
-                {% empty %}
-                    <li>No related events at the moment.</li>
-                {% endfor %}
-            </ul>
-        </div>
-    </div>
+  <div class="col card mb-4 mt-3 left top">
+      <div class="card-body">
+          <h2>Related Events</h2>
+          {% if events %}
+              <ul class="list-group">
+                  {% for event in events %}
+                      <li class="list-group-item">
+                          <h4>
+                              <a href="{% url 'blog:event_detail' event.id %}">
+                                  {{ event.title }}
+                              </a>
+                          </h4>
+                          <p><strong>Date:</strong> {{ event.date }}</p>
+                          <p>{{ event.description|truncatewords:20 }}</p>
+                          <a href="{% url 'blog:event_detail' event.id %}" class="btn btn-secondary btn-sm">
+                              View Event Details
+                          </a>
+                      </li>
+                  {% endfor %}
+              </ul>
+          {% else %}
+              <p>No related events at the moment.</p>
+          {% endif %}
+      </div>
+  </div>
 </div>
-</div>
+
 <!-- Delete confirmation modal -->
 <div class="modal fade" id="deleteModal" tabindex="-1"
   aria-labelledby="deleteModalLabel" aria-hidden="true">

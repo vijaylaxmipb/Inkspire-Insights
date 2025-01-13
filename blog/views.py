@@ -55,7 +55,7 @@ def post_detail(request, post_id):
     # Fetch related posts (exclude the current post)
     posts = Post.objects.filter(status=1).exclude(id=post.id)[:3]
 
-    events = Event.objects.all()
+    events = post.events.all()
     return render(
         request,
         'blog/post_detail.html',
@@ -69,10 +69,9 @@ def post_detail(request, post_id):
         }
     )
 
-
 def event_detail(request, event_id):
     event = get_object_or_404(Event, id=event_id)
-    return render(request, 'event_detail.html', {'event': event})
+    return render(request, 'blog/event_detail.html', {'event': event})
 
 
 def search_view(request):

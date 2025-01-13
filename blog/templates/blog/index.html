@@ -3,7 +3,6 @@
 
 {% block content %}
 
-<!-- index.html content starts here -->
 <div class="container-fluid">
     <div class="row">
         <!-- Blog Entries Column -->
@@ -15,7 +14,7 @@
                    <div class="col-md-4 col-sm-6 col-12">
                        <div class="card mb-4">
 
-                         <!-- Display the post featured image -->
+                         <!-- Displays the post featured image -->
                          
                          {% if post.featured_image %}
                          <img src="{{ post.featured_image.url }}" class="card-img-top img-fluid" alt="{{ post.title }}">
@@ -36,20 +35,20 @@
                                     <p class="author">Author: {{ post.author }}</p>
                                 </div>
                             </div>
-                        </div> <!-- Closing card-body -->
-                    </div> <!-- Closing card -->
-                </div> <!-- Closing column -->
+                        </div> 
+                    </div> 
+                </div> 
 
                 <!-- Create a new row every 3 posts -->
                 {% if forloop.counter|divisibleby:3 %}
-            </div> <!-- Close previous row -->
-            <div class="row"> <!-- Start a new row -->
+            </div> 
+            <div class="row"> 
                 {% endif %}
                 {% endif %}
                 {% endfor %} 
 
-            </div> <!-- Closing row -->
-        </div> <!-- Closing Blog Entries Column -->
+            </div> 
+        </div> 
 
         <!-- Events Loop (Separate from Posts) -->
         <div class="col-12 mt-5">
@@ -63,20 +62,20 @@
                                 <h2>{{ event.event_name }}</h2>
                             </a>
                             <p class="card-text text-muted h6">{{ event.date }}</p>
-                        </div> <!-- Closing card-body -->
-                    </div> <!-- Closing card -->
-                </div> <!-- Closing column -->
+                        </div> 
+                    </div> 
+                </div> 
 
-                <!-- Create a new row every 3 events -->
+                
                 {% if forloop.counter|divisibleby:3 %}
-            </div> <!-- Close previous row -->
-            <div class="row"> <!-- Start a new row -->
+            </div> 
+            <div class="row"> 
                 {% endif %}
                 {% endfor %}
-            </div> <!-- Closing row -->
-        </div> <!-- Closing Events Column -->
-    </div> <!-- Closing row -->
-</div> <!-- Closing container-fluid -->
+            </div> 
+        </div> 
+    </div> 
+</div> 
 
 {% if is_paginated %}
 <nav aria-label="Page navigation">
