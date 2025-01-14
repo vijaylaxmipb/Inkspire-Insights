@@ -30,13 +30,6 @@ main.flex-shrink-0 {
 
 .container {
     text-align: justify;
-    max-width: 600px;
-    margin: 50px auto;
-    background: #fff;
-    padding: 30px;
-    border-radius: 12px;
-    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
-    color: #333;
 }
 
 /* Brand and Typography */
