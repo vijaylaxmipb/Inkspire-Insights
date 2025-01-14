@@ -9,30 +9,45 @@
     </p>
 
     <div class="row mt-5">
-        <!-- Section 1: About Inkspire Insights -->
+        <!-- Section 1: Did You Know? -->
         <div class="col-md-6">
-            <h2>About Us</h2>
+            <h2>Did You Know?</h2>
             <p>
-                At Inkspire Insights, we believe in the power of stories and creativity to inspire meaningful change. From personal growth strategies to the latest trends in technology, our platform offers a wide range of resources to help you unlock your potential.
+                Creativity is like a muscle—the more you use it, the stronger it gets! Dedicate just 15 minutes daily to a creative activity, and watch your ideas flow effortlessly.
             </p>
+            <p>
+                Studies show that engaging in creative activities can help reduce stress, improve problem-solving skills, and even boost your overall happiness. Whether it's journaling, painting, brainstorming new ideas, or learning a new skill, every small step you take towards nurturing your creativity can lead to amazing outcomes.
+            </p>
+            
+            <div class="community-preview">
+                <div class="community-preview">
+                    <img src="{% static 'images/avatar1.jpg' %}" alt="User 1: A painter" class="rounded-circle" width="50" title="Painter">
+                    <img src="{% static 'images/avatar2.jpg' %}" alt="User 2: A writer" class="rounded-circle" width="50" title="Writer">
+                    <img src="{% static 'images/avatar3.jpg' %}" alt="User 3: A photographer" class="rounded-circle" width="50" title="Photographer">
+                </div>
+            </div>
         </div>
         <div class="col-md-6">
-            <img src="{% static 'images/placeholder-about.jpg' %}" alt="About Us Placeholder" class="img-fluid rounded">
+            <img src="{% static 'images/about_img.jpg' %}" alt="Did You Know?" class="img-fluid rounded">
         </div>
     </div>
 
     <div class="row mt-5">
         <!-- Section 2: Key Features -->
         <div class="col-md-6">
-            <img src="{% static 'images/placeholder-features.jpg' %}" alt="Key Features Placeholder" class="img-fluid rounded">
+            <img src="{% static 'images/features-img.jpg' %}" alt="Key Features" class="img-fluid rounded">
         </div>
         <div class="col-md-6">
             <h2>Our Key Features</h2>
-            <ul>
-                <li>Insightful articles on personal development and creativity</li>
-                <li>Inspiring stories from contributors around the world</li>
-                <li>Actionable advice for achieving work-life balance</li>
-                <li>Expert tips on mastering technology and self-improvement</li>
+            <ul class="list-unstyled">
+                <li><i class="fas fa-lightbulb text-primary me-2"></i> Insightful articles on personal development and creativity</li>
+                <li><i class="fas fa-globe text-success me-2"></i> Inspiring stories from contributors around the world</li>
+                <li><i class="fas fa-balance-scale text-warning me-2"></i> Actionable advice for achieving work-life balance</li>
+                <li><i class="fas fa-tools text-info me-2"></i> Expert tips on mastering technology and self-improvement</li>
+                <li><i class="fas fa-comments text-danger me-2"></i> Interactive discussions and a vibrant community of like-minded individuals</li>
+                <li><i class="fas fa-download text-secondary me-2"></i> Downloadable templates, guides, and creative tools</li>
+                <li><i class="fas fa-star text-warning me-2"></i> Real-life success stories to inspire and motivate</li>
+                <li><i class="fas fa-calendar text-success me-2"></i> Announcements about workshops, webinars, and events</li>
             </ul>
         </div>
     </div>
@@ -47,7 +62,7 @@
             <a href="{% url 'account_signup' %}" class="btn btn-primary">Sign Up Now</a>
         </div>
         <div class="col-md-6">
-            <img src="{% static 'images/placeholder-community.jpg' %}" alt="Community Placeholder" class="img-fluid rounded">
+            <img src="{% static 'images/community-img.jpg' %}" alt="Community" class="img-fluid rounded">
         </div>
     </div>
 

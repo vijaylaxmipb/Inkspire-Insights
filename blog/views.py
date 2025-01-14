@@ -65,6 +65,7 @@ def post_detail(request, post_id):
             'comments': comments,
             'comment_count': comment_count,
             'comment_form': comment_form,
+
       
         }
     )

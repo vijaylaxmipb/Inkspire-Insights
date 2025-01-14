@@ -36,13 +36,17 @@
     </div>
 
     <!-- Section to Display Other Blog Posts (Three per row) -->
+  <div class="container my-4">
     <div class="row">
-      <div class="col-12">
-          <h2>More Blog Posts</h2>
+      <div class="col-12 text-center mb-4">
+          <h2>
+              More Blog Posts
+          </h2>
       </div>
+
       {% for blog_post in posts %}
           <div class="col-md-4 mb-4 d-flex align-items-stretch">
-              <div class="card h-100">
+              <div class="card h-100 shadow-sm">
                   
                      <!-- Display blog post image -->
                      {% if blog_post.featured_image %}
@@ -52,77 +56,61 @@
                      {% endif %}
 
                      <div class="card-body d-flex flex-column">
-                         <h3 class="card-title">{{ blog_post.title }}</h3>
-                         <p class="card-text">{{ blog_post.content|truncatewords:20 }}</p>
-                         <p class="card-subtitle text-muted">By {{ blog_post.author }}</p>
+                      <h5 class="card-title">
+                        <a href="{% url 'blog:post_detail' blog_post.id %}" class="text-decoration-none text-dark">
+                            {{ blog_post.title }}
+                        </a>
+                    </h5>
+                    <p class="card-text text-muted">{{ blog_post.content|truncatewords:20 }}</p>
+                    <div class="mt-auto">
+                        <a href="{% url 'blog:post_detail' blog_post.id %}" class="btn btn-primary w-100">Read More</a>
                     </div>
-                  <div class="card-footer">
-                    <a href="{% url 'blog:post_detail' post_id=blog_post.id %}" class="btn btn-primary">Read More</a>
-                  </div>
-              </div>
-          </div>
-      {% endfor %}
-  </div> 
+                </div>
+            </div>
+        </div>
+    {% endfor %}
+</div>
+</div>
+
+<div class="text-center mt-4">
+  <a href="{% url 'blog:blog_home' %}" class="btn btn-outline-primary">
+      View All Blog Posts
+  </a>
+</div>
 </div>
   
-    <!-- Displaying count of comments -->
-  <div class="row">
-    <div class="col-12">
-      <strong class="text-secondary">
-        <i class="far fa-comments"></i> {{ comment_count }}
-      </strong>
-    </div>
-    <div class="col-12">
-      <hr>
-    </div>
+<div class="row">
+  <!-- Comments Section -->
+  <div class="col-md-7 card comments-section">
+      <h3>Comments</h3>
+      <div class="card-body">
+          {% if comments %}
+              {% for comment in comments %}
+                  <div class="comment">
+                      <p class="comment-author">{{ comment.user.username }}</p>
+                      <p class="comment-date">{{ comment.created_at|date:"M d, Y H:i" }}</p>
+                      <p class="comment-text">{{ comment.body }}</p>
+                  </div>
+              {% endfor %}
+          {% else %}
+              <p>No comments yet. Be the first to comment!</p>
+          {% endif %}
+      </div>
   </div>
 
-  <!-- Displaying Comments -->
-  <div class="row">
-    <div class="col-md-8 card mb-4  mt-3 ">
-      <h3>Comments:</h3>
-      <div class="card-body">
-        {% if comments %}
-            {% for comment in comments %}
-               <div class="p-2 comments">
-                   <p class="font-weight-bold">
-                       {{ comment.user.username }}
-                       <span class="font-weight-normal">
-                           {{ comment.created_at }}
-                       </span> wrote:
-                   </p>
-                   <div id="comment{{ comment.id }}">
-                       {{ comment.body | linebreaks }}
-                   </div>
-                   {% if user.is_authenticated and comment.user == user %}
-                       <!-- Edit and Delete Buttons for the comment owner -->
-                       <a href="{% url 'blog:comment_edit' post.id comment.id %}" class="btn btn-sm btn-warning">Edit</a>
-                       <a href="{% url 'blog:comment_delete' post.id comment.id %}" class="btn btn-sm btn-danger">Delete</a>
-                    {% endif %}
-                      </div>
-                  {% endfor %}
-              {% else %}
-                  <p>No comments yet. Be the first to comment!</p>
-              {% endif %}
-          </div>
-      </div>
-
-    <!-- Creating New Comments -->
-    <div class="col-md-4 card mb-4 mt-3">
-      <div class="card-body">
-        {% if user.is_authenticated %}l
-        <h3>Leave a comment:</h3>
-        <p>Posting as: {{ user.username }}</p>
-        <form method="post">
-          {{ comment_form.as_p }}
-          {% csrf_token %}
-          <button type="submit" class="btn btn-primary">Submit</button>
-        </form>
-            {% else %}
-                <p>You need to <a href="{% url 'account_login' %}">log in</a> to leave a comment.</p>
-            {% endif %}
-      </div>
-    </div>
+  <!-- Leave a Comment Section -->
+  <div class="col-md-5 card leave-comment">
+      {% if user.is_authenticated %}
+          <h3>Leave a Comment:</h3>
+          <p>Posting as: <strong>{{ user.username }}</strong></p>
+          <form method="post">
+              {% csrf_token %}
+              {{ comment_form.as_p }}
+              <button type="submit" class="btn btn-primary w-100">Submit</button>
+          </form>
+      {% else %}
+          <p>You need to <a href="{% url 'account_login' %}" class="text-primary">log in</a> to leave a comment.</p>
+      {% endif %}
   </div>
 </div>
 
