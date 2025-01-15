@@ -90,13 +90,21 @@
                       <p class="comment-author">{{ comment.user.username }}</p>
                       <p class="comment-date">{{ comment.created_at|date:"M d, Y H:i" }}</p>
                       <p class="comment-text">{{ comment.body }}</p>
-                  </div>
-              {% endfor %}
-          {% else %}
-              <p>No comments yet. Be the first to comment!</p>
-          {% endif %}
-      </div>
-  </div>
+                      <!-- Buttons for comment author -->
+                    {% if user.is_authenticated and comment.user == user %}
+                    <a href="{% url 'blog:comment_edit' post.id comment.id %}" class="btn btn-warning btn-sm">Edit</a>
+                    <form action="{% url 'blog:comment_delete' post.id comment.id %}" method="post" style="display:inline;">
+                        {% csrf_token %}
+                        <button type="submit" class="btn btn-danger btn-sm">Delete</button>
+                    </form>
+                {% endif %}
+            </div>
+        {% endfor %}
+    {% else %}
+        <p>No comments yet. Be the first to comment!</p>
+    {% endif %}
+</div>
+</div>
 
   <!-- Leave a Comment Section -->
   <div class="col-md-5 card leave-comment">
