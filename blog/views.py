@@ -33,6 +33,13 @@ def post_detail(request, post_id):
     post = get_object_or_404(Post, id=post_id)
 
     comments = post.comments.filter(approved=True).order_by("-created_at")
+    for comment in comments:
+        # Add a flag to each comment for deletion permission
+        comment.can_delete = (
+            request.user.is_authenticated and
+            (comment.user == request.user or post.author == request.user or request.user.is_staff)
+        )
+
     comment_count = comments.count()
     comment_form = CommentForm()
 
@@ -42,10 +49,7 @@ def post_detail(request, post_id):
             comment = comment_form.save(commit=False)
             comment.user = request.user
             comment.post = post
-
-            if request.user.is_authenticated:
-                comment.approved = True
-
+            comment.approved = True
             comment.save()
             messages.success(request, 'Your comment has been posted successfully!')
             return redirect('blog:post_detail', post_id=post.id) 
@@ -65,6 +69,8 @@ def post_detail(request, post_id):
             'comments': comments,
             'comment_count': comment_count,
             'comment_form': comment_form,
+            'logged_in_user': request.user,
+            'post_author': post.author,
 
       
         }
@@ -101,10 +107,21 @@ def comment_edit(request, post_id, comment_id):
 
 @login_required
 def comment_delete(request, post_id, comment_id):
-    comment = get_object_or_404(Comment, id=comment_id, post__id=post_id, user=request.user)
-    if request.method == "POST":
-        comment.delete()
-        messages.success(request, 'Comment deleted successfully.')
+    try:
+        comment = get_object_or_404(Comment, id=comment_id, post__id=post_id)
+    except Comment.DoesNotExist:
+        print(f"Comment with ID {comment_id} not found.")
+        print(f"Post ID: {post_id}")
+        raise
+    
+    # Allow delete only for comment author, post author, or admin
+    if request.user == comment.user or request.user == comment.post.author or request.user.is_staff:
+        if request.method == "POST":
+             comment.delete()
+             messages.success(request, 'Comment deleted successfully.')
+             return redirect('blog:post_detail', post_id=post_id)
+    else:
+        messages.error(request, 'You do not have permission to delete this comment.')
         return redirect('blog:post_detail', post_id=post_id)
 
     return render(request, 'blog/confirm_delete.html', {'comment': comment})

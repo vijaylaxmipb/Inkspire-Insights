@@ -5,46 +5,49 @@
 {% block content %}
 
 <div class="container mt-5 about-page">
-
-    <div class="row">
-        <div class="col-4 text-center">
-           
-           {% if about.profile_image %}
-           <img src="{{ about.profile_image.url }}" width="300" alt="{{ about.title }}">
-           {% else %}
-           <img src="{% static 'images/blnk photo.png' %}"width="75%" alt="placeholder image">
-           {% endif %}
-   </div>
-
-        <div class="col-8">
-            <!-- Title (About Me) -->
-            {% if about %}
-                <h2>{{ about.title }}</h2>
-                {{ about.content | safe }}
-                <p class="text-end"><em>Updated on: {{ about.updated_on }}</em></p>
+    <div class="row align-items-center">
+        <!-- Profile Image -->
+        <div class="col-lg-4 text-center mb-4 mb-lg-0">
+            {% if about.profile_image %}
+            <img src="{{ about.profile_image.url }}" class="img-fluid rounded-circle shadow-lg" alt="{{ about.title }}">
             {% else %}
-                <p>No information available.</p>
+            <img src="{% static 'images/default-placeholder.jpeg' %}" width="75%" alt="Default profile image">
             {% endif %}
+        </div>
 
+        <!-- About Content -->
+        <div class="col-lg-8">
+            {% if about %}
+            <h2 class="display-4 text-primary mb-3">{{ about.title }}</h2>
+            <div class="about-content">
+                {{ about.content | safe }}
+            </div>
+            <p class="text-muted text-end mt-3"><em>Last updated on: {{ about.updated_on|date:"M d, Y, H:i" }}</em></p>
+            {% else %}
+            <p class="text-center">No information available at the moment.</p>
+            {% endif %}
         </div>
     </div>
-    
-    <div class="row justify-content-center">
-        <div class="col-12 col-md-6 my-5">
-            <h2>Let's collaborate!</h2>
-            <p>I believe in the power of shared knowledge and collective effort.
-                Whether you have a project in mind, wish to co-author
-                an article, or simply want to brainstorm some ideas,
-                I'm excited to hear from you. Fill out the form
-                and we can get the ball rolling!</p>
-            <form method="post">
-                {{ collaborate_form | crispy }}
-                {% csrf_token %}
-                <button class="btn btn-secondary"
-                 type="submit">Submit</button>
-            </form>
+
+    <!-- Collaboration Section -->
+    <div class="row justify-content-center mt-5">
+        <div class="col-12 col-md-8">
+            <div class="p-4 rounded bg-light shadow-sm">
+                <h3 class="text-center text-secondary">Let's Collaborate!</h3>
+                <p class="text-center">
+                    I believe in the power of shared knowledge and collective effort. Whether you have a project in mind, 
+                    wish to co-author an article, or simply want to brainstorm ideas, I’d love to hear from you.
+                </p>
+                <form method="post">
+                    {{ collaborate_form|crispy }}
+                    {% csrf_token %}
+                    <div class="d-grid">
+                        <button class="btn btn-primary btn-lg" type="submit">Submit</button>
+                    </div>
+                </form>
+            </div>
         </div>
     </div>
 </div>
-    
+
 {% endblock content %}

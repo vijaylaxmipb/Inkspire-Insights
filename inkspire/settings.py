@@ -30,7 +30,7 @@ DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
 SECRET_KEY = os.getenv('SECRET_KEY', 'default-secret-key')  # Set a default key if not set
 
 # DEBUG mode
-DEBUG = os.getenv('DEBUG', 'False') == 'False' 
+DEBUG = os.getenv('DEBUG', 'False') == 'True' 
 
 # Allowed hosts
 ALLOWED_HOSTS = os.getenv('ALLOWED_HOSTS', '*').split(',')
@@ -101,6 +101,7 @@ MIDDLEWARE = [
     'django.contrib.messages.middleware.MessageMiddleware',
     'django.middleware.clickjacking.XFrameOptionsMiddleware',
     'allauth.account.middleware.AccountMiddleware',
+    
 ]
 
 ROOT_URLCONF = 'inkspire.urls'
