@@ -3,17 +3,10 @@ import os
 import sys
 import dj_database_url
 from dotenv import load_dotenv
-import cloudinary
 
 # Load environment variables from the .env file
 load_dotenv()
 
-# Cloudinary configuration
-cloudinary.config(
-    cloud_name=os.getenv('CLOUDINARY_CLOUD_NAME', 'your-cloud-name'),
-    api_key=os.getenv('CLOUDINARY_API_KEY', 'your-api-key'),
-    api_secret=os.getenv('CLOUDINARY_API_SECRET', 'your-api-secret')
-)
 
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
 BASE_DIR = Path(__file__).resolve().parent.parent
@@ -27,13 +20,14 @@ TEMPLATES_DIRS = [
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
 
 # SECURITY WARNING: keep the secret key used in production secret!
-SECRET_KEY = os.getenv('SECRET_KEY', 'default-secret-key')  # Set a default key if not set
+SECRET_KEY = os.getenv('SECRET_KEY', 'default-secret-key') 
 
 # DEBUG mode
-DEBUG = os.getenv('DEBUG', 'False') == 'True' 
+#DEBUG = os.getenv('DEBUG', 'False') == 'False'
+DEBUG=True
 
 # Allowed hosts
-ALLOWED_HOSTS = os.getenv('ALLOWED_HOSTS', '*').split(',')
+ALLOWED_HOSTS = os.getenv('ALLOWED_HOSTS', '*',).split(',')
 
 # Database Configuration
 DATABASE_URL = os.getenv('DATABASE_URL')

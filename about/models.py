@@ -1,19 +1,24 @@
 from django.db import models
-from cloudinary.models import CloudinaryField
-from django.contrib.auth.models import User  # Moved to the top
-import datetime  # Import at the top, as per PEP 8
+from django.contrib.auth.models import User
+import datetime
 
 STATUS = ((0, "Draft"), (1, "Published"))
 
 
 class About(models.Model):
     title = models.CharField(max_length=300)
-    profile_image = CloudinaryField('image', default='placeholder')
+    profile_image = models.ImageField(upload_to='about_images/', blank=True, null=True)
     updated_on = models.DateTimeField(auto_now=True)
     content = models.TextField()
 
     def __str__(self):
         return self.title
+
+    @property
+    def image_url(self):
+        if self.profile_image:
+            return self.profile_image.url
+        return '/static/images/default-placeholder.jpeg' 
 
 
 class Post(models.Model):

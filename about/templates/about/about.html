@@ -9,9 +9,9 @@
         <!-- Profile Image -->
         <div class="col-lg-4 text-center mb-4 mb-lg-0">
             {% if about.profile_image %}
-            <img src="{{ about.profile_image.url }}" class="img-fluid rounded-circle shadow-lg" alt="{{ about.title }}">
+                <img src="{{ about.profile_image.url }}" class="img-fluid rounded-circle shadow-lg" alt="{{ about.title }}">
             {% else %}
-            <img src="{% static 'images/default-placeholder.jpeg' %}" width="75%" alt="Default profile image">
+                <img src="{% static 'images/default-placeholder.jpeg' %}" width="75%" alt="Default profile image">
             {% endif %}
         </div>
 
