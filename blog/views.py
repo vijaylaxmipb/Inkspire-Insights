@@ -113,7 +113,7 @@ def comment_delete(request, post_id, comment_id):
         print(f"Comment with ID {comment_id} not found.")
         print(f"Post ID: {post_id}")
         raise
-    
+
     # Allow delete only for comment author, post author, or admin
     if request.user == comment.user or request.user == comment.post.author or request.user.is_staff:
         if request.method == "POST":
@@ -126,7 +126,7 @@ def comment_delete(request, post_id, comment_id):
 
     return render(request, 'blog/confirm_delete.html', {'comment': comment})
 
-# blog/views.py
+
 def learn_more(request):
     return render(request, 'blog/learn_more.html')
 
