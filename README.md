@@ -18,6 +18,7 @@ InspireSight is envisioned as a vibrant hub for creative minds and lifelong lear
   * [Admin User Stories](#admin-user-stories)
 - [Website Goals and Objectives](#website-goals-and-objectives)
 - [Target Audience](#target-audience)
+- [Wireframes](#Wireframes)
 - [Database Schema](#database-schema)
 - [Design Choices](#design-choices)
   * [Typography](#typography)
@@ -169,6 +170,20 @@ With an emphasis on delivering a seamless user experience, the goal of this proj
 - Developers
 - General Visitors
 - Families and Educators
+
+[Back to top](#contents)
+
+## Wireframes
+
+The wireframes for **Inkwell Insight** were meticulously designed using [Balsamiq](https://balsamiq.com/), a tool known for its simplicity and focus on rapid prototyping. These wireframes outline the application's structure, showcasing its intuitive interface and user-friendly navigation.
+
+The purpose of these wireframes is to provide a clear visual representation of the application's layout and user flow, ensuring alignment during the development process.
+
+![Wireframes](/static/images/WireFrame_Landing%20Page.PNG)
+![Wireframes](/static/images/WireFrame_Learnmore.PNG)
+![Wireframes](/static/images/WireFrame_HomePage.PNG)
+![Wireframes](/static/images/WireFrame_HomeBlog.PNG)
+![Wireframes](/static/images/WireFrame_AboutPage.PNG)
 
 [Back to top](#contents)
 
