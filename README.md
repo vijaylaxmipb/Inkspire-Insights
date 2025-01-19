@@ -68,6 +68,75 @@ InspireSight is envisioned as a vibrant hub for creative minds and lifelong lear
 
 Agile methodology is a project management approach that emphasizes flexibility, collaboration, and iterative progress towards a well-defined goal. It is particularly effective in software development where requirements and solutions evolve through the collaborative effort of self-organizing cross-functional teams. Agile methodologies aim to deliver small, incremental changes in a product to improve quality and adaptability to changing needs.
 
+### Development Approach
+
+This project follows an Agile methodology to ensure flexibility, collaboration, and iterative progress. The focus is on delivering high-quality features incrementally and adapting to changing requirements.
+
+### Key Agile Practices
+
+#### 1. **Epics and User Stories**
+
+To ensure structured development, user stories are grouped into **Epics** aligned with major platform goals. Each epic is further broken down into actionable tasks.
+
+##### Example Epics:
+
+- **Epic 1: User Authentication and Security**
+  - User stories related to account creation, login, password reset, and logout.
+
+- **Epic 2: Content Management**
+  - User stories for creating, editing, deleting articles and comments.
+
+- **Epic 3: User Profile Management**
+  - User stories for managing user profiles and personalization.
+
+#### 2. **Task Prioritization**
+
+We use the **MoSCoW** prioritization framework to rank tasks:
+
+- **Must Have**: Critical for MVP (e.g., User authentication).
+- **Should Have**: Enhances functionality (e.g., Filtering articles by category).
+- **Could Have**: Nice-to-have features (e.g., Dark mode).
+- **Won’t Have**: Features not planned for the current release cycle.
+
+#### 3. **Sprint Planning and Deliverables**
+
+The development process is broken into **sprints**, each focusing on delivering a specific set of functionalities.  
+Below are the planned sprints and their deliverables:
+
+- **Sprint 1**: User authentication (login, registration, password reset).
+- **Sprint 2**: Article creation and commenting.
+- **Sprint 3**: User profile management and filtering content.
+
+Each sprint includes the following:
+- Defined user stories and tasks.
+- Assigned priorities and deadlines.
+- Testing for acceptance criteria.
+
+#### 4. **Milestone Mapping**
+
+The project milestones are tied to the end of each sprint. These serve as checkpoints to ensure progress and goal alignment.
+
+##### Milestones:
+
+1. **Milestone 1**: Authentication system completed.
+2. **Milestone 2**: Core CRUD functionalities for articles and comments implemented.
+3. **Milestone 3**: Admin interface for content moderation operational.
+4. **Milestone 4**: Responsive UI tested and deployed.
+
+#### 5. **Acceptance Criteria**
+
+To ensure clarity and quality, each user story includes **acceptance criteria**. For example:
+
+- **User Story**: "As a user, I can create an account so that I can post, save, and edit content."
+- **Acceptance Criteria**:
+  - User is presented with a registration form.
+  - On successful registration, user receives a confirmation email.
+  - User can log in with registered credentials.
+
+#### 6. **GitHub Projects and Task Tracking**
+
+GitHub Projects is used for Agile tracking. Tasks are organized into columns for each **Epic** with cards for individual user stories.  
+
 ### GitHub Projects
 
 Using GitHub Projects, tasks are managed and progress tracked through project boards. In this project represents a key aspect of the platform's development and ensures comprehensive coverage of the required functionalities.
@@ -77,9 +146,6 @@ Using GitHub Projects, tasks are managed and progress tracked through project bo
 ## User Experience
 
 ### User Stories
-
-
-
 
 With an emphasis on delivering a seamless user experience, the goal of this project is to provide a comprehensive platform that serves both visitors and registered users. The platform will allow for the development and maintenance of content, present developer profile, and provide opportunities for interaction.  The following user stories outline the essential functionalities.
 
@@ -179,7 +245,10 @@ The wireframes for **Inkwell Insight** were meticulously designed using [Balsami
 
 The purpose of these wireframes is to provide a clear visual representation of the application's layout and user flow, ensuring alignment during the development process.
 
+#### Landing Page
 ![Wireframes](/static/images/WireFrame_Landing%20Page.PNG)
+The landing page highlights the platform's key features and allows easy navigation to the primary sections.
+
 ![Wireframes](/static/images/WireFrame_Learnmore.PNG)
 ![Wireframes](/static/images/WireFrame_HomePage.PNG)
 ![Wireframes](/static/images/WireFrame_HomeBlog.PNG)
