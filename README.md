@@ -39,10 +39,9 @@ InspireSight is envisioned as a vibrant hub for creative minds and lifelong lear
   * [Search Feature](#Search-Feature)
   * [Password Reset with Email Validation](#Password-Reset-with-Email-Validation)
   * [User Account Pages](#user-account-pages)
-  * [Article Preview Card](#Article-Preview-Card)
+  * [Home Tab Functionality](#Home-tab-functionality)
   * [Notification Messages](#Notification-Messages)
   * [Comment Card](#Comment-Card)
-  * [Awaiting approval](#Awaiting-approval)
 - [Django Admin Portal](#django-admin-portal)
 - [Future Features](#future-features)
     + [Enhanced User Profiles](#enhanced-user-profiles)
@@ -319,7 +318,7 @@ My website is responsive to different layouts depending on the size of the viewp
 ## Comment Management
 
 - Users can add comments to posts. The comments are associated with specific posts and are displayed in the post detail view.
-- After submitting a comment, the comment is saved and set to await approval by an admin/moderator before being displayed publicly.
+- After submitting a comment, the comment is saved.
 - **Edit and Delete Functionality**: There is no explicit enforcement of user-specific permissions on editing or deleting comments in the current implementation. However, the views handle comment editing and deleting through form submission, with logic in place to compare the comment author with the logged-in user. If the logged-in user is the author of the comment, they are allowed to edit or delete the comment.
 
 ## Post and Event Management
@@ -367,14 +366,16 @@ The About Me section of Inkspire Insights provides detailed information about th
 
 ![About](/static/images/About_me.jpg)
 
- ### Landing Page
+### Landing Page
 
 The landing page of Inkspire Insights is designed to welcome visitors with a clean, modern, and engaging layout. The page features a series of blog post cards, each displaying the title, excerpt, publication date, and author, making it easy for users to browse and explore the latest insights. The page is structured with a prominent navigation bar at the top, including options for Home, About, Login/Logout, and a search bar for easy content discovery.The blog post cards feature vibrant images, bold headlines, and brief excerpts that draw the user in. The clean typography and ample spacing ensure that the content is easy to read and visually appealing.
 
 
 ![LandingPage](/static/images/landing%20page.png)
 
- #### Learn More
+#### Learn More
+ 
+ ![Learnmore](/static/images/learnmore.png)
 
  The Learn More page is designed to provide users with additional information about The Inkspire Insights platform, focusing on personal growth, creativity, and community involvement. This document outlines the key features of the Learn More page and its subsections.
 
@@ -384,7 +385,8 @@ The landing page of Inkspire Insights is designed to welcome visitors with a cle
  - Key Features: A highlight of what the platform offers to its users.
  - Get Involved: Information on how users can actively participate in the community.
 
-![Learnmore](/static/images/learnmore.png)
+![Learnmore](/static/images/learnmore_pge.png)
+![Learnmore](/static/images/learnmore_page.png)
 
 ### Search Feature
 
@@ -444,9 +446,6 @@ The Log Out page provides users with confirmation of a successful logout from th
    - Likes: The number of likes the post has received, offering a sense of its popularity and engagement.
 
 
-![Article Preview Card](/static/images/article_preview_card.PNG)
-
-
 ### Notification Messages
 
 Notification messages were user every time the user performs CRUD operation, sign in, and sign out.
@@ -456,15 +455,9 @@ Notification messages were user every time the user performs CRUD operation, sig
 ### Comment Card
 
 The comment card elegantly showcases the user's comment, the author's identity, and the date
-![Comment Card ](/static/images/comment_card.png)
-
-### Awaiting approval
-
-when a user comment for a blog and click on submit button,notification popup for approval from admin.
-![Awaiting approval ](/static/images/awating_approval.png)
+![Comment Card ](/static/images/comments.png)
 
 ## Django Admin Portal 
-
 Django Admin Portal allows superuser to manage content and users of the website. The admin view is customized to reflect the scope of this project. 
 
 ![Django Admin Portal](/static/images/admin_view.png)
