@@ -32,6 +32,10 @@
             <div class="card-body">
                 <p class="card-text">{{ post.content | safe }}</p>
             </div>
+            <!-- Like button -->
+            <button class="like-button btn btn-primary" data-post-id="{{ post.id }}" onclick="handleLike(this)">
+                👍 Like <span class="like-count">{{ post.like_count|default:0 }}</span>
+            </button>            
         </div>
     </div>
 
@@ -91,6 +95,11 @@
                       <p class="comment-date text-muted">{{ comment.created_at|date:"M d, Y H:i" }}</p>
                       <p class="comment-text">{{ comment.body }}</p>
 
+                      <!-- Like Button for Comments -->
+                      <button class="btn-like btn btn-secondary" data-comment-id="{{ comment.id }}" onclick="handleLike(this)">
+                        👍 Like <span class="like-count">{{ comment.like_count }}</span>
+                      </button>
+    
                       <!-- Buttons for comment author, post author, and admin -->
                       {% if comment.can_delete %}
                           <form action="{% url 'blog:comment_delete' post.id comment.id %}" method="post" style="display:inline;">

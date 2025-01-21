@@ -9,6 +9,9 @@ from django.urls import reverse
 from .models import Event
 from .forms import EventForm
 from django.utils.timezone import now
+from django.views.decorators.csrf import csrf_exempt
+from .models import Comment
+from django.views.decorators.csrf import ensure_csrf_cookie
 
 class PostList(ListView):
     queryset = Post.objects.filter(status=1).exclude(title__exact='').exclude(content__exact='').exclude(excerpt__exact='')
@@ -142,3 +145,30 @@ def create_event(request):
         form = EventForm()
 
     return render(request, 'blog/create_event.html', {'form': form})
+
+@csrf_exempt  # Only for debugging - remove in production!
+def like_comment(request, comment_id):
+    if request.method == "POST":
+        try:
+            comment = Comment.objects.get(id=comment_id)
+            comment.like_count += 1
+            comment.save()
+            print(f"Comment ID {comment_id} liked successfully. New like count: {comment.like_count}")  # Debugging log
+            return JsonResponse({"success": True, "like_count": comment.like_count})
+        except Comment.DoesNotExist:
+            print(f"Comment ID {comment_id} not found.")  # Debugging log
+            return JsonResponse({"success": False, "error": "Comment not found"}, status=404)
+    print("Invalid request method.")  # Debugging log
+    return JsonResponse({"success": False, "error": "Invalid request method"}, status=400)
+    
+@ensure_csrf_cookie
+def like_comment(request, comment_id):
+    if request.method == "POST":
+        try:
+            comment = Comment.objects.get(id=comment_id)
+            comment.like_count += 1
+            comment.save()
+            return JsonResponse({"success": True, "like_count": comment.like_count})
+        except Comment.DoesNotExist:
+            return JsonResponse({"success": False, "error": "Comment not found"}, status=404)
+    return JsonResponse({"success": False, "error": "Invalid request method"}, status=400)

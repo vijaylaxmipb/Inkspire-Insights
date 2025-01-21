@@ -10,6 +10,8 @@ InspireSight is envisioned as a vibrant hub for creative minds and lifelong lear
 # Contents
 - [Agile Methodology](#agile-methodology)
   * [Overview](#overview)
+  * [Development Approach](#development-approach)
+  * [Key Agile Practices](#key-agile-practices)
   * [GitHub Projects](#github-projects)
   * [User Stories](#user-stories)
   * [New User Stories](#New-User-stories)

@@ -775,8 +775,21 @@ input[type="password"] {
 img.rounded-circle {
     border: 2px solid #ccc; 
 }
+.like-button {
+    background-color: #1a1c1f;
+    color: white;
+    border-radius: 5px;
+    cursor: pointer;
+}
 
+.like-button:hover {
+    background-color: #0056b3;
+}
 
+.like-count {
+    font-weight: bold;
+    margin-left: 5px;
+}
 
 
 /* Responsive Section */

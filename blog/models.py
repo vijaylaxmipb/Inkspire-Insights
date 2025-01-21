@@ -41,6 +41,7 @@ class Comment(models.Model):
     created_at = models.DateTimeField(auto_now_add=True)
     active = models.BooleanField(default=False)
     approved = models.BooleanField(default=False)
+    like_count = models.PositiveIntegerField(default=0)
 
 
     class Meta:
@@ -72,4 +73,5 @@ class BlogPost(models.Model):
 
     def __str__(self):
         return self.title
+    
     

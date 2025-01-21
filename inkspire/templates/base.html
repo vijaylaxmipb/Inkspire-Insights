@@ -36,6 +36,19 @@
 
 <body class="d-flex flex-column h-100 main-bg">
 
+    <!-- Hidden form for CSRF Token -->
+    <form id="csrf-form" style="display: none;">
+        {% csrf_token %}
+    </form>
+
+    <!-- CSRF Token Utility Script -->
+    <script>
+        function getCSRFToken() {
+            return document.querySelector('#csrf-form input[name="csrfmiddlewaretoken"]').value;
+        }
+    </script>
+    
+
     <!-- Navigation -->
     <nav class="navbar navbar-expand-lg navbar-light bg-white">
         <div class="container-fluid">
