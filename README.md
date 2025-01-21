@@ -365,7 +365,7 @@ The footer maintains consistency with the overall site design, featuring the sam
 
 The About Me section of Inkspire Insights provides detailed information about the blog creator in a visually appealing format. It includes a brief bio where about the developer, shares their passion for creativity, personal growth, and storytelling. The layout focuses on a user-friendly presentation of the developer’s background and inspirations for the blog. The data is managed via the Django Admin Portal, and the system is scalable to support multiple profiles or further enhancements, offering a clean and structured way to access important information about the blog's creator.
 
-![About](/static/images/About%20Section.png)
+![About](/static/images/About_me.jpg)
 
  ### Landing Page
 
@@ -373,6 +373,18 @@ The landing page of Inkspire Insights is designed to welcome visitors with a cle
 
 
 ![LandingPage](/static/images/landing%20page.png)
+
+ #### Learn More
+
+ The Learn More page is designed to provide users with additional information about The Inkspire Insights platform, focusing on personal growth, creativity, and community involvement. This document outlines the key features of the Learn More page and its subsections.
+
+ The Learn More page serves as a gateway to:
+
+ - Did You Know?: Insights into the benefits of creativity and how to nurture it.
+ - Key Features: A highlight of what the platform offers to its users.
+ - Get Involved: Information on how users can actively participate in the community.
+
+![Learnmore](/static/images/learnmore.png)
 
 ### Search Feature
 
@@ -391,7 +403,7 @@ The user account pages ensure a smooth and secure process for managing user acce
 
 The Sign Up page features a clean and intuitive form where users can create an account by entering their username, first name, last name, email, and password. The form uses a responsive design, ensuring accessibility and ease of use across devices. By prioritizing user-friendly design, the Sign Up page helps facilitate quick and easy registration, encouraging new users to join the community.
 
-![Register](/static/images/register.png)
+![Register](/static/images/Signup_pge.png)
 
 
 **Sign In Page:**
@@ -404,21 +416,33 @@ The Sign In page offers a straightforward and secure way for existing users to a
 
 The Log Out page provides users with confirmation of a successful logout from their account. It features a brief message indicating that the user has been logged out. The design is minimalistic, reinforcing the action taken and providing a clear path to continue exploring the site or logging in again.
 
-
 ![Log Out View](/static/images/sign_out.png)
 
-### Article Preview Card
+### Home Tab Functionality
 
-The Article Card on Inkspire Insight  is a concise yet informative snapshot of a user's post in General blog. It includes the following key elements:
+1. **Blog Cards**:
 
-1. Author Profile: A visual representation of the author's Profile and username, providing a quick way to identify the content creator.
-2. Likes: The number of likes the post has received, offering a sense of its popularity and engagement.
-3. Comments: The count of comments on the post, indicating the level of community discussion and interaction.
-4. Post Date: The date when the article was published, offering a reference for the recency of the content.
-5. Title: The headline of the post, serving as a captivating entry point to the article's content.
-6. Excerpt: A brief summary or excerpt from the article, providing users with a glimpse of the post's key points and enticing them to read further.
+![Blog Cards](/static/images/Home.png)
 
-Together, these elements create a preview Card that is both visually appealing and informative, allowing users to make informed choices about which posts to explore further within a specific category.
+   - When the **Home** tab is clicked, the user is redirected to a page that displays a collection of blog posts in a card layout.
+   - Each card contains:
+     - Blog title.
+     - Featured image.
+     - Excerpt or summary of the post.
+     - Author's name and post creation date.
+     - A "Read More" button to view the full blog post.
+
+2. **Navigation**:
+![Post_list](/static/images/home_post.png)
+
+   - The `Home` tab in the navigation bar is configured to redirect to the blog cards section (`/home` or `/`).
+   - Each card links to its corresponding blog post detail page.
+   - Comments: The count of comments on the post, indicating the level of community discussion and interaction.
+   - Post Date: The date when the article was published, offering a reference for the recency of the content.
+   - Title: The headline of the post, serving as a captivating entry point to the article's content.
+   - Excerpt: A brief summary or excerpt from the article, providing users with a glimpse of the post's key points and enticing them to read further.
+   - Likes: The number of likes the post has received, offering a sense of its popularity and engagement.
+
 
 ![Article Preview Card](/static/images/article_preview_card.PNG)
 
