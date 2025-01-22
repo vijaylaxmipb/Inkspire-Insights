@@ -20,7 +20,7 @@ class About(models.Model):
             return self.profile_image.url
         return '/static/images/default-placeholder.jpeg' 
 
-class CollaborateRequest(models.Model):  # Fixed indentation
+class CollaborateRequest(models.Model):
     name = models.CharField(max_length=200)
     email = models.EmailField()
     message = models.TextField()

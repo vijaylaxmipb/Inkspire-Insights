@@ -26,5 +26,6 @@ urlpatterns = [
     path('events/', views.EventsList.as_view(), name='events_list'), 
     path('event/<int:event_id>/', views.event_detail, name='event_detail'),
     
+    
 
     ]

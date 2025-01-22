@@ -9,6 +9,7 @@ from django.urls import reverse
 from .models import Event
 from .forms import EventForm
 from django.utils.timezone import now
+from .models import Post
 
 
 class PostList(ListView):

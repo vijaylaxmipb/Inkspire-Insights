@@ -25,17 +25,12 @@
         </div>
     </div>
 </div>
-
 <div class="container">
     <div class="row">
         <div class="col card mb-4  mt-3 left  top">
             <div class="card-body">
                 <p class="card-text">{{ post.content | safe }}</p>
-            </div>
-            <!-- Like button -->
-            <button class="like-button btn btn-primary" data-post-id="{{ post.id }}" onclick="handleLike(this)">
-                👍 Like <span class="like-count">{{ post.like_count|default:0 }}</span>
-            </button>            
+            </div>           
         </div>
     </div>
 
