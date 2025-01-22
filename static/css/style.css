@@ -183,17 +183,17 @@ main.flex-shrink-0 {
 }
 
 .card-title a {
-    text-decoration: none; /* Remove underline */
-    color: #0f3f86; /* Use the same color as your current card title */
+    text-decoration: none; 
+    color: #0f3f86; 
     transition: color 0.3s ease-in-out;
 }
 
 .card-title a:hover {
-    color: #6a11cb; /* Change color on hover */
-    text-decoration: underline; /* Add underline effect */
+    color: #6a11cb; 
+    text-decoration: underline; 
 }
 
-/* Flexbox for Equal Height Rows */
+
 .row {
     display: flex;
     flex-wrap: wrap;
@@ -790,6 +790,54 @@ img.rounded-circle {
     font-weight: bold;
     margin-left: 5px;
 }
+
+.scroll-text {
+    position: fixed;
+    bottom: 150px; 
+    right: 30px; 
+    text-align: center;
+    font-size: 14px;
+    color: rgb(255 255 255);
+    font-weight: bold;
+    z-index: 1000;
+}
+.scroll-arrow {
+    position: fixed; 
+    bottom: 100px; 
+    
+    background: linear-gradient(to right, #6a11cb, #2575fc); 
+    color: white;
+    padding: 12px;
+    font-size: 18px;
+    border-radius: 50%; 
+    text-align: center;
+    z-index: 1000; 
+    cursor: pointer;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); 
+    transition: transform 0.3s ease, background-color 0.3s ease;
+}
+
+.scroll-arrow:hover {
+    background: #0056b3;
+    transform: scale(1.2);
+}
+
+.scroll-arrow {
+    animation: bounce 2s infinite;
+}
+
+@keyframes bounce {
+    0%, 20%, 50%, 80%, 100% {
+        transform: translateY(0);
+    }
+    40% {
+        transform: translateY(-10px);
+    }
+    60% {
+        transform: translateY(-5px);
+    }
+}
+
 
 
 /* Responsive Section */

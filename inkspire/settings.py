@@ -23,7 +23,6 @@ DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
 SECRET_KEY = os.getenv('SECRET_KEY', 'default-secret-key') 
 
 # DEBUG mode
-#DEBUG = os.getenv('DEBUG', 'False') == 'False'
 DEBUG=True
 
 # Allowed hosts
