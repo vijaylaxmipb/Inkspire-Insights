@@ -94,11 +94,6 @@
                       <p class="comment-author"><strong>{{ comment.user.username }}</strong></p>
                       <p class="comment-date text-muted">{{ comment.created_at|date:"M d, Y H:i" }}</p>
                       <p class="comment-text">{{ comment.body }}</p>
-
-                      <!-- Like Button for Comments -->
-                      <button class="btn-like btn btn-secondary" data-comment-id="{{ comment.id }}" onclick="handleLike(this)">
-                        👍 Like <span class="like-count">{{ comment.like_count }}</span>
-                      </button>
     
                       <!-- Buttons for comment author, post author, and admin -->
                       {% if comment.can_delete %}

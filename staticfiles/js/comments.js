@@ -10,6 +10,7 @@ function getCSRFToken() {
 // Function to handle like button clicks
 function handleLike(button) {
   const commentId = button.getAttribute("data-comment-id");
+
   fetch(`/like_comment/${commentId}/`, {
       method: "POST",
       headers: {
@@ -17,7 +18,12 @@ function handleLike(button) {
           "X-CSRFToken": getCSRFToken(),
       },
   })
-      .then((response) => response.json())
+      .then((response) => {
+          if (!response.ok) {
+              throw new Error(`HTTP error! status: ${response.status}`);
+          }
+          return response.json();
+      })
       .then((data) => {
           if (data.success) {
               const likeCountSpan = button.querySelector(".like-count");
@@ -38,37 +44,31 @@ document.querySelectorAll(".btn-like").forEach((button) => {
   });
 });
 
-
-// Attach event listeners to all like buttons
-document.querySelectorAll(".btn-like").forEach((button) => {
-  button.addEventListener("click", () => handleLike(button));
-});
-
+// Edit comment functionality
 const editButtons = document.getElementsByClassName("btn-edit");
 const commentText = document.getElementById("id_body");
 const commentForm = document.getElementById("commentForm");
 const submitButton = document.getElementById("submitButton");
 
-const deleteModal = new bootstrap.Modal(document.getElementById("deleteModal"));
-const deleteButtons = document.getElementsByClassName("btn-delete");
-const deleteConfirm = document.getElementById("deleteConfirm");
-const likeButtons = document.querySelectorAll(".btn-like");
-
 for (let button of editButtons) {
   button.addEventListener("click", (e) => {
-    let commentId = e.target.getAttribute("comment_id");
-    let commentContent = document.getElementById(`comment${commentId}`).innerText;
+    const commentId = e.target.getAttribute("comment_id");
+    const commentContent = document.getElementById(`comment${commentId}`).innerText;
     commentText.value = commentContent;
     submitButton.innerText = "Update";
     commentForm.setAttribute("action", `edit_comment/${commentId}`);
   });
 }
 
-for (let button of deleteButtons) {
-    button.addEventListener("click", (e) => {
-      let commentId = e.target.getAttribute("comment_id");
-      deleteConfirm.href = `delete_comment/${commentId}`;
-      deleteModal.show();
-    });
-  }
+// Delete comment functionality
+const deleteModal = new bootstrap.Modal(document.getElementById("deleteModal"));
+const deleteButtons = document.getElementsByClassName("btn-delete");
+const deleteConfirm = document.getElementById("deleteConfirm");
 
+for (let button of deleteButtons) {
+  button.addEventListener("click", (e) => {
+    const commentId = e.target.getAttribute("comment_id");
+    deleteConfirm.href = `delete_comment/${commentId}`;
+    deleteModal.show();
+  });
+}
