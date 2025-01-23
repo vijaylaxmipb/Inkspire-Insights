@@ -1,49 +1,39 @@
+document.addEventListener("DOMContentLoaded", () => {
+  console.log("comments.js loaded");
 
-function getCSRFToken() {
-    const cookieValue = document.cookie
-        .split('; ')
-        .find(row => row.startsWith('csrftoken='))
-        ?.split('=')[1];
-    return cookieValue;
+  const deleteModalElement = document.getElementById("deleteModal");
+  console.log("Delete modal element found:", deleteModalElement);
+  
+
+  if (!deleteModalElement) {
+      console.error("Delete modal element not found!");
+      return;
   }
-  
-  // Function to handle like button clicks
-  function handleLike(button) {
-    const commentId = button.getAttribute("data-comment-id");
-  
-    fetch(`/like_comment/${commentId}/`, {
-        method: "POST",
-        headers: {
-            "Content-Type": "application/json",
-            "X-CSRFToken": getCSRFToken(),
-        },
-    })
-        .then((response) => {
-            if (!response.ok) {
-                throw new Error(`HTTP error! status: ${response.status}`);
-            }
-            return response.json();
-        })
-        .then((data) => {
-            if (data.success) {
-                const likeCountSpan = button.querySelector(".like-count");
-                likeCountSpan.textContent = data.like_count; // Update like count
-            } else {
-                console.error("Failed to like comment:", data.error);
-            }
-        })
-        .catch((error) => {
-            console.error("Error liking comment:", error);
-        });
+
+  const deleteModal = new bootstrap.Modal(deleteModalElement);
+  const deleteButtons = document.getElementsByClassName("btn-delete");
+  const deleteConfirm = document.getElementById("deleteConfirm");
+
+  if (!deleteConfirm) {
+      console.error("Delete confirmation button not found!");
+      return;
   }
-  
-  // Attach event listeners to like buttons
-  document.querySelectorAll(".btn-like").forEach((button) => {
-    button.addEventListener("click", () => {
-        handleLike(button);
-    });
-  });
-  
+
+  for (let button of deleteButtons) {
+      button.addEventListener("click", (e) => {
+          const commentId = e.target.getAttribute("comment_id");
+          console.log("Comment ID:", commentId);
+ 
+          if (commentId) {
+              deleteConfirm.href = `/delete_comment/${commentId}`;
+              deleteModal.show();
+          } else {
+              console.error("Comment ID is missing!");
+          }
+      });
+  }
+});
+ 
   // Edit comment functionality
   const editButtons = document.getElementsByClassName("btn-edit");
   const commentText = document.getElementById("id_body");
@@ -60,15 +50,3 @@ function getCSRFToken() {
     });
   }
   
-  // Delete comment functionality
-  const deleteModal = new bootstrap.Modal(document.getElementById("deleteModal"));
-  const deleteButtons = document.getElementsByClassName("btn-delete");
-  const deleteConfirm = document.getElementById("deleteConfirm");
-  
-  for (let button of deleteButtons) {
-    button.addEventListener("click", (e) => {
-      const commentId = e.target.getAttribute("comment_id");
-      deleteConfirm.href = `delete_comment/${commentId}`;
-      deleteModal.show();
-    });
-  }
