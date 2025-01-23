@@ -7,11 +7,7 @@ STATUS = ((0, "Draft"), (1, "Published"))
 
 class About(models.Model):
     title = models.CharField(max_length=300)
-    profile_image = models.ImageField(
-        upload_to='about_images/', 
-        blank=True, 
-        null=True
-    )
+    profile_image = models.ImageField(upload_to='about_images/',blank=True,null=True)
     updated_on = models.DateTimeField(auto_now=True)
     content = models.TextField()
 
@@ -22,7 +18,8 @@ class About(models.Model):
     def image_url(self):
         if self.profile_image:
             return self.profile_image.url
-        return '/static/images/default-placeholder.jpeg' 
+        return '/static/images/default-placeholder.jpeg'
+
 
 class CollaborateRequest(models.Model):
     name = models.CharField(max_length=200)
@@ -32,4 +29,3 @@ class CollaborateRequest(models.Model):
 
     def __str__(self):
         return f"Collaboration request from {self.name}"
-

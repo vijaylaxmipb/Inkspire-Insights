@@ -1,74 +1,52 @@
-// Utility function to get CSRF token
-function getCSRFToken() {
-  const cookieValue = document.cookie
-      .split('; ')
-      .find(row => row.startsWith('csrftoken='))
-      ?.split('=')[1];
-  return cookieValue;
-}
+document.addEventListener("DOMContentLoaded", () => {
+  console.log("comments.js loaded");
 
-// Function to handle like button clicks
-function handleLike(button) {
-  const commentId = button.getAttribute("data-comment-id");
+  const deleteModalElement = document.getElementById("deleteModal");
+  console.log("Delete modal element found:", deleteModalElement);
+  
 
-  fetch(`/like_comment/${commentId}/`, {
-      method: "POST",
-      headers: {
-          "Content-Type": "application/json",
-          "X-CSRFToken": getCSRFToken(),
-      },
-  })
-      .then((response) => {
-          if (!response.ok) {
-              throw new Error(`HTTP error! status: ${response.status}`);
-          }
-          return response.json();
-      })
-      .then((data) => {
-          if (data.success) {
-              const likeCountSpan = button.querySelector(".like-count");
-              likeCountSpan.textContent = data.like_count; // Update like count
+  if (!deleteModalElement) {
+      console.error("Delete modal element not found!");
+      return;
+  }
+
+  const deleteModal = new bootstrap.Modal(deleteModalElement);
+  const deleteButtons = document.getElementsByClassName("btn-delete");
+  const deleteConfirm = document.getElementById("deleteConfirm");
+
+  if (!deleteConfirm) {
+      console.error("Delete confirmation button not found!");
+      return;
+  }
+
+  for (let button of deleteButtons) {
+      button.addEventListener("click", (e) => {
+          const commentId = e.target.getAttribute("comment_id");
+          console.log("Comment ID:", commentId);
+ 
+          if (commentId) {
+              deleteConfirm.href = `/delete_comment/${commentId}`;
+              deleteModal.show();
           } else {
-              console.error("Failed to like comment:", data.error);
+              console.error("Comment ID is missing!");
           }
-      })
-      .catch((error) => {
-          console.error("Error liking comment:", error);
       });
-}
-
-// Attach event listeners to like buttons
-document.querySelectorAll(".btn-like").forEach((button) => {
-  button.addEventListener("click", () => {
-      handleLike(button);
-  });
+  }
 });
-
-// Edit comment functionality
-const editButtons = document.getElementsByClassName("btn-edit");
-const commentText = document.getElementById("id_body");
-const commentForm = document.getElementById("commentForm");
-const submitButton = document.getElementById("submitButton");
-
-for (let button of editButtons) {
-  button.addEventListener("click", (e) => {
-    const commentId = e.target.getAttribute("comment_id");
-    const commentContent = document.getElementById(`comment${commentId}`).innerText;
-    commentText.value = commentContent;
-    submitButton.innerText = "Update";
-    commentForm.setAttribute("action", `edit_comment/${commentId}`);
-  });
-}
-
-// Delete comment functionality
-const deleteModal = new bootstrap.Modal(document.getElementById("deleteModal"));
-const deleteButtons = document.getElementsByClassName("btn-delete");
-const deleteConfirm = document.getElementById("deleteConfirm");
-
-for (let button of deleteButtons) {
-  button.addEventListener("click", (e) => {
-    const commentId = e.target.getAttribute("comment_id");
-    deleteConfirm.href = `delete_comment/${commentId}`;
-    deleteModal.show();
-  });
-}
+ 
+  // Edit comment functionality
+  const editButtons = document.getElementsByClassName("btn-edit");
+  const commentText = document.getElementById("id_body");
+  const commentForm = document.getElementById("commentForm");
+  const submitButton = document.getElementById("submitButton");
+  
+  for (let button of editButtons) {
+    button.addEventListener("click", (e) => {
+      const commentId = e.target.getAttribute("comment_id");
+      const commentContent = document.getElementById(`comment${commentId}`).innerText;
+      commentText.value = commentContent;
+      submitButton.innerText = "Update";
+      commentForm.setAttribute("action", `edit_comment/${commentId}`);
+    });
+  }
+  

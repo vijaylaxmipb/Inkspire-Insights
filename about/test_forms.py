@@ -1,6 +1,7 @@
 from django.test import TestCase
 from .forms import CollaborateForm
 
+
 # Create your tests here.
 
 class TestCollaborateForm(TestCase):

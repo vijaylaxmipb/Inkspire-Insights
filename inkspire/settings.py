@@ -23,10 +23,13 @@ DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
 SECRET_KEY = os.getenv('SECRET_KEY', 'default-secret-key')
 
 # DEBUG mode
-DEBUG = False
+DEBUG = True
 
 # Allowed hosts
-ALLOWED_HOSTS = os.getenv('ALLOWED_HOSTS', '*',).split(',')
+ALLOWED_HOSTS = os.getenv('ALLOWED_HOSTS', '').split(',')
+if not ALLOWED_HOSTS or ALLOWED_HOSTS == ['']:
+    ALLOWED_HOSTS = ['inkspire-insights.herokuapp.com']
+
 
 # Database Configuration
 DATABASE_URL = os.getenv('DATABASE_URL')
