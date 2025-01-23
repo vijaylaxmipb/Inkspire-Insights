@@ -23,7 +23,7 @@ DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
 SECRET_KEY = os.getenv('SECRET_KEY', 'default-secret-key')
 
 # DEBUG mode
-DEBUG=False
+DEBUG = False
 
 # Allowed hosts
 ALLOWED_HOSTS = os.getenv('ALLOWED_HOSTS', '*',).split(',')
@@ -127,13 +127,22 @@ AUTH_PASSWORD_VALIDATORS = [
         )
     },
     {
-        'NAME': 'django.contrib.auth.password_validation.MinimumLengthValidator',
+        'NAME': (
+            'django.contrib.auth.password_validation.'
+            'MinimumLengthValidator'
+        ),
     },
     {
-        'NAME': 'django.contrib.auth.password_validation.CommonPasswordValidator',
+        'NAME': (
+            'django.contrib.auth.password_validation.'
+            'CommonPasswordValidator'
+        ),
     },
     {
-        'NAME': 'django.contrib.auth.password_validation.NumericPasswordValidator',
+        'NAME': (
+            'django.contrib.auth.password_validation.'
+            'NumericPasswordValidator'
+        ),
     },
 ]
 
@@ -151,8 +160,8 @@ STATIC_URL = '/static/'
 STATIC_ROOT = os.path.join(BASE_DIR, 'staticfiles')
 STATICFILES_DIRS = [BASE_DIR / 'static']
 
-# Media files 
-MEDIA_URL = '/media/'  
+# Media files
+MEDIA_URL = '/media/'
 MEDIA_ROOT = BASE_DIR / 'media'
 
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
@@ -163,7 +172,7 @@ ACCOUNT_FORMS = {
     'signup': 'blog.forms.CustomSignupForm',
 }
 
-#LOGGING = {
+# LOGGING = {
 #    'version': 1,
 #    'disable_existing_loggers': False,
 #   'handlers': {
@@ -180,5 +189,4 @@ ACCOUNT_FORMS = {
 #          'propagate': True,
 #       },
 #   },
-#}
-
+# }

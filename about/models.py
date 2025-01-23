@@ -7,7 +7,11 @@ STATUS = ((0, "Draft"), (1, "Published"))
 
 class About(models.Model):
     title = models.CharField(max_length=300)
-    profile_image = models.ImageField(upload_to='about_images/', blank=True, null=True)
+    profile_image = models.ImageField(
+        upload_to='about_images/', 
+        blank=True, 
+        null=True
+    )
     updated_on = models.DateTimeField(auto_now=True)
     content = models.TextField()
 
