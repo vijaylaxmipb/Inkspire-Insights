@@ -20,10 +20,10 @@ TEMPLATES_DIRS = [
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
 
 # SECURITY WARNING: keep the secret key used in production secret!
-SECRET_KEY = os.getenv('SECRET_KEY', 'default-secret-key') 
+SECRET_KEY = os.getenv('SECRET_KEY', 'default-secret-key')
 
 # DEBUG mode
-DEBUG=True
+DEBUG=False
 
 # Allowed hosts
 ALLOWED_HOSTS = os.getenv('ALLOWED_HOSTS', '*',).split(',')
@@ -35,7 +35,7 @@ if not DATABASE_URL:
     DATABASES = {
         'default': {
             'ENGINE': 'django.db.backends.sqlite3',
-            'NAME': BASE_DIR / 'db.sqlite3',  # Local SQLite database
+            'NAME': BASE_DIR / 'db.sqlite3',
         }
     }
 else:
@@ -72,7 +72,7 @@ INSTALLED_APPS = [
     'django_summernote',
     'blog',
     'about',
-    'inkspire', 
+    'inkspire',
 ]
 
 # Authentication settings
@@ -95,7 +95,6 @@ MIDDLEWARE = [
     'django.middleware.clickjacking.XFrameOptionsMiddleware',
     'allauth.account.middleware.AccountMiddleware',
     'django.middleware.csrf.CsrfViewMiddleware',
-    
 ]
 
 ROOT_URLCONF = 'inkspire.urls'
@@ -122,7 +121,10 @@ WSGI_APPLICATION = 'inkspire.wsgi.application'
 # Password validation settings
 AUTH_PASSWORD_VALIDATORS = [
     {
-        'NAME': 'django.contrib.auth.password_validation.UserAttributeSimilarityValidator',
+        'NAME': (
+          'django.contrib.auth.password_validation.'
+          'UserAttributeSimilarityValidator',
+        )
     },
     {
         'NAME': 'django.contrib.auth.password_validation.MinimumLengthValidator',
@@ -161,22 +163,22 @@ ACCOUNT_FORMS = {
     'signup': 'blog.forms.CustomSignupForm',
 }
 
-LOGGING = {
-    'version': 1,
-    'disable_existing_loggers': False,
-    'handlers': {
-        'file': {
-            'level': 'DEBUG',
-            'class': 'logging.FileHandler',
-            'filename': 'debug.log',
-        },
-    },
-    'loggers': {
-        'django': {
-            'handlers': ['file'],
-            'level': 'DEBUG',
-            'propagate': True,
-        },
-    },
-}
+#LOGGING = {
+#    'version': 1,
+#    'disable_existing_loggers': False,
+#   'handlers': {
+#        'file': {
+#           'level': 'DEBUG',
+#          'class': 'logging.FileHandler',
+#           'filename': 'debug.log',
+#        },
+#    },
+#    'loggers': {
+#       'django': {
+#           'handlers': ['file'],
+#           'level': 'DEBUG',
+#          'propagate': True,
+#       },
+#   },
+#}
 
