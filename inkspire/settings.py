@@ -27,9 +27,6 @@ DEBUG = True
 
 # Allowed hosts
 ALLOWED_HOSTS = os.getenv('ALLOWED_HOSTS', '').split(',')
-if not ALLOWED_HOSTS or ALLOWED_HOSTS == ['']:
-    ALLOWED_HOSTS = ['inkspire-insights.herokuapp.com']
-
 
 # Database Configuration
 DATABASE_URL = os.getenv('DATABASE_URL')
@@ -124,28 +121,16 @@ WSGI_APPLICATION = 'inkspire.wsgi.application'
 # Password validation settings
 AUTH_PASSWORD_VALIDATORS = [
     {
-        'NAME': (
-          'django.contrib.auth.password_validation.'
-          'UserAttributeSimilarityValidator',
-        )
+        'NAME': 'django.contrib.auth.password_validation.UserAttributeSimilarityValidator',
     },
     {
-        'NAME': (
-            'django.contrib.auth.password_validation.'
-            'MinimumLengthValidator'
-        ),
+        'NAME': 'django.contrib.auth.password_validation.MinimumLengthValidator',
     },
     {
-        'NAME': (
-            'django.contrib.auth.password_validation.'
-            'CommonPasswordValidator'
-        ),
+        'NAME': 'django.contrib.auth.password_validation.CommonPasswordValidator',
     },
     {
-        'NAME': (
-            'django.contrib.auth.password_validation.'
-            'NumericPasswordValidator'
-        ),
+        'NAME': 'django.contrib.auth.password_validation.NumericPasswordValidator',
     },
 ]
 
