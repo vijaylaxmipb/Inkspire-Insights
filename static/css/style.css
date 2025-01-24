@@ -734,7 +734,6 @@ input[type="password"] {
 }
 
 .custom-class {
-    /* Your custom styles */
     background-color: #f9f9f9;
     font-size: 16px;
 }
@@ -778,8 +777,8 @@ img.rounded-circle {
     bottom: 150px; 
     right: 30px; 
     text-align: center;
-    font-size: 18px;
-    color: rgb(213, 217, 226);
+    font-size: 22px;
+    color: rgba(14, 81, 236, 0.973);
     font-weight: bold;
     z-index: 1000;
 }
@@ -924,14 +923,13 @@ img.rounded-circle {
         margin-left: 0;
     }
 
-    /* Adjust button sizes */
     .btn-primary {
         font-size: 1rem;
         padding: 8px 15px;
         width: 100%; 
     }
 
-    /* Adjust titles and subtitles */
+    
     .post-title {
         font-size: 1.4rem;
     }
@@ -940,7 +938,7 @@ img.rounded-circle {
         font-size: 1rem;
     }
 
-    /* Adjust input fields for better visibility */
+    
     input[type="text"],
     input[type="password"],
     input[type="email"] {
@@ -948,12 +946,12 @@ img.rounded-circle {
         padding: 8px;
     }
 
-    /* Reduce spacing */
+   
     .text-content {
         margin-bottom: 30px;
     }
 
-    /* Reduce margin for columns */
+    
     .col-md-4, .col-sm-6 {
         margin-bottom: 20px;
     }
@@ -997,3 +995,27 @@ img.rounded-circle {
         padding: 8px 15px;
     }
 }
+
+/* Media query for small screens (e.g., mobile devices) */
+@media only screen and (max-width: 375px) {
+    .hero-content {
+      font-size: 14px; 
+      line-height: 1.5; 
+    }
+  
+    .hero-content h2 {
+      font-size: 27px; 
+    }
+  
+    .hero-content p {
+      font-size: 23px; 
+    }
+
+    .scroll-text {
+        font-size:16px ;
+        color: black;
+        right: 16px;
+    }
+
+  }
+  
