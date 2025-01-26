@@ -249,5 +249,5 @@ Lighthouse validation was run on all pages (both mobile and desktop) in order to
 | [Pagination on profile page ](.css/)                                                           | Closed |
 | [Lighthouse Performance Score for about](./css/images/about_light.png)                         | Closed |
 | [w3c validator error for Blog Postdetails.html file](./static/images/blog_w3c_post_details.png)| Closed |
-| [Jshint Error for comment.py file](./css/images/comment_js.png)                                | Open   |
-| [Jshint Error for blog(urls.py)  ](./css/images/urls_py(blog).png)                             | Open   |
+| [python minor Error for some files like whitespace,line too long](./static/images/Comments_pip8_error.png)                                | Open   |
+

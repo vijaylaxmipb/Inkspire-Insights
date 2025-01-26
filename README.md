@@ -77,9 +77,9 @@ This project follows an Agile methodology to ensure flexibility, collaboration, 
 
 #### 1. **Epics and User Stories**
 
-To ensure structured development, user stories are grouped into **Epics** aligned with major platform goals. Each epic is further broken down into actionable tasks.
+To ensure structured development, user stories are aligned with major platform goals.
 
-##### Example Epics:
+##### Example :
 
 - **Epic 1: User Authentication and Security**
   - User stories related to account creation, login, password reset, and logout.
@@ -263,7 +263,7 @@ The database schema outlines the structure and relationships between key tables 
 
 This schema was generated using [Lucidchart.com](https://www.lucidchart.com)
 
-![Database Schema](/static/images/database%20schema.PNG)
+![Database Schema](/static/images/Database_Schema.png)
 
 [Back to top](#contents)
 
@@ -277,7 +277,7 @@ This schema was generated using [Lucidchart.com](https://www.lucidchart.com)
 
 The color scheme aims to create a  the vibrant, nature-inspired elements,reliable tone needed for the about section. By combining these carefully chosen colors, I aim to deliver a visually appealing and user-friendly experience.
 
-![Coolors Scheme](/static/images/colour.png)
+![Coolors Scheme](/static/images/Colour%20Scheme.png)
 
 | color          |  Hex Code  |  usage
 |----------------|------------|---------------------                         
@@ -288,7 +288,8 @@ The color scheme aims to create a  the vibrant, nature-inspired elements,reliabl
 |Accent Color:2  |#b0b0b0     |Use this as a secondary text color or for borders and dividers. 
 |Teal Accent     |#188181     |This deep teal works great for icons, links, or hover effects.It's a fresh, calm color that adds visual interest without being too bold, complementing the rest of the color scheme.
 |Bright Cyan     |#23BBBB     |A bright and modern cyan color, useful for hover effects, secondary buttons, or interactive elements.
-|Soft Colour     |#F9FAFC     |This very light blue-gray color can be applied to the background of cards, forms, or input fields. 
+|Soft Colour     |#d19797     |A warm, muted blush tone with hints of softness and sophistication.
+
 
 [Back to top](#contents)
 
@@ -313,7 +314,7 @@ My website is responsive to different layouts depending on the size of the viewp
 
 - The application uses Django's built-in authentication system to manage user access.
 - Logged-in users can post comments, and the system allows for post and event management through standard Django views.
-- Users must be logged in to submit comments. However, the system currently does not enforce login requirements for viewing posts or events.
+- Users must be logged in to submit comments.
 
 ## Comment Management
 
