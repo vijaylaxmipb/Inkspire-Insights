@@ -32,17 +32,6 @@
 | As a developer I can setup a new Django project                                              | The project was set up successfully                           | <mark>PASS</mark> |
 | As a developer I can connect database and media storage                                      | Database and storage set up successfully                      | <mark>PASS</mark> |
 | As a developer, I can perform an early deployment of the application                         | Live site was hosted with no errors                           | <mark>PASS</mark> |
-| As a developer I can choose a colour theme                                                   | A colour theme was chosen for the website as referenced in the README | <mark>PASS</mark> |
-
-### User Stories
-
-### Developer Stories
-
-| User Story                                                                                  | Screenshot                                                   | Result           |
-| ------------------------------------------------------------------------------------------- | ------------------------------------------------------------ | ---------------- |
-| As a developer I can setup a new Django project                                              | The project was set up successfully                           | <mark>PASS</mark> |
-| As a developer I can connect database and media storage                                      | Database and storage set up successfully                      | <mark>PASS</mark> |
-| As a developer, I can perform an early deployment of the application                         | Live site was hosted with no errors                           | <mark>PASS</mark> |
 | As a developer I can layout wireframes                                                       | Wireframes were planned and created as referenced in the [README](./README.md) | <mark>PASS</mark> |
 | As a developer I can choose a colour theme                                                   | A colour theme was chosen for the website as referenced in the [Colour Sceme](./README.md#colour-scheme) | <mark>PASS</mark> |
 
@@ -59,14 +48,16 @@
 | As a User, I can view a selected article                                                    | Post Detail Page in the [Article Preview Card ](./README.md#article-preview-card) | <mark>PASS</mark> |
 | As a User, I can view comments on an article                                                | Comments functionality explained in the [Comment](./README.md#comment-card) | <mark>PASS</mark> |
 | As a User, I can click on the footer contact social links                                   | Footer social links referenced in the [Footer](./README.md#footer) | <mark>PASS</mark> |
+| As a User, I can click on the upcoming event | referenced in the [Upcoming Events](./README.md#upcomin-event) | <mark>PASS</mark> |
+
 
 ### Admin Stories
 
 | User Story                                                                                  | Screenshot                                                   | Result           |
 | ------------------------------------------------------------------------------------------- | ------------------------------------------------------------ | ---------------- |
 | As a Site Owner, I can perform all CRUD operations in the admin interface                   | Admin CRUD features detailed in the [README](/static/images/add.png) | <mark>PASS</mark> |
-| As a Site Owner, I can approve user-created content                                          | Approval process explained in the [README](./static/images/approve_comment.png) | <mark>PASS</mark> |
 | As a Site Owner, I can delete user profiles and their content                               | User deletion process in the [README](./static/images/admin_delete.png) | <mark>PASS</mark> |
+| As a Site Owner, I can edit user profiles and their content                               | User deletion process in the [README](./static/images/admin_edit.png) | <mark>PASS</mark> |
 | As a Site Owner, I can manage users through the admin interface                             | Admin Content management in the [README](./static/images/manage_user.png) | <mark>PASS</mark> |
 | As a Site Owner, I can view notifications when performing CRUD operations                   | Notifications feature detailed in the [Notification](./README.md#notification-messages) | <mark>PASS</mark> |
 
@@ -78,17 +69,22 @@ All HTML pages were run through the [W3C HTML Validator](https://validator.w3.or
 
 | Page            | Validator                                                                                     | Result              |
 | --------------- | --------------------------------------------------------------------------------------------- | ------------------- |
-| Home            | <details><summary>Inksight</summary><img src="./static/images/insight_error.png"></details>                                   | <mark>ERROR</mark>   |
-| Home     | <details><summary>Home</summary>><img src="./static/images/home_w3c.png"></details>                            | <mark>PASS</mark>   |
-| About       | <details><summary>about</summary><img src="./static/images/about_w3c_error.png"></details>                                | <mark>ERROR</mark>   |
-| Sign In    | <details><summary>Sign In</summary><img src="./static/images/sign_in_w3c.png"></details>                           | <mark>PASS</mark> |
-| Sign Up         | <details><summary>Sign Up</summary><img src="./static/images/sign_up_w3c.png"></details>                                     | <mark>PASS</mark>   |
-| Log Out         | <details><summary>Log Out</summary><img src="./static/images/logout_w3c.png"></details>                                     | <mark>PASS</mark>   |
+| Landing page | <details><summary>Landing page</summary><img src="./static/images/Landing_page_w3c.png"></details>         | <mark>PASS</mark>   |
+| Learn More     | <details><summary>Learn More</summary>><img src="./static/images/Learnmore_w3c_validator.png"></details>                              | <mark>PASS</mark>   |
+| Blogs     | <details><summary>Blogs</summary>><img src="./static/images/Blog_w3c_validator.png"></details>                            | <mark>PASS</mark>   |
+| Related Events | <details><summary>Related Events</summary>><img src="./static/images/Related_events_w3c_validator.png"></details>                            | <mark>PASS</mark>   |
+| Upcoming Events| <details><summary>Upcoming Events</summary>><img src="./static/images/upcoming_events_w3c.png"></details>                            | <mark>PASS</mark>   |
+| Edit     | <details><summary>Edit</summary>><img src="./static/images/Edit_w3c_validator.png.png"></details>                            | <mark>PASS</mark>   |
+| Blogs_Post_Details| <details><summary>Blog_post_details</summary>><img src="./static/images/blog_w3cerror_post_details.png.png"></details>                            | <mark>ERROR</mark>   |
+| About       | <details><summary>about</summary><img src="./static/images/About_w3c_validator.png"></details>                                | <mark>PASS</mark>   |
+| Sign In    | <details><summary>Sign In</summary><img src="./static/images/SignIn_w3c_validator,png.PNG"></details>                           | <mark>PASS</mark> |
+| Sign Up         | <details><summary>Sign Up</summary><img src="./static/images/SignUp_w3c_Validator.PNG"></details>                                     | <mark>PASS</mark>   |
+| Log Out         | <details><summary>Log Out</summary><img src="./static/images/Signout_w3c_validator.png"></details>                                     | <mark>PASS</mark>   |
 
 ### CSS
 
 Test Results CSS <mark>PASS<mark>
-<img src="./static/images/css_w3c_validator.png">
+<img src="./static/images/CSS_W3C.png">
 
 ### JavaScript
 
@@ -124,6 +120,7 @@ Further testing was done on a real mobile device to confirm all is working as ex
 | Device         |     Pass/Fail     |               Comment                |
 | -------------- | :---------------: | :----------------------------------: |
 | Oneplus nord 4 | <mark>PASS</mark> | All elements are displayed correctly |
+| iphone 14      | <mark>PASS</mark> | All elements are displayed correctly |
 
 ## Browser Testing
 
@@ -141,15 +138,14 @@ Lighthouse validation was run on all pages (both mobile and desktop) in order to
 | --------------- | :---------: | :-----------: | :------------: | :-: | --------------------------------------------------------------------------------------------------------------------------- |
 |                 |             |               |                |     |
 | **Desktop**     |             |               |                |     |
-| Inksight        |     98      |      95       |      96        | 82  | <details><summary>Inksight</summary><img src="./css/images/Insight_lighhouse.png"></details>                    |
-| Home            |     96      |      95       |      96        | 91  | <details><summary>Home</summary><img src="./css/images/home_lighthouse.png"></details>                    |
-| Post Detail     |     99      |      96       |      96        | 91  | <details><summary>Post Detail </summary><img src="./css/images/post_title_lighthouse.png"></details>      |
-| About           |     98      |      100      |      56        | 91  | <details><summary>Update Profile</summary><img src=".css/images/lighthouse/about_light.png"></details> |
-| Sign Up         |     99      |      96       |      96        | 91  | <details><summary>Sign Up</summary><img src=".css/images/sign_up_lighthouse.png"></details>               |
-| Sign In         |     99      |      100      |      96        | 91  | <details><summary>Sign In</summary><img src=".css/images/sign_in_lighthouse.png"></details>               |
-| Sign Out        |     100     |      100      |      96        | 91  | <details><summary>Sign Out</summary><img src=".css/images/logout_lighthouse.png"></details>             |
-| Delete comment  |     100     |      100      |      96        | 91  | <details><summary>Profile</summary><img src="./css/images/delete_comment_lighthouse.png"></details>              |
-| Edit comment    |     99      |      95       |      96        | 91  | <details><summary>Add Post</summary><img src="./css/images/edit_commet_lighthouse.png"></details>             |
+| Landing Page    |     87      |      100       |      100      | 82 | <details><summary>Inksight</summary><img src="./static/images/Lighthouse_performance_landingPage.png"></details>                    |
+| Blogs            |     87      |      95       |      100       | 91  | <details><summary>Home</summary><img src="./static/images/Lighthouse_performance_blog.png"></details>                    |
+| Blog Post Detail |     98      |      98       |      100        | 98  | <details><summary>Post Detail </summary><img src="./static/images/Lighthouse_performance_blog_postDetils.png"></details>      |
+| About           |     99      |      100      |      91       | 100  | <details><summary>Update Profile</summary><img src="./static/images/Lighthouse_performance_about.png"></details> |
+| Sign Up         |     99      |      96       |      96       | 91  | <details><summary>Sign Up</summary><img src="./static/images/Lighthouse_performance_register.png"></details>               |
+| Sign In         |     95      |      100      |      100        | 91  | <details><summary>Sign In</summary><img src="./static/images/Lighthouse_performance_login.png"></details>               |
+| Sign Out        |     99     |      100      |      100        | 91  | <details><summary>Sign Out</summary><img src="./static/images/Lighthouse_performance_logout.png"></details>             |            |
+| Edit comment    |     99      |      100       |      100       | 91  | <details><summary>Add Post</summary><img src="./static/images/Lighthouse_performance_edit.png"></details>             |
 
 ## Manual Testing
 
@@ -157,10 +153,14 @@ Lighthouse validation was run on all pages (both mobile and desktop) in order to
 
 | Element                | Action      | Expected Result                                         | Pass/Fail         |
 | ---------------------- | ----------- | ------------------------------------------------------- | ----------------- |
-| Home Link              | Click       | Redirect to Home page                                   | <mark>Pass</mark> |
+| Blogs Link             | Click       | Redirect to Blogs page                                  | <mark>Pass</mark> |
 | Register Link          | Click       | Redirect to sign up page                                | <mark>Pass</mark> |
 | Log in Link            | Click       | Redirect to sign in page                                | <mark>Pass</mark> |
 | Log out Link           | Click       | Redirect to log out page                                | <mark>Pass</mark> |
+| Learn More Link        | Click       | Redirect to Learn More page                             | <mark>Pass</mark> |
+| Related Events Link    | Click       | Related to Events page                                  | <mark>Pass</mark> |
+| Upcoming Events Link   | Click       | Redirect to Upcoming page                               | <mark>Pass</mark> |
+| Edirt Link             | Click       | Redirect to Edit page                                   | <mark>Pass</mark> |
 | Footer Socials         | Click       | Redirect in a new tab to all respective media platforms | <mark>Pass</mark> |
 | Footer Email           | Click       | Open up an email provider with developer email attached | <mark>Pass</mark> |
 | Register Link          | Display     | Render for non authenticated users                      | <mark>Pass</mark> |
@@ -169,12 +169,14 @@ Lighthouse validation was run on all pages (both mobile and desktop) in order to
 | Log out Link           | Display     | Render only if user is authenticated                    | <mark>Pass</mark> |
 
 
-### Home Page
+### Blogs Page
 
 | Element          | Action      | Expected Result                          | Pass/Fail         |
 | ---------------- | ----------- | ---------------------------------------- | ----------------- |
 | Editors Pick     | Display     | Editors Pick Post Card viewable          | <mark>Pass</mark> |
-| Popular Post     | Display     | Popular Post Post Card viewable          | <mark>Pass</mark> |
+| Blogs List       | Display     | Blogs List viewable                      | <mark>Pass</mark> |
+
+
 
 ### Article Preview Card
 
@@ -185,8 +187,6 @@ Lighthouse validation was run on all pages (both mobile and desktop) in order to
 | Edit Button    | Click       | Redirect to edit post page                         | <mark>Pass</mark> |
 | Edit Button    | Display     | Render for only authneticated post author          | <mark>Pass</mark> |
 | Delete Button  | Hover/Focus | Background color                                   | <mark>Pass</mark> |
-| Title Link     | Hover/Focus | Darken Text                                        | <mark>Pass</mark> |
-| Author Link    | Hover/Focus | Darken Text                                        | <mark>Pass</mark> |
 | Edit Button    | Hover/Focus | Background color                                   | <mark>Pass</mark> |
 
 
@@ -212,13 +212,12 @@ Lighthouse validation was run on all pages (both mobile and desktop) in order to
 
 | Element       | Action         | Expected Result                             | Pass/Fail         |
 | ------------- | -------------- | ------------------------------------------- | ----------------- |
-| Page          | Authentication | Authenticated users redirected to Home page | <mark>Pass</mark> |
-| Form(Valid)   | Submit         | Redirected to Home page                     | <mark>Pass</mark> |
+| Page          | Authentication | Authenticated users redirected to page      | <mark>Pass</mark> |
+| Form(Valid)   | Submit         | Redirected to page                          | <mark>Pass</mark> |
 | Form(Valid)   | Submit         | Sign up in Notification received            | <mark>Pass</mark> |
 | Form(Invalid) | Submit         | Error Context rendered to UI                | <mark>Pass</mark> |
 | Form(Invalid) | Submit         | Error Notification received                 | <mark>Pass</mark> |
 | Login Link    | Click          | Redirect to Login Page                      | <mark>Pass</mark> |
-| Form Button   | Hover/Focus    | Darken Background                           | <mark>Pass</mark> |
 | Login Link    | Hover/Focus    | Darken Text                                 | <mark>Pass</mark> |
 
 ### Sign In Page
@@ -245,14 +244,10 @@ Lighthouse validation was run on all pages (both mobile and desktop) in order to
 
 ## Bugs
 
-| Bug                                                                                                                        | Status |
-| -------------------------------------------------------------------------------------------------------------------------- | ------ |
-
-| [UpdateView Profile throwing errors with multiple forms](./css/images/Insight_lighhousepng.png)| Closed |
-| [Content creating widget not responsive](./css/images/Insight_lighhousepng.png)                | Closed |
+| Bug                                                                                            | Status |
+| -----------------------------------------------------------------------------------------------| ------ |
 | [Pagination on profile page ](.css/)                                                           | Closed |
 | [Lighthouse Performance Score for about](./css/images/about_light.png)                         | Closed |
-| [w3c validator error for about.html file](./css/images/about_w3c_bugfix.png)                   | Closed |
-| [w3c validator insighterror for html file](./css/images/insight_error.png)                     | Closed |
+| [w3c validator error for Blog Postdetails.html file](./static/images/blog_w3c_post_details.png)| Closed |
 | [Jshint Error for comment.py file](./css/images/comment_js.png)                                | Open   |
 | [Jshint Error for blog(urls.py)  ](./css/images/urls_py(blog).png)                             | Open   |
