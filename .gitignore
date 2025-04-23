@@ -8,5 +8,6 @@ node_modules/
 .github/
 cloudinary_python.txt
 blog/fixtures/
-.env
 debug.log
+.env
+
