@@ -480,7 +480,7 @@ The Log Out page provides users with confirmation of a successful logout from th
 
 1. **Blog Cards**:
 
-![Blog Cards](/static/images/Blog.PNG)
+![Blog Cards](/static/images/Blog_post.png)
 
    - When the **Blogs** tab is clicked, the user is redirected to a page that displays a collection of blog posts in a card layout.
    - Each card contains:
