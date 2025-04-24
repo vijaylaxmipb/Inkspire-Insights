@@ -1,3 +1,5 @@
+# noqa: E501
+
 from pathlib import Path
 import os
 import sys
@@ -12,8 +14,6 @@ cloudinary.config(
 )
 
 
-
-# Build paths inside the project like this: BASE_DIR / 'subdir'.
 BASE_DIR = Path(__file__).resolve().parent.parent
 TEMPLATES_DIRS = [
     os.path.join(BASE_DIR, 'inkspire', 'templates'),
@@ -31,7 +31,7 @@ load_dotenv()
 SECRET_KEY = os.getenv('SECRET_KEY', 'default-secret-key')
 
 # DEBUG mode
-DEBUG = False
+DEBUG = True
 
 # Allowed hosts
 ALLOWED_HOSTS = ['127.0.0.1', 'localhost']
@@ -48,8 +48,13 @@ if not DATABASE_URL:
     }
 else:
     DATABASES = {
-        'default': dj_database_url.parse(DATABASE_URL, conn_max_age=600, ssl_require=True)
+        'default': dj_database_url.parse(
+            DATABASE_URL,
+            conn_max_age=600,
+            ssl_require=True
+        )
     }
+
 
 # Use SQLite for testing
 if 'test' in sys.argv:
@@ -136,18 +141,31 @@ WSGI_APPLICATION = 'inkspire.wsgi.application'
 # Password validation settings
 AUTH_PASSWORD_VALIDATORS = [
     {
-        'NAME': 'django.contrib.auth.password_validation.UserAttributeSimilarityValidator',
+        'NAME': (
+            'django.contrib.auth.password_validation.'
+            'UserAttributeSimilarityValidator'
+        ),
     },
     {
-        'NAME': 'django.contrib.auth.password_validation.MinimumLengthValidator',
+        'NAME': (
+            'django.contrib.auth.password_validation.'
+            'MinimumLengthValidator'
+        ),
     },
     {
-        'NAME': 'django.contrib.auth.password_validation.CommonPasswordValidator',
+        'NAME': (
+            'django.contrib.auth.password_validation.'
+            'CommonPasswordValidator'
+        ),
     },
     {
-        'NAME': 'django.contrib.auth.password_validation.NumericPasswordValidator',
+        'NAME': (
+            'django.contrib.auth.password_validation.'
+            'NumericPasswordValidator'
+        ),
     },
 ]
+
 
 # Account settings
 ACCOUNT_EMAIL_VERIFICATION = 'none'
