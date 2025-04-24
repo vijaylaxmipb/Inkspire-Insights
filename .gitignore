@@ -10,4 +10,6 @@ cloudinary_python.txt
 blog/fixtures/
 debug.log
 .env
+/staticfiles/
+
 
