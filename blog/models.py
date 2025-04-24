@@ -20,7 +20,7 @@ class Post(models.Model):
     updated_on = models.DateTimeField(auto_now=True)
     dummy_field = models.CharField(max_length=10, null=True, blank=True) 
     featured_image = CloudinaryField('image', blank=True, null=True) 
-    featured_image = models.ImageField(upload_to='blog_images/', blank=True, null=True)
+    
     
 
     class Meta:

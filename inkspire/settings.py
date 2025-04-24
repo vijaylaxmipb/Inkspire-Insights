@@ -3,6 +3,14 @@ import os
 import sys
 import dj_database_url
 from dotenv import load_dotenv
+import cloudinary
+
+load_dotenv()
+
+cloudinary.config(
+    cloudinary_url=os.getenv("CLOUDINARY_URL")
+)
+
 
 
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
@@ -23,7 +31,7 @@ load_dotenv()
 SECRET_KEY = os.getenv('SECRET_KEY', 'default-secret-key')
 
 # DEBUG mode
-DEBUG = True
+DEBUG = False
 
 # Allowed hosts
 ALLOWED_HOSTS = ['127.0.0.1', 'localhost']
@@ -76,7 +84,11 @@ INSTALLED_APPS = [
     'blog',
     'about',
     'inkspire',
+    'cloudinary',
+    'cloudinary_storage',
 ]
+
+DEFAULT_FILE_STORAGE = 'cloudinary_storage.storage.MediaCloudinaryStorage'
 
 # Authentication settings
 SITE_ID = 1

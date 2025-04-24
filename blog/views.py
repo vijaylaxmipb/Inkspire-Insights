@@ -13,10 +13,13 @@ from .models import Post
 
 
 class PostList(ListView):
-    queryset = Post.objects.filter(status=1).exclude(title__exact='').exclude(content__exact='').exclude(excerpt__exact='')
+    model = Post
     template_name = "blog/index.html"
-    paginate_by = 6
     context_object_name = 'post_list'
+    paginate_by = 6
+
+    def get_queryset(self):
+        return Post.objects.filter(status=1).exclude(title__exact='').exclude(content__exact='').exclude(excerpt__exact='')
 
 
 class EventsList(ListView):
@@ -73,6 +76,7 @@ def post_detail(request, post_id):
             'comment_form': comment_form,
             'logged_in_user': request.user,
             'post_author': post.author,
+            'posts': posts,
 
       
         }
