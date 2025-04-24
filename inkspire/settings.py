@@ -34,7 +34,11 @@ SECRET_KEY = os.getenv('SECRET_KEY', 'default-secret-key')
 DEBUG = False
 
 # Allowed hosts
-ALLOWED_HOSTS = ['127.0.0.1', 'localhost']
+ALLOWED_HOSTS = [
+    '127.0.0.1',
+    'localhost',
+    'inkspire-insights-ce1064155269.herokuapp.com'
+]
 
 # Database Configuration
 DATABASE_URL = os.getenv('DATABASE_URL')
